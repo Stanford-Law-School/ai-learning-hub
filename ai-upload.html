@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>The AI Upload | AI Learning Hub | Stanford Law School</title>
+<meta name="description" content="The Robert Crown Law Library's weekly digest of artificial intelligence news for the SLS community. What is in each issue, where to find the archive, and how to read it." />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+</head>
+<!-- An ordinary hub page that hands the reader off to the digest, rather than a
+     frame around it.
+
+     The AI Upload is a separate application on its own domain, with its own
+     repository and its own deployment. Nothing of it is copied here: this page
+     says what it is and links to it. That link is the whole integration.
+
+     Unlike the faculty site there is no sign-in involved — the digest is open to
+     anybody — so this page carries no eligibility rules and no student referral.
+     It exists because the digest is a weekly publication with an archive, and a
+     reader deciding whether to open it is better served by a sentence about what
+     is in it than by being dropped straight into this week's issue. -->
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="siteHeader">
+  <a class="headerLogo" href="index.html" aria-label="AI Learning Hub home">
+    <img src="assets/images/robert-crown-law-library-logo.svg" alt="Stanford Law School | Robert Crown Law Library" width="551" height="139" />
+  </a>
+  <div class="headerNavigation">
+    <div class="headerTools">
+      <a class="homeButton" href="index.html">Home</a>
+      <form class="siteSearch" action="search.html" method="get" role="search">
+        <label class="srOnly" for="site-search">Search the AI Learning Hub</label>
+        <input id="site-search" name="q" type="search" placeholder="Search" required />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <button class="navToggleBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburgerIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <nav id="primary-nav" class="primaryNav" aria-label="Main navigation">
+    <a href="https://ai-upload-stanford-law.vercel.app/" target="_blank" rel="noopener noreferrer">The AI Upload<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="ai-resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="skills.html">Skills</a>
+    <a href="faculty.html">Faculty Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <p class="crumb"><a href="index.html">AI Learning Hub</a> &rsaquo; The AI Upload</p>
+
+  <p class="eyebrow">This week in AI</p>
+  <h1>The AI Upload</h1>
+  <p class="lede">
+    The Robert Crown Law Library&rsquo;s weekly digest of artificial intelligence news for the
+    Stanford Law School community &mdash; the tools, the court and policy developments, and the
+    practical guidance worth your attention, gathered into one short read.
+  </p>
+
+  <section class="card" aria-labelledby="read-h">
+    <div class="homeCardHead">
+      <h2 id="read-h" style="margin: 0;">Read the digest</h2>
+      <span class="pill"><span class="dot" aria-hidden="true"></span>New every Friday</span>
+    </div>
+    <p class="muted">
+      The digest opens in a new tab on its own address. No sign-in is needed &mdash; it is open to
+      the whole SLS community, and to anyone else who finds it.
+    </p>
+    <p class="actions">
+      <!-- target="_blank" is deliberate and load-bearing, not a stylistic choice.
+           Every hub page is itself a full-page frame on a Google Sites page, so a
+           same-tab link would load the digest *inside that frame* — which is the
+           embedding this page exists to remove. _top would keep one tab, but
+           Google's embed sandbox can withhold top-level navigation, so _blank is
+           the sturdier of the two. See README, "Inside Google Sites". -->
+      <a class="primary" href="https://ai-upload-stanford-law.vercel.app/" target="_blank" rel="noopener noreferrer">
+        Read The AI Upload<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span>
+      </a>
+    </p>
+  </section>
+
+  <section aria-labelledby="inside-h">
+    <h2 id="inside-h">What is in each issue</h2>
+    <ul class="checkList">
+      <li><strong>The week&rsquo;s AI news</strong>, selected by hand rather than generated &mdash; articles are searched and chosen by people at the Library.</li>
+      <li><strong>A podcast edition</strong> of each issue, for reading time you do not have.</li>
+      <li><strong>Pro tips</strong> &mdash; a short, practical technique each week, from AI in Gmail to context engineering.</li>
+      <li><strong>An archive</strong> of past issues and tips, so a week you missed is still there.</li>
+      <li><strong>An AI transparency statement</strong> naming the tools used to produce it.</li>
+    </ul>
+    <p class="note">
+      <strong>New issues every Friday</strong>, minus Stanford holidays and closures. Questions or
+      suggestions? Email <a href="mailto:library@law.stanford.edu">library@law.stanford.edu</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <nav class="footerNav" aria-label="Site footer">
+      <div class="footerGroup">
+        <h2 class="footerHeading" id="footer-elsewhere">Elsewhere at Stanford</h2>
+        <ul aria-labelledby="footer-elsewhere">
+          <li><a href="https://law.stanford.edu/ai-initiative/" target="_blank" rel="noopener noreferrer">SLS AI Initiative<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/robert-crown-law-library/" target="_blank" rel="noopener noreferrer">Robert Crown Law Library<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://uit.stanford.edu/security/responsibleai" target="_blank" rel="noopener noreferrer">Responsible AI at Stanford<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/office-of-student-affairs/use-of-generative-ai-technology/" target="_blank" rel="noopener noreferrer">Use of Generative AI at SLS<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/hub.js"></script>
+
+<!-- embed-map: generated by scripts/build-embed-map.py -->
+<script src="assets/embed-map.js"></script>
+<script src="assets/embed.js"></script>
+</body>
+</html>
