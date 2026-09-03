@@ -4,7 +4,12 @@ frontend:
     preBuild:
       commands: []
     build:
-      commands: []
+      commands:
+        # Writes GOOGLE_CALENDAR_API_KEY into assets/calendar-config.js so the
+        # Curiosity Corner section on events.html can read the hours calendar.
+        # Exits 0 with a note if the variable is not set, so branch previews
+        # without it still deploy — they fall back to the written hours.
+        - node scripts/build-calendar-config.mjs
   artifacts:
     baseDirectory: /
     files:

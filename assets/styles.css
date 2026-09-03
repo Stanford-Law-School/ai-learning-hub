@@ -2938,28 +2938,6 @@ main section[id] { scroll-margin-top: 8rem; }
    the vertical margin a standalone .promptBlock carries would double it. */
 .promptComparison.grid .promptBlock { margin: 0; }
 
-/* ---- Posters ---------------------------------------------------------------
-   The training and framework posters are the content, not decoration, so they
-   are shown at a size worth reading and each one keeps its own aspect ratio.
-   object-fit is deliberately absent: these are posters full of small type, and
-   cropping one to a uniform tile would cut the text off. */
-.posterGrid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-  gap: clamp(0.9rem, 2vw, 1.4rem); margin: 1.3rem 0 0;
-}
-.posterFigure { margin: 0; }
-.posterFigure img {
-  display: block; width: 100%; height: auto;
-  border-radius: 16px; border: 1px solid var(--glass-border);
-  background: #fff;
-  box-shadow: var(--glass-shadow);
-}
-.posterFigure figcaption { margin-top: 0.5rem; font-size: 0.85rem; color: var(--muted); }
-/* A poster is a flat image with its own white ground, so on the dark theme it
-   sits as a bright rectangle. Dimming it slightly stops it glaring against the
-   glass without washing out the type. */
-:root[data-theme="dark"] .posterFigure img { filter: brightness(0.94); }
-
 /* ---- Inline embeds --------------------------------------------------------
    Panels that hold a third-party frame inside the normal flow of a page — the
    week-at-a-glance board, the event calendar, and the faculty publications list.
@@ -3007,6 +2985,206 @@ main section[id] { scroll-margin-top: 8rem; }
   font-size: 0.87rem; font-style: italic; color: var(--muted);
 }
 
+/* ---- The Curiosity Corner hours -------------------------------------------
+   A chronological list of the next few days of drop-in hours, built by
+   assets/curiosity-corner.js out of the same calendar the panel further down
+   the page frames. Nothing here is a new colour or a new shape: the day rail
+   borrows the hairline, the slots borrow the glass, and the badges borrow
+   --gold, --cardinal and the aurora's blue. That is the whole reason for
+   rendering it ourselves rather than framing Google's month grid — a frame is a
+   second stylesheet that cannot be told which theme it is in, and cannot be
+   told anything at all about the keyboard.
+
+   The container holds a written summary of the standing hours as markup. The
+   script replaces that only once it has events in hand, so with no script, no
+   key, or no network the page still answers "when can I come in". */
+.ccSchedule { margin: 1.3rem 0 0; }
+.ccSchedule[aria-busy="true"] { opacity: 0.72; }
+
+/* The status line is the one-sentence version of the list beneath it: how many
+   sessions, and how far ahead they run. It is a live region sitting in the
+   markup rather than an element the script creates, so a screen reader is told
+   when the list arrives; empty, it takes up no room. */
+.ccStatus {
+  margin: 0.9rem 0 0;
+  font-size: 0.92rem; color: var(--muted);
+}
+.ccStatus:empty { display: none; }
+.ccStatus--empty { color: var(--ink); }
+
+.ccDayList {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 0.7rem;
+}
+
+/* Wide enough, the date sits in its own rail and the sessions for that day
+   stack beside it, so a reader scanning for "Thursday" runs their eye down one
+   column instead of through the sessions. Narrower, it becomes a heading above
+   its sessions, which is what it is semantically either way. */
+.ccDay {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 10.5rem) minmax(0, 1fr);
+  gap: clamp(0.8rem, 2vw, 1.6rem);
+  align-items: start;
+  padding: 0.95rem 0 0;
+  border-top: 1px solid var(--glass-hairline);
+}
+.ccDay:first-child { border-top: 0; padding-top: 0; }
+
+.ccDayHead {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.1rem 0.5rem;
+  margin: 0;
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: 1.05rem; line-height: 1.2; letter-spacing: -0.01em;
+}
+.ccDayName { display: block; width: 100%; }
+.ccDayDate { color: var(--muted); font-family: var(--font-sans); font-size: 0.88rem; font-weight: 600; }
+
+/* "Today" and "Tomorrow" are the reason most people are reading this list, so
+   they are stated in words. The tint is an accent on a label that already says
+   what it means. */
+.ccDayRel {
+  font-family: var(--font-sans);
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink);
+  padding: 0.15rem 0.5rem; border-radius: 999px;
+  border: 1px solid rgba(169, 121, 31, 0.55);
+  background: rgba(169, 121, 31, 0.16);
+}
+
+.ccSlots { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+
+.ccSlot {
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-hairline);
+  background: var(--glass-bg);
+}
+
+/* A session in progress. The left edge and the tint are the quick signal; the
+   "Happening now" label beside the time is the actual one, because nobody
+   should have to notice a colour to learn that the door is open right now. */
+.ccSlot.isLive {
+  border-color: rgba(140, 21, 21, 0.5);
+  border-left-width: 3px;
+  background: linear-gradient(90deg, rgba(140, 21, 21, 0.14), var(--glass-bg) 40%);
+}
+
+.ccSlotHead {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.7rem;
+  margin-bottom: 0.15rem;
+}
+.ccSlotTime {
+  margin: 0;
+  font-size: 0.95rem; font-weight: 650; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+/* Pacific, always, whatever the reader's clock says — these are hours in a room
+   in California. The label is quieter than the time but never hidden. */
+.ccTzLabel { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; }
+
+.ccLive {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink);
+  padding: 0.15rem 0.55rem; border-radius: 999px;
+  border: 1px solid rgba(46, 158, 91, 0.6);
+  background: rgba(46, 158, 91, 0.16);
+}
+.ccLiveDot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #2e9e5b; flex: 0 0 7px;
+  animation: ccPulse 2.4s ease-in-out infinite;
+}
+@keyframes ccPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+.ccSlotTitle {
+  margin: 0 0 0.35rem;
+  font-size: 1rem; font-weight: 650; letter-spacing: -0.005em;
+}
+
+.ccSlotWhere {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.55rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem; color: var(--muted);
+}
+
+/* In person, on Zoom, or both. Each badge carries the words, and the tint sits
+   behind --ink rather than replacing it: a translucent wash over the theme's own
+   surface keeps the label at full contrast in light and dark alike, which a
+   coloured foreground on glass does not. */
+.ccMode {
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink);
+  padding: 0.18rem 0.55rem; border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-strong);
+  white-space: nowrap;
+}
+.ccMode--person { border-color: rgba(169, 121, 31, 0.55); background: rgba(169, 121, 31, 0.16); }
+.ccMode--online { border-color: rgba(90, 110, 160, 0.65); background: rgba(90, 110, 160, 0.20); }
+.ccMode--hybrid { border-color: rgba(140, 21, 21, 0.55); background: rgba(140, 21, 21, 0.16); }
+:root[data-theme="light"] .ccMode--online { background: rgba(90, 110, 160, 0.16); }
+
+.ccWhereText { color: var(--muted); }
+
+.ccSlotNote { margin: 0 0 0.5rem; font-size: 0.89rem; color: var(--muted); max-width: 62ch; }
+
+.ccSlotActions { display: flex; flex-wrap: wrap; gap: 0.4rem 0.8rem; margin: 0; }
+
+/* Text links rather than buttons. A row of six filled buttons down a list of
+   six sessions reads as a form; the action here is a link to somewhere else,
+   and saying so plainly keeps the list scannable. */
+.ccAction { font-size: 0.86rem; font-weight: 650; }
+.ccAction--join { color: var(--link); }
+
+.ccMore { margin: 1rem 0 0; font-size: 0.88rem; color: var(--muted); }
+
+/* Subscribing is the actual ask: come to one session, or put every session on
+   your own calendar once and stop checking this page. */
+.ccSubscribe {
+  margin: 1.2rem 0 0; padding: 0.85rem 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-hairline);
+  background: var(--glass-bg-strong);
+}
+.ccSubscribeLead {
+  margin: 0 0 0.35rem;
+  font-size: 0.74rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold);
+}
+.ccSubscribeLinks { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin: 0; font-size: 0.9rem; }
+
+/* The written standing hours: what the section says with no script, no key and
+   no network, and what stays on the page if the calendar has nothing coming up.
+   It is deliberately not a skeleton — a reader who gets this has still been
+   answered. */
+.ccFallback { margin: 0; }
+.ccFallback dl { display: grid; gap: 0.55rem; margin: 0.8rem 0 0; }
+.ccFallback dt {
+  font-size: 0.74rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);
+}
+.ccFallback dd { margin: 0.1rem 0 0; font-size: 0.94rem; }
+.ccSchedule.isLoaded .ccFallback { display: none; }
+
+@media (max-width: 700px) {
+  .ccDay { grid-template-columns: 1fr; gap: 0.6rem; }
+  .ccDayName { width: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ccLiveDot { animation: none; }
+}
+
+@media print {
+  .ccDay, .ccSlot { break-inside: avoid; }
+  .ccSubscribe, .ccSlotActions { display: none; }
+}
+
 /* ============================================================================
    AI in the Library
    ---------------------------------------------------------------------------
@@ -3017,10 +3195,11 @@ main section[id] { scroll-margin-top: 8rem; }
    published key.
    ========================================================================== */
 
-/* Exhibit cards sit in a three-column grid when they are text-only. Cards that
-   carry posters span the full row and put the poster(s) beside the copy at a
-   readable width — stuffing a full-length poster into a one-third column made
-   the display look like a mobile stack on desktop. */
+/* Exhibit cards sit in a three-column grid. They used to come in two shapes:
+   text-only in one column, and poster-carrying cards spanning the full row to
+   give a poster room to be read. The reproduced posters are gone — the cards are
+   the content, and the display they describe is on the library's first floor —
+   so there is one shape left and the grid is a plain grid again. */
 .exhibitGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3028,18 +3207,6 @@ main section[id] { scroll-margin-top: 8rem; }
   align-items: start;
 }
 .exhibitCard { display: flex; flex-direction: column; }
-.exhibitCard.hasPosters {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(16rem, 0.95fr) minmax(18rem, 1.2fr);
-  gap: clamp(1rem, 2.5vw, 1.8rem);
-  align-items: start;
-}
-/* Two or more posters: copy on top, posters in a readable row beneath — putting
-   both beside the text clipped the second poster on laptop widths. */
-.exhibitCard.hasPosters.multiPoster {
-  grid-template-columns: 1fr;
-}
 .exhibitBody { min-width: 0; }
 .exhibitHead { display: flex; align-items: flex-start; gap: 0.7rem; margin-bottom: 0.5rem; }
 .exhibitIcon {
@@ -3052,17 +3219,6 @@ main section[id] { scroll-margin-top: 8rem; }
 .exhibitHeadText { min-width: 0; }
 .exhibitHeadText .eyebrow { margin-bottom: 0.1rem; }
 .exhibitHeadText h3 { margin: 0; }
-.exhibitPosters {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.85rem;
-  min-width: 0;
-}
-.exhibitCard.hasPosters.multiPoster .exhibitPosters {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 52rem;
-}
-.exhibitCard .posterFigure { margin: 0; }
 .exhibitCard > :last-child { margin-bottom: 0; }
 .readingShelfHead { margin-top: 2rem; }
 .readingShelfHead h3 { margin-bottom: 0.4rem; }
@@ -3074,8 +3230,6 @@ main section[id] { scroll-margin-top: 8rem; }
 }
 @media (max-width: 860px) {
   .exhibitGrid { grid-template-columns: 1fr; }
-  .exhibitCard.hasPosters { grid-template-columns: 1fr; }
-  .exhibitCard.hasPosters.multiPoster .exhibitPosters { grid-template-columns: 1fr; }
 }
 
 /* ---- The book collection --------------------------------------------------

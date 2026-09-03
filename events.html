@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
 <title>Events | AI Learning Hub | Stanford Law School</title>
-<meta name="description" content="AI events facilitated by the Robert Crown Law Library at Stanford Law School: AI Curiosity Corners drop-in help, the SLS Tech Club, and the full event calendar." />
+<meta name="description" content="AI events facilitated by the Robert Crown Law Library at Stanford Law School: AI Curiosity Corner drop-in hours, AI trainings, and the full event calendar." />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
 </head>
@@ -53,6 +53,119 @@
     <a class="secondary" href="past-events.html">Past events and materials</a>
   </div>
 
+  <!-- ===================== Curiosity Corner ===================== -->
+
+  <section aria-labelledby="corners-h">
+    <p class="eyebrow">Drop-in, one to one, no appointment</p>
+    <h2 id="corners-h">What the AI Curiosity Corner is</h2>
+    <p class="lede" style="max-width: 66ch;">
+      Office hours for AI. A librarian, a screen, and whatever you are actually stuck on. You do not need to
+      book, you do not need to prepare, and you do not need to know what to ask.
+    </p>
+    <p class="muted" style="max-width: 70ch;">
+      We run these because most AI questions are too small to justify an email and too specific to answer in a
+      workshop. &ldquo;Which of these tools should I use for this?&rdquo; &ldquo;Why is it giving me
+      this?&rdquo; &ldquo;Is this allowed?&rdquo; &ldquo;Can it do the boring part of this task?&rdquo; Those
+      are exactly the right questions to bring, and ten minutes with someone who has already hit the same wall
+      usually settles them.
+    </p>
+
+    <div class="grid" style="margin-top: 1.3rem;">
+
+      <article class="card">
+        <h3>Who it is for</h3>
+        <p class="muted">
+          Everyone at Stanford Law School &mdash; students, faculty, and staff &mdash; at every level of
+          experience. Complete beginners are the people we most want to see. So are people who have been
+          using these tools daily for a year and have hit something odd.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>How it works</h3>
+        <p class="muted">
+          Turn up, in the room or on the Zoom link, and say what you are trying to do. There is no queue
+          ticket and no intake form. Sessions are an hour, but most questions take a fraction of that, so come
+          for as long as you need and leave when you have your answer.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>What to bring</h3>
+        <p class="muted">
+          Nothing, or the thing that is not working. A prompt that went sideways, a tool you cannot get access
+          to, a task you suspect could be automated, a piece of output you do not trust. Real work beats a
+          hypothetical every time.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="card" style="margin-top: 1.2rem;">
+      <h3>Things people actually come in with</h3>
+      <ul class="checkList">
+        <li>Which AI tool fits a particular task &mdash; and when the answer is &ldquo;none of them.&rdquo;</li>
+        <li>Getting access to a licensed tool, and what the license does and does not cover.</li>
+        <li>Prompting that is nearly working, and why the output keeps drifting.</li>
+        <li>Checking whether output can be trusted, and how to verify a citation.</li>
+        <li>Building something small: a custom GPT, a skill, a reusable prompt, a workflow.</li>
+        <li>What Stanford Law School&rsquo;s policies permit for coursework and for client-facing work.</li>
+      </ul>
+      <p class="muted" style="margin-bottom: 0;">
+        Zero judgment, and no question is too basic. If it turns out to be a bigger project than an hour
+        allows, we will book proper time with you.
+      </p>
+    </div>
+
+    <div class="actions">
+      <a class="secondary" href="#hours-h">See the next sessions</a>
+      <a class="textLink" href="mailto:library@law.stanford.edu">Can&rsquo;t make any of them? Email us for an appointment &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ===================== The hours =====================
+       Rendered from the Curiosity Corner calendar by assets/curiosity-corner.js.
+       The written standing hours inside the container are not a placeholder:
+       they are what the section says when the script is blocked, the API key is
+       not configured, or the calendar cannot be reached. -->
+
+  <section aria-labelledby="hours-h">
+    <p class="eyebrow">Every week, in person and on Zoom</p>
+    <h2 id="hours-h">Upcoming Curiosity Corner hours</h2>
+    <p class="muted" style="max-width: 70ch;">
+      All times Pacific. Sessions are open to the whole Stanford Law School community, and you can add any of
+      them to your own calendar in one click.
+    </p>
+
+    <!-- An empty live region that exists before the list does. A status element
+         created in the same breath as its text is often not announced at all;
+         one already in the document is. It collapses when empty, so it costs
+         nothing on a page with no script. -->
+    <p class="ccStatus" id="curiosity-status" role="status" aria-live="polite"></p>
+
+    <div class="ccSchedule" id="curiosity-schedule">
+      <div class="card ccFallback">
+        <h3>The standing hours</h3>
+        <dl>
+          <dt>In person, weekly</dt>
+          <dd>
+            Thursdays, 2&ndash;3pm PT, in the library&rsquo;s reference office on the first floor of the
+            Robert Crown Law Library.
+          </dd>
+          <dt>On Zoom, weekly</dt>
+          <dd>Times vary from week to week. The calendar below carries the current dates and the link.</dd>
+          <dt>By appointment, any time</dt>
+          <dd>
+            <a href="mailto:library@law.stanford.edu">Email library@law.stanford.edu</a> and we will find a
+            time that works.
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== This week ===================== -->
+
   <section aria-labelledby="week-h">
     <p class="eyebrow">What is on</p>
     <h2 id="week-h">This week at a glance</h2>
@@ -62,23 +175,6 @@
         title="This week at a glance — Robert Crown Law Library AI events"
         loading="lazy"
       ></iframe>
-    </div>
-  </section>
-
-  <!-- ===================== Curiosity Corners ===================== -->
-
-  <section aria-labelledby="corners-h">
-    <p class="eyebrow">One-to-one help</p>
-    <h2 id="corners-h">AI Curiosity Corners</h2>
-    <div class="card" style="margin-top: 1.2rem;">
-      <p>
-        Want one-to-one AI help with your specific questions? Drop in. There are weekly, fixed in-person
-        sessions on <strong>Thursdays at 2pm</strong> in the library&rsquo;s reference office, plus weekly Zoom
-        sessions at varying times &mdash; see the board above and the calendar below for dates and times.
-      </p>
-      <p style="margin-bottom: 0;">
-        Or <a href="mailto:library@law.stanford.edu">email us</a> to set up an appointment.
-      </p>
     </div>
   </section>
 
@@ -95,107 +191,15 @@
     </div>
   </section>
 
-  <!-- ===================== Tech Club ===================== -->
-
-  <section aria-labelledby="techclub-h">
-    <p class="eyebrow">Monthly, and open to everyone</p>
-    <h2 id="techclub-h">SLS Tech Club</h2>
-    <p class="muted" style="max-width: 70ch;">
-      Welcome to the SLS Tech Club, where we ignite the tech spark in every member of the Stanford Law School
-      community. You are already a member.
-    </p>
-
-    <details class="guideDetails">
-      <summary>Club charter: our tech adventure map</summary>
-      <div class="detailsBody">
-        <p>
-          Thank you for being part of the SLS Tech Club, where we hope to ignite the tech spark in every member
-          of the Stanford Law School community. We are all about exploring the latest and greatest in
-          technology, sharing insights, and building our tech skills together in a fun, collaborative
-          environment.
-        </p>
-
-        <h3>Mission statement</h3>
-        <p>
-          Our mission is simple: to create a space for the entire Stanford Law School community to come
-          together, dive into emerging technologies, and have a blast while learning and growing.
-        </p>
-
-        <h3>Focus</h3>
-        <p>
-          While our primary focus is often the rapidly evolving world of generative artificial intelligence and
-          its impact on law and society, our curiosity does not stop there. The club is an open forum for all
-          technology-related subjects &mdash; from low-tech productivity hacks to the mind-bending possibilities
-          of quantum computing, any topic is open for consideration. If it sparks your curiosity, it belongs
-          here. Have suggestions for future Tech Clubs? Let us know.
-        </p>
-
-        <h3>Membership</h3>
-        <p>
-          You are already a member. Everyone at Stanford Law School who loves tech &mdash; or is just curious
-          &mdash; is welcome. The more, the merrier.
-        </p>
-
-        <h3>Objectives</h3>
-        <ul>
-          <li><strong>Monthly meet-ups:</strong> we gather once a month on Zoom to catch up, learn, and share. You do not have to attend every gathering &mdash; come and go as time permits, and skip an event altogether if a topic does not interest you.</li>
-          <li><strong>Reading and discussion:</strong> dive into books, articles, podcasts, and other resources that keep us ahead of the tech curve, then discuss what we learned and what we can implement.</li>
-          <li><strong>Tech demos:</strong> get hands-on with new gadgets, software, and tools.</li>
-          <li><strong>Guest speakers:</strong> occasionally hear from tech experts as passionate about technology as we are. Most often we watch videos of experts speaking, but we leave room for live guest speakers too.</li>
-        </ul>
-
-        <h3>Governance</h3>
-        <p>
-          Will Huggins and Taryn Marks co-facilitate. But this is your club too. Got ideas for activities or
-          topics? Bring them. Use the suggestion form, pinned to the channel at any time, or post to the
-          <strong>#techclub</strong> Slack channel.
-        </p>
-        <p>
-          <strong>Share your passion.</strong> If you have a topic you are excited about and would like to lead
-          a discussion or demo, we strongly encourage you to be a guest facilitator. It is a great way to share
-          your expertise with the community. Reach out to Will or Taryn to get on the schedule.
-        </p>
-
-        <h3>Meetings and resources</h3>
-        <h4>Meeting schedule</h4>
-        <p>
-          We mix it up. One month we dive into a great tech read, the next we have a guest speaker or a
-          hands-on demo. Variety is the spice of our tech life. Have thoughts on what you would like to
-          discuss? Let us know.
-        </p>
-        <h4>Between meetings</h4>
-        <p>
-          Join the <strong>#techclub</strong> Slack channel and pop in with ideas, reactions, and new resources
-          throughout the month. Let us keep talking.
-        </p>
-        <h4>Resource materials</h4>
-        <p>
-          We pick books, podcasts, resources, and articles that are not only relevant but genuinely
-          interesting. Reading lists go out in advance, so you have plenty of time to get cosy with the
-          material.
-        </p>
-        <h4>Interactive sessions</h4>
-        <p>
-          Let us keep it lively &mdash; discussions, questions, and practical applications. We want everyone to
-          share their thoughts and experiences, and we are respectful of all opinions at all times. This is a
-          safe space to voice your thoughts.
-        </p>
-      </div>
-    </details>
-
-    <div class="actions">
-      <a class="secondary" href="https://stanford.enterprise.slack.com/" target="_blank" rel="noopener noreferrer">
-        Join #techclub on Slack<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span>
-      </a>
-      <a class="textLink" href="past-events.html#tech-club">See past Tech Club meetings &rarr;</a>
-    </div>
-  </section>
-
   <!-- ===================== Calendar ===================== -->
 
   <section aria-labelledby="calendar-h">
     <p class="eyebrow">Everything, in one place</p>
     <h2 id="calendar-h">Full event calendar</h2>
+    <p class="muted" style="max-width: 70ch;">
+      The month grid, for looking further ahead than the list above. It is the same calendar the Curiosity
+      Corner hours come from.
+    </p>
     <div class="embedPanel tall">
       <iframe
         src="https://calendar.google.com/calendar/u/0/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;bgcolor=%23ffffff&amp;color=%23cca6ac&amp;src=c_3ce86d0800c7eb54574a4b9780c16841ede64be125b24e0946ccf2b7ea6978b1@group.calendar.google.com"
@@ -229,6 +233,12 @@
 </footer>
 
 <script src="assets/hub.js"></script>
+
+<!-- The Curiosity Corner hours. calendar-config.js carries the calendar id and,
+     after the Amplify build step, the API key; with no key the second script
+     returns without touching the page and the written hours stand. -->
+<script src="assets/calendar-config.js"></script>
+<script src="assets/curiosity-corner.js"></script>
 
 <!-- embed-map: generated by scripts/build-embed-map.py -->
 <script src="assets/embed-map.js"></script>
