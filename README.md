@@ -47,7 +47,10 @@ python3 -m http.server 8000
 | `assets/books.js` | Shared reading-list data and card renderer |
 | `assets/ai-reading-list.pdf` | The same shelf as a printable PDF, with clickable SearchWorks links |
 | `scripts/generate-reading-list-pdf.py` | Builds that PDF from `assets/books.js` |
-| `events.html` | Curiosity Corners, trainings, the Tech Club charter, and the calendar |
+| `events.html` | The upcoming schedule, what the Curiosity Corner is, trainings, and the calendar |
+| `assets/curiosity-corner.js` | Draws the next three weeks of the AI calendar as a native list |
+| `assets/calendar-config.js` | Which calendar it reads; the API key is injected at deploy time |
+| `scripts/build-calendar-config.mjs` | Writes that key in from the Amplify environment |
 | `past-events.html` | Archive of past sessions and Tech Club meetings |
 | `skills.html` | The twenty-one downloadable AI skills, the three one-click sets, and the practice drafts |
 | `skills/bundles.json` | Which skills each set holds, and in what order |
@@ -138,6 +141,105 @@ must appear, and a heading hit outweighs a passing mention. Snippets are built a
 text nodes and `<mark>` elements rather than markup, so a query can never become
 HTML.
 
+### The Curiosity Corner hours
+
+`events.html` opens with the schedule. `assets/curiosity-corner.js` reads the
+library's AI calendar over the public Google Calendar API and lays the next three
+weeks out as nested lists built from the site's own elements: an `<ol>` of weeks, each
+holding an `<ol>` of days, each holding its sessions. A session carries its times as
+`<time>` elements, an "In person" / "On Zoom" / "In person and on Zoom" badge, a
+"Happening now" label when it is in progress, a one-click "Add to my calendar" link,
+and a Zoom link when the event has one. Below the list, two subscribe links put every
+future session on the reader's own calendar. Then comes what the Curiosity Corner
+actually is — drop-in, one to one, no appointment, who it is for, what to bring.
+
+**The schedule leads the page, and it is grouped by week.** Both of those replace a
+framed Apps Script board that used to sit third on the page under the heading "This
+week at a glance". It answered the question most readers arrive with, and it did it
+below two other sections, in a 560px-tall iframe, in its own type. The native list
+answers the same question in the first screenful. Weeks are the unit because "what is
+on this week" is the actual question; a flat run of a dozen days does not answer it at
+a glance. The current week gets the stronger surface, and its heading says "This
+week", so the emphasis is not carried by the tint alone. Weeks with nothing on them
+never appear, so a quiet stretch produces no empty headings — and only weeks with
+something in them count against the three.
+
+The **SLS Tech Club** section — the club charter, the mission statement, the
+governance notes, and the Slack link — is off this page, as is the framed
+week-at-a-glance board. Events is now about what the library runs and when you can
+turn up to it, and a monthly club's charter is not that.
+The Tech Club's meeting archive is unchanged on `past-events.html`, whose intro
+paragraph now points at the `#techclub` Slack channel for the charter rather than at
+the anchor on this page that no longer exists.
+
+The Google Calendar iframe stays at the foot of the page as the month grid, for
+looking further ahead than three weeks, and the list points at it when there is more
+beyond its last week. It is no longer how the hours are marketed: a framed month grid
+is a second stylesheet that cannot be told which theme it is in, ignores our type, and
+buries the next available session three clicks deep. Everything above it is ours, so
+light mode, dark mode, keyboard focus, and the print stylesheet all work the way they
+do everywhere else on the site.
+
+**It degrades to prose, not to a spinner.** The container in the markup holds a
+written summary of the standing hours. The script replaces that only once it has real
+events in hand, so with JavaScript blocked, the API unreachable, no key configured, or
+nothing on the calendar for the next sixty days, a reader still gets an answer to
+"when can I come in". Times are always printed in `America/Los_Angeles` and labeled
+`PT`, because these are hours in a room in California; a visitor's local time would be
+a kindness that mostly produces confusion.
+
+That summary is hand-written from the recurring entries on the calendar, so it is the
+one part of this that can drift — update it when the standing pattern changes. As of
+now the pattern is three weekly in-person sessions in the Reference Office: Mondays
+12:30–1:30pm, Tuesdays 1–2pm, and Thursdays 12–1pm PT. The copy this page and
+`ai-in-the-library.html` used to carry said "Thursdays 2–3pm" and "twice weekly",
+which the calendar had already moved past; both are corrected.
+
+Nothing from the API is ever treated as markup. Every value goes into the page through
+`createElement` and `textContent`, and a URL out of an event's location or description
+is linked only if it is `https` and on a short host allowlist (`zoom.us`,
+`stanford.edu`, `law.stanford.edu`, `google.com`). Some events carry their Zoom link as
+a `google.com/url?q=` redirect, from having been pasted out of a Google doc; those are
+unwrapped and the allowlist is re-applied to the target, so the reader goes straight to
+Zoom and the check is made against where they actually land. Most events keep the Zoom
+link in the location field, so the bare URL is stripped out of the location text once
+it has become the "Join on Zoom" link — printing it twice made the line unreadable.
+
+#### Configuring it
+
+The calendar id is public — it is in the iframe URL on the same page — and is
+committed in `assets/calendar-config.js`. The API key is not. It is written into that
+file at deploy time by `scripts/build-calendar-config.mjs`, which `amplify.yml` runs
+in its build phase:
+
+```
+node scripts/build-calendar-config.mjs   # reads GOOGLE_CALENDAR_API_KEY from the environment
+```
+
+With no variable set the script exits 0 and leaves the committed file alone, so a
+branch preview nobody has configured still deploys and simply shows the written hours.
+
+To set it up, in the **Google Cloud console**:
+
+1. Enable the **Google Calendar API** on a project.
+2. Create an **API key** under *APIs & Services → Credentials*.
+3. Restrict it: *API restrictions* → **Google Calendar API** only; *Application
+   restrictions* → **Websites**, listing the hub's own origins (the Amplify domain,
+   any custom domain, and `http://localhost` if you preview locally).
+4. Make sure the calendar itself is shared as **"Make available to public / See all
+   event details"** — the key authorizes the caller, not the calendar.
+
+Then in the **Amplify console**, under *Hosting → Environment variables*, add
+`GOOGLE_CALENDAR_API_KEY` with that key and redeploy. `CURIOSITY_CALENDAR_ID` is an
+optional second variable that overrides the committed calendar id without a commit.
+
+This key does ship to the browser, which is unavoidable for a static site reading a
+Google API directly. It is acceptable for this one key and no other: it is read-only,
+scoped to the Calendar API alone, limited to our referrers, and the only thing behind
+it is a calendar that is already public. It is the opposite trade from the Gemini
+"AI Curator" key described below, which would have been a write-capable key on a paid
+API — that one we did not take.
+
 ### Content that is data, not markup
 
 Two pages keep their content in one array at the bottom of the file and render the
@@ -219,6 +321,17 @@ Two of the app's features did **not** come across, and both were deliberate:
   Each of the thirty-two entries carries its title, author, publisher, date, ISBN, the
   annotation from the shelf, and a clickable link to its SearchWorks record; an entry is
   never split across a page break. Re-run the script after editing `assets/books.js`.
+
+**The reproduced poster images are gone too.** Each exhibit panel used to carry a
+photograph of the printed poster, hotlinked from `postimg.cc` — up to two per card,
+about twenty images in all. They were a third-party dependency for content the cards
+already state in text, they arrived as flat white rectangles that had to be dimmed to
+sit on the dark theme, and small type in a screenshot is not readable text. The cards
+are the content now, and the display they describe is on the library's first floor.
+`itemCard()` lost its `poster`/`extraPoster` fields and the `.posterGrid`,
+`.posterFigure`, `.exhibitPosters`, `.hasPosters` and `.multiPoster` rules went with
+them, which also returned `.exhibitGrid` to a plain three-column grid — the full-row
+card variant existed only to give a poster room to be read.
 
 The app also fetched book covers at runtime from the Open Library and Google Books
 APIs. Covers here come from Open Library by ISBN as a plain image URL
