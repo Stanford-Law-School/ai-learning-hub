@@ -20,7 +20,6 @@ window.HUB_EMBED_MAP = {
     { file: "embed-codes.html", mode: "private", title: "Google Sites embed codes" },
     { file: "events.html", mode: "page", path: "/events", title: "Events" },
     { file: "faculty-publications.html", mode: "page", path: "/faculty-publications", title: "SLS faculty publications on AI" },
-    { file: "faculty.html", mode: "page", path: "/faculty-support", title: "Faculty Support" },
     { file: "github-portfolio.html", mode: "page", path: "/github-portfolio", title: "Your First GitHub Portfolio" },
     { file: "install.html", mode: "page", path: "/install", title: "Install a skill" },
     { file: "past-events.html", mode: "page", path: "/past-events", title: "Past events" },

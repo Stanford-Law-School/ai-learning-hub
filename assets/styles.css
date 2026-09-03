@@ -1964,13 +1964,10 @@ img.mediaAsset {
 }
 .accessSummaryItem dd { margin: 0; font-size: 0.95rem; word-break: break-word; }
 
-/* The student referral on the sign-in page. Set apart from the faculty explanation,
-   because the reader it is for has already been told this site is not for them and
-   should not have to read the rest to find where they should go. */
-.studentRedirect { margin-top: 2rem; }
-.studentRedirect h2 { margin-top: 0; font-size: 1.2rem; }
-.studentRedirect p { max-width: 62ch; overflow-wrap: anywhere; }
-.studentRedirect .actions { margin-top: 1rem; }
+/* .studentRedirect was here: the student referral card on faculty.html, set apart
+   from the faculty explanation so a student did not have to read the rest to find
+   where they should go. That page is deleted and the referral is now one line in
+   the .crossPromoAside on the landing page, so the rules went with it. */
 
 .adminPortal { margin-top: 1.4rem; display: grid; gap: 2rem; }
 .adminCounts { font-size: 0.9rem; }

@@ -34,10 +34,11 @@
   // records what it carries, and Google Sites frames that directly rather than
   // nesting three deep to show the same thing.
   //
-  // faculty.html used to be the other one. Now that it is an ordinary page, the
-  // map carries no `frame` for it and this returns the hub page instead — which is
-  // the URL the Google Sites /faculty-support page has to be repointed at by hand
-  // before the old embed of the faculty site stops being served.
+  // faculty.html used to be the other one. That page is deleted — Faculty
+  // Support goes straight to the faculty application at /faculty now — so it is
+  // absent from the map and prints no block here. The Google Sites
+  // /faculty-support page, if it still exists, has nothing left to point at and
+  // should be removed on that side.
   function sourceFor(entry) {
     return entry.frame || base + entry.file + "?embed=1";
   }
