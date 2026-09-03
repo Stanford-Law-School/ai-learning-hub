@@ -3012,6 +3012,44 @@ main section[id] { scroll-margin-top: 8rem; }
 .ccStatus:empty { display: none; }
 .ccStatus--empty { color: var(--ink); }
 
+/* Weeks, then days, then sessions. The week is the grouping the framed board
+   that used to sit here did by hand, and it is the question most people arrive
+   with: what is on this week. A flat run of a dozen days does not answer that
+   at a glance. */
+.ccWeekList {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.5rem;
+}
+.ccWeek {
+  padding: 1rem 1.1rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-hairline);
+  background: var(--glass-bg);
+}
+/* The current week is where the eye should land first, so it gets the stronger
+   surface and a hairline in the brand red. The heading still says "This week",
+   which is what carries the meaning. */
+.ccWeek.isCurrent {
+  border-color: rgba(140, 21, 21, 0.42);
+  background: var(--glass-bg-strong);
+  box-shadow: var(--glass-shadow);
+}
+
+.ccWeekHead {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.15rem 0.6rem;
+  margin: 0 0 0.9rem; padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--glass-hairline);
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: 1.2rem; line-height: 1.2; letter-spacing: -0.015em;
+}
+/* "This week" must not break across two lines when the range beside it wraps. */
+.ccWeekLabel { white-space: nowrap; }
+.ccWeekRange {
+  font-family: var(--font-sans);
+  font-size: 0.8rem; font-weight: 650; color: var(--muted);
+  letter-spacing: 0;
+}
+
 .ccDayList {
   list-style: none; margin: 0; padding: 0;
   display: grid; gap: 0.7rem;
@@ -3023,10 +3061,10 @@ main section[id] { scroll-margin-top: 8rem; }
    its sessions, which is what it is semantically either way. */
 .ccDay {
   display: grid;
-  grid-template-columns: minmax(8.5rem, 10.5rem) minmax(0, 1fr);
-  gap: clamp(0.8rem, 2vw, 1.6rem);
+  grid-template-columns: minmax(7.5rem, 9.5rem) minmax(0, 1fr);
+  gap: clamp(0.7rem, 1.8vw, 1.4rem);
   align-items: start;
-  padding: 0.95rem 0 0;
+  padding: 0.85rem 0 0;
   border-top: 1px solid var(--glass-hairline);
 }
 .ccDay:first-child { border-top: 0; padding-top: 0; }
@@ -3055,20 +3093,27 @@ main section[id] { scroll-margin-top: 8rem; }
 
 .ccSlots { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
 
+/* The week card is the glass. A second glass surface inside it would be the
+   glass-on-glass mud the collection tiles avoid further up this file, so a
+   session is a flat lifted panel instead: a hairline and the faintest wash. */
 .ccSlot {
-  padding: 0.85rem 1rem;
-  border-radius: 16px;
+  padding: 0.8rem 0.95rem;
+  border-radius: 14px;
   border: 1px solid var(--glass-hairline);
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.04);
 }
+:root[data-theme="light"] .ccSlot { background: rgba(255, 255, 255, 0.55); }
 
 /* A session in progress. The left edge and the tint are the quick signal; the
    "Happening now" label beside the time is the actual one, because nobody
-   should have to notice a colour to learn that the door is open right now. */
+   should have to notice a color to learn that the door is open right now. */
 .ccSlot.isLive {
   border-color: rgba(140, 21, 21, 0.5);
   border-left-width: 3px;
-  background: linear-gradient(90deg, rgba(140, 21, 21, 0.14), var(--glass-bg) 40%);
+  background: linear-gradient(90deg, rgba(140, 21, 21, 0.16), rgba(255, 255, 255, 0.04) 42%);
+}
+:root[data-theme="light"] .ccSlot.isLive {
+  background: linear-gradient(90deg, rgba(140, 21, 21, 0.12), rgba(255, 255, 255, 0.6) 42%);
 }
 
 .ccSlotHead {
@@ -3114,7 +3159,7 @@ main section[id] { scroll-margin-top: 8rem; }
 /* In person, on Zoom, or both. Each badge carries the words, and the tint sits
    behind --ink rather than replacing it: a translucent wash over the theme's own
    surface keeps the label at full contrast in light and dark alike, which a
-   coloured foreground on glass does not. */
+   colored foreground on glass does not. */
 .ccMode {
   font-size: 0.72rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.08em;
@@ -3172,6 +3217,8 @@ main section[id] { scroll-margin-top: 8rem; }
 .ccSchedule.isLoaded .ccFallback { display: none; }
 
 @media (max-width: 700px) {
+  .ccWeek { padding: 0.9rem 0.85rem 1rem; }
+  .ccWeekHead { font-size: 1.08rem; }
   .ccDay { grid-template-columns: 1fr; gap: 0.6rem; }
   .ccDayName { width: auto; }
 }
@@ -3181,7 +3228,8 @@ main section[id] { scroll-margin-top: 8rem; }
 }
 
 @media print {
-  .ccDay, .ccSlot { break-inside: avoid; }
+  .ccWeek, .ccDay, .ccSlot { break-inside: avoid; }
+  .ccWeek { border-color: rgba(0, 0, 0, 0.25); box-shadow: none; }
   .ccSubscribe, .ccSlotActions { display: none; }
 }
 

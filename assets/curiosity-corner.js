@@ -39,7 +39,9 @@
   var TZ_LABEL = cfg.timeZoneLabel || "PT";
   var HORIZON_DAYS = cfg.horizonDays || 60;
   var MAX_EVENTS = cfg.maxEvents || 40;
-  var MAX_DAYS_SHOWN = cfg.maxDaysShown || 6;
+  // Capped in weeks, not days, because weeks are how the list is grouped and
+  // how people plan. Three is "this week, next week, the one after".
+  var MAX_WEEKS_SHOWN = cfg.maxWeeksShown || 3;
   // Optional: only list events whose title contains this string. Left empty
   // because the calendar holds all of our hours and each row prints its own
   // title, so nothing is mislabeled by showing everything.
@@ -65,6 +67,11 @@
   var weekdayFmt = fmt({ weekday: "long" });
   var dayDateFmt = fmt({ day: "numeric", month: "long" });
   var timeFmt = fmt({ hour: "numeric", minute: "2-digit" });
+
+  // These two take dates built from a YYYY-MM-DD key at noon UTC, so they read
+  // that key back in UTC rather than shifting it into the calendar's zone.
+  var monthDayFmt = new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "long", day: "numeric" });
+  var dayNumFmt = new Intl.DateTimeFormat("en-US", { timeZone: "UTC", day: "numeric" });
 
   // "2:00 PM" -> ["2:00", "pm"]. Split so a range inside one meridiem can print
   // it once: "2:00–3:00pm" rather than "2:00pm–3:00pm".
@@ -102,6 +109,35 @@
     var d = new Date(date.getTime());
     d.setDate(d.getDate() + n);
     return d;
+  }
+
+  // A day key is already a calendar date in the right zone, so weekday
+  // arithmetic on it can be done in UTC — which is the only way to do it without
+  // a zone offset creeping in and moving a Sunday.
+  function keyToUtcDate(key) {
+    return new Date(key + "T12:00:00Z");
+  }
+
+  // The Sunday that starts the week a day belongs to. US convention, matching
+  // the month grid at the foot of the page.
+  function weekKey(key) {
+    var d = keyToUtcDate(key);
+    d.setUTCDate(d.getUTCDate() - d.getUTCDay());
+    return d.toISOString().slice(0, 10);
+  }
+
+  // "September 3", "September 3–6", "September 28 – October 3". Written out
+  // rather than assembled from dayDateFmt twice, so a week inside one month does
+  // not repeat the month.
+  function spanLabel(firstKey, lastKey) {
+    var a = keyToUtcDate(firstKey);
+    var b = keyToUtcDate(lastKey);
+    var aLabel = monthDayFmt.format(a);
+    if (firstKey === lastKey) return aLabel;
+    if (firstKey.slice(0, 7) === lastKey.slice(0, 7)) {
+      return aLabel + "–" + dayNumFmt.format(b);
+    }
+    return aLabel + " – " + monthDayFmt.format(b);
   }
 
   // ---- Reading the calendar -------------------------------------------------
@@ -171,6 +207,20 @@
       var raw = match[i].replace(/[.,;:)\]]+$/, "");
       try {
         var url = new URL(raw);
+        // Some events on the calendar carry the Zoom link as a
+        // google.com/url?q= redirect, from having been pasted out of a Google
+        // doc. Unwrap it and re-check the target, so the reader goes straight
+        // to Zoom and the allowlist is applied to where they actually land.
+        if (/(^|\.)google\.com$/.test(url.hostname) && url.pathname === "/url") {
+          var target = url.searchParams.get("q") || url.searchParams.get("url");
+          if (target) {
+            try {
+              url = new URL(target);
+            } catch (e2) {
+              continue;
+            }
+          }
+        }
         if (url.protocol === "https:" && LINK_HOSTS.test(url.hostname)) return url.href;
       } catch (e) {
         // Not a URL after all.
@@ -315,7 +365,10 @@
     }
 
     li.appendChild(head);
-    li.appendChild(el("h4", "ccSlotTitle", ev.title));
+    // h5, under the week (h3) and the day (h4), under the section's h2. Deep,
+    // but it is the real outline, and it is what lets a screen reader jump
+    // session to session.
+    li.appendChild(el("h5", "ccSlotTitle", ev.title));
 
     var where = el("p", "ccSlotWhere");
     where.appendChild(el("span", "ccMode ccMode--" + ev.mode.key, ev.mode.label));
@@ -356,7 +409,7 @@
     var li = el("li", "ccDay");
     var first = events[0].start;
 
-    var heading = el("h3", "ccDayHead");
+    var heading = el("h4", "ccDayHead");
     heading.appendChild(el("span", "ccDayName", weekdayFmt.format(first)));
     var date = el("time", "ccDayDate", dayDateFmt.format(first));
     date.dateTime = key;
@@ -370,6 +423,46 @@
       slots.appendChild(slotItem(ev, now));
     });
     li.appendChild(slots);
+    return li;
+  }
+
+  // A week of days. This is the grouping the board that used to sit here did by
+  // hand: "this week" is the question most people are actually asking, and a
+  // flat run of fifteen days does not answer it at a glance.
+  function weekItem(week, thisWeekKey, nextWeekKey, byDay, now, todayKey, tomorrowKey) {
+    var li = el("li", "ccWeek");
+    if (week.key === thisWeekKey) li.classList.add("isCurrent");
+
+    var label;
+    var named = true;
+    if (week.key === thisWeekKey) label = "This week";
+    else if (week.key === nextWeekKey) label = "Next week";
+    else {
+      label = "Week of " + monthDayFmt.format(keyToUtcDate(week.key));
+      named = false;
+    }
+
+    var heading = el("h3", "ccWeekHead");
+    heading.appendChild(el("span", "ccWeekLabel", label));
+    // "This week" and "Next week" say nothing about which dates those are, so
+    // they always carry the span. A "Week of September 20" heading already
+    // anchors itself, so it only earns a span when there is a range to add.
+    if (named || week.days.length > 1) {
+      heading.appendChild(el(
+        "span",
+        "ccWeekRange",
+        spanLabel(week.days[0], week.days[week.days.length - 1])
+      ));
+    }
+    var sessions = week.days.reduce(function (n, k) { return n + byDay[k].length; }, 0);
+    heading.appendChild(el("span", "srOnly", ", " + sessions + (sessions === 1 ? " session" : " sessions")));
+    li.appendChild(heading);
+
+    var days = el("ol", "ccDayList");
+    week.days.forEach(function (key) {
+      days.appendChild(dayItem(key, byDay[key], now, todayKey, tomorrowKey));
+    });
+    li.appendChild(days);
     return li;
   }
 
@@ -418,7 +511,27 @@
       byDay[key].push(ev);
     });
 
-    var shown = order.slice(0, MAX_DAYS_SHOWN);
+    // Days into weeks, in order. A week with nothing on it never appears, so a
+    // quiet fortnight produces no empty headings — only weeks that have
+    // something in them are counted against the cap.
+    var allWeeks = [];
+    var byWeek = {};
+    order.forEach(function (key) {
+      var wk = weekKey(key);
+      if (!byWeek[wk]) {
+        byWeek[wk] = { key: wk, days: [] };
+        allWeeks.push(byWeek[wk]);
+      }
+      byWeek[wk].days.push(key);
+    });
+
+    var weeks = allWeeks.slice(0, MAX_WEEKS_SHOWN);
+    var shown = weeks.reduce(function (days, week) {
+      return days.concat(week.days);
+    }, []);
+
+    var thisWeekKey = weekKey(todayKey);
+    var nextWeekKey = weekKey(dayKey(addDays(now, 7)));
 
     var frag = document.createDocumentFragment();
 
@@ -426,22 +539,25 @@
     var lastDay = byDay[shown[shown.length - 1]][0].start;
     setStatus(
       count === 1
-        ? "The next session is " +
+        ? "One session coming up, " +
           (shown[0] === todayKey ? "today" : "on " + weekdayFmt.format(byDay[shown[0]][0].start)) + "."
         : count + " sessions between now and " + dayDateFmt.format(lastDay) + "."
     );
 
-    var list = el("ol", "ccDayList");
-    shown.forEach(function (key) {
-      list.appendChild(dayItem(key, byDay[key], now, todayKey, tomorrowKey));
+    var list = el("ol", "ccWeekList");
+    weeks.forEach(function (week) {
+      list.appendChild(
+        weekItem(week, thisWeekKey, nextWeekKey, byDay, now, todayKey, tomorrowKey)
+      );
     });
     frag.appendChild(list);
 
-    if (order.length > shown.length) {
+    if (allWeeks.length > weeks.length) {
       frag.appendChild(el(
         "p",
         "ccMore",
-        "More hours are scheduled beyond " + dayDateFmt.format(lastDay) + " — the full run is on the calendar below."
+        "More is scheduled beyond " + dayDateFmt.format(lastDay) +
+          " — the month grid at the foot of this page has the full run."
       ));
     }
 

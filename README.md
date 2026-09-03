@@ -47,8 +47,8 @@ python3 -m http.server 8000
 | `assets/books.js` | Shared reading-list data and card renderer |
 | `assets/ai-reading-list.pdf` | The same shelf as a printable PDF, with clickable SearchWorks links |
 | `scripts/generate-reading-list-pdf.py` | Builds that PDF from `assets/books.js` |
-| `events.html` | What the Curiosity Corner is, the upcoming hours, trainings, and the calendar |
-| `assets/curiosity-corner.js` | Draws the upcoming Curiosity Corner hours from the calendar |
+| `events.html` | The upcoming schedule, what the Curiosity Corner is, trainings, and the calendar |
+| `assets/curiosity-corner.js` | Draws the next three weeks of the AI calendar as a native list |
 | `assets/calendar-config.js` | Which calendar it reads; the API key is injected at deploy time |
 | `scripts/build-calendar-config.mjs` | Writes that key in from the Amplify environment |
 | `past-events.html` | Archive of past sessions and Tech Club meetings |
@@ -143,29 +143,42 @@ HTML.
 
 ### The Curiosity Corner hours
 
-`events.html` leads with what the AI Curiosity Corner actually is — drop-in, one to
-one, no appointment — and then lists the next few days of hours as a chronological
-list built out of the site's own elements. `assets/curiosity-corner.js` reads the
-Curiosity Corner calendar over the public Google Calendar API and draws a real `<ol>`
-of days, each with its sessions: the time as `<time>` elements, an "In person" / "On
-Zoom" / "In person and on Zoom" badge, a "Happening now" label on a session in
-progress, a one-click "Add to my calendar" link, and a Zoom link when the event
-carries one. Below the list, two subscribe links put every future session on the
-reader's own calendar.
+`events.html` opens with the schedule. `assets/curiosity-corner.js` reads the
+library's AI calendar over the public Google Calendar API and lays the next three
+weeks out as nested lists built from the site's own elements: an `<ol>` of weeks, each
+holding an `<ol>` of days, each holding its sessions. A session carries its times as
+`<time>` elements, an "In person" / "On Zoom" / "In person and on Zoom" badge, a
+"Happening now" label when it is in progress, a one-click "Add to my calendar" link,
+and a Zoom link when the event has one. Below the list, two subscribe links put every
+future session on the reader's own calendar. Then comes what the Curiosity Corner
+actually is — drop-in, one to one, no appointment, who it is for, what to bring.
+
+**The schedule leads the page, and it is grouped by week.** Both of those replace a
+framed Apps Script board that used to sit third on the page under the heading "This
+week at a glance". It answered the question most readers arrive with, and it did it
+below two other sections, in a 560px-tall iframe, in its own type. The native list
+answers the same question in the first screenful. Weeks are the unit because "what is
+on this week" is the actual question; a flat run of a dozen days does not answer it at
+a glance. The current week gets the stronger surface, and its heading says "This
+week", so the emphasis is not carried by the tint alone. Weeks with nothing on them
+never appear, so a quiet stretch produces no empty headings — and only weeks with
+something in them count against the three.
 
 The **SLS Tech Club** section — the club charter, the mission statement, the
-governance notes, and the Slack link — is off this page. Events is now about what the
-library runs and when you can turn up to it, and a monthly club's charter is not that.
+governance notes, and the Slack link — is off this page, as is the framed
+week-at-a-glance board. Events is now about what the library runs and when you can
+turn up to it, and a monthly club's charter is not that.
 The Tech Club's meeting archive is unchanged on `past-events.html`, whose intro
 paragraph now points at the `#techclub` Slack channel for the charter rather than at
 the anchor on this page that no longer exists.
 
-The Google Calendar iframe further down the page stays as the month grid, for looking
-further ahead than the list. It is not how the hours are marketed any more: a framed
-month grid is a second stylesheet that cannot be told which theme it is in, ignores
-our type, and buries the next available session three clicks deep. Everything above it
-is ours, so light mode, dark mode, keyboard focus, and the print stylesheet all work
-the way they do everywhere else on the site.
+The Google Calendar iframe stays at the foot of the page as the month grid, for
+looking further ahead than three weeks, and the list points at it when there is more
+beyond its last week. It is no longer how the hours are marketed: a framed month grid
+is a second stylesheet that cannot be told which theme it is in, ignores our type, and
+buries the next available session three clicks deep. Everything above it is ours, so
+light mode, dark mode, keyboard focus, and the print stylesheet all work the way they
+do everywhere else on the site.
 
 **It degrades to prose, not to a spinner.** The container in the markup holds a
 written summary of the standing hours. The script replaces that only once it has real
@@ -175,10 +188,22 @@ nothing on the calendar for the next sixty days, a reader still gets an answer t
 `PT`, because these are hours in a room in California; a visitor's local time would be
 a kindness that mostly produces confusion.
 
+That summary is hand-written from the recurring entries on the calendar, so it is the
+one part of this that can drift — update it when the standing pattern changes. As of
+now the pattern is three weekly in-person sessions in the Reference Office: Mondays
+12:30–1:30pm, Tuesdays 1–2pm, and Thursdays 12–1pm PT. The copy this page and
+`ai-in-the-library.html` used to carry said "Thursdays 2–3pm" and "twice weekly",
+which the calendar had already moved past; both are corrected.
+
 Nothing from the API is ever treated as markup. Every value goes into the page through
 `createElement` and `textContent`, and a URL out of an event's location or description
 is linked only if it is `https` and on a short host allowlist (`zoom.us`,
-`stanford.edu`, `law.stanford.edu`, `google.com`).
+`stanford.edu`, `law.stanford.edu`, `google.com`). Some events carry their Zoom link as
+a `google.com/url?q=` redirect, from having been pasted out of a Google doc; those are
+unwrapped and the allowlist is re-applied to the target, so the reader goes straight to
+Zoom and the check is made against where they actually land. Most events keep the Zoom
+link in the location field, so the bare URL is stripped out of the location text once
+it has become the "Join on Zoom" link — printing it twice made the line unreadable.
 
 #### Configuring it
 

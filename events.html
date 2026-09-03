@@ -53,6 +53,60 @@
     <a class="secondary" href="past-events.html">Past events and materials</a>
   </div>
 
+  <!-- ===================== What is coming up =====================
+       The schedule, week by week, drawn from the calendar by
+       assets/curiosity-corner.js. It leads the page on purpose: the framed
+       week-at-a-glance board that used to sit further down was the answer to
+       "what is on this week", and nobody should have to scroll past three
+       sections to get it.
+
+       The written standing hours inside the container are not a placeholder.
+       They are what this section says when the script is blocked, the key is
+       not configured, or the calendar cannot be reached. -->
+
+  <section aria-labelledby="hours-h">
+    <p class="eyebrow">Week by week</p>
+    <h2 id="hours-h">What&rsquo;s coming up</h2>
+    <p class="muted" style="max-width: 70ch;">
+      The next three weeks on the library&rsquo;s AI calendar, soonest first, all times Pacific. Most of these
+      are <a href="#corners-h">AI Curiosity Corner</a> drop-in hours &mdash; no booking, no agenda &mdash; and
+      you can put any of them on your own calendar in one click.
+    </p>
+
+    <!-- An empty live region that exists before the list does. A status element
+         created in the same breath as its text is often not announced at all;
+         one already in the document is. It collapses when empty, so it costs
+         nothing on a page with no script. -->
+    <p class="ccStatus" id="curiosity-status" role="status" aria-live="polite"></p>
+
+    <div class="ccSchedule" id="curiosity-schedule">
+      <!-- Written by hand from the recurring entries on the calendar, so it will
+           drift if the standing pattern changes. Update it when it does; the
+           live list above is authoritative either way. -->
+      <div class="card ccFallback">
+        <h3>The standing hours</h3>
+        <dl>
+          <dt>Three times a week, in person</dt>
+          <dd>
+            Mondays 12:30&ndash;1:30pm, Tuesdays 1&ndash;2pm, and Thursdays 12&ndash;1pm PT, in the
+            Reference Office on the first floor of the Robert Crown Law Library.
+          </dd>
+          <dt>Trainings and Zoom sessions</dt>
+          <dd>
+            Scheduled through the year at varying times. The
+            <a href="#calendar-h">month grid at the foot of this page</a> carries the current dates and any
+            Zoom links.
+          </dd>
+          <dt>By appointment, any time</dt>
+          <dd>
+            <a href="mailto:library@law.stanford.edu">Email library@law.stanford.edu</a> and we will find a
+            time that works.
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== Curiosity Corner ===================== -->
 
   <section aria-labelledby="corners-h">
@@ -118,63 +172,8 @@
     </div>
 
     <div class="actions">
-      <a class="secondary" href="#hours-h">See the next sessions</a>
+      <a class="secondary" href="#hours-h">Back to the schedule</a>
       <a class="textLink" href="mailto:library@law.stanford.edu">Can&rsquo;t make any of them? Email us for an appointment &rarr;</a>
-    </div>
-  </section>
-
-  <!-- ===================== The hours =====================
-       Rendered from the Curiosity Corner calendar by assets/curiosity-corner.js.
-       The written standing hours inside the container are not a placeholder:
-       they are what the section says when the script is blocked, the API key is
-       not configured, or the calendar cannot be reached. -->
-
-  <section aria-labelledby="hours-h">
-    <p class="eyebrow">Every week, in person and on Zoom</p>
-    <h2 id="hours-h">Upcoming Curiosity Corner hours</h2>
-    <p class="muted" style="max-width: 70ch;">
-      All times Pacific. Sessions are open to the whole Stanford Law School community, and you can add any of
-      them to your own calendar in one click.
-    </p>
-
-    <!-- An empty live region that exists before the list does. A status element
-         created in the same breath as its text is often not announced at all;
-         one already in the document is. It collapses when empty, so it costs
-         nothing on a page with no script. -->
-    <p class="ccStatus" id="curiosity-status" role="status" aria-live="polite"></p>
-
-    <div class="ccSchedule" id="curiosity-schedule">
-      <div class="card ccFallback">
-        <h3>The standing hours</h3>
-        <dl>
-          <dt>In person, weekly</dt>
-          <dd>
-            Thursdays, 2&ndash;3pm PT, in the library&rsquo;s reference office on the first floor of the
-            Robert Crown Law Library.
-          </dd>
-          <dt>On Zoom, weekly</dt>
-          <dd>Times vary from week to week. The calendar below carries the current dates and the link.</dd>
-          <dt>By appointment, any time</dt>
-          <dd>
-            <a href="mailto:library@law.stanford.edu">Email library@law.stanford.edu</a> and we will find a
-            time that works.
-          </dd>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== This week ===================== -->
-
-  <section aria-labelledby="week-h">
-    <p class="eyebrow">What is on</p>
-    <h2 id="week-h">This week at a glance</h2>
-    <div class="embedPanel board">
-      <iframe
-        src="https://script.google.com/macros/s/AKfycbwVtkoFbXvaqSu-DzXceeRktdV3Kr3Lu1SvE4wqEYy3nc4o7Zux7KW4zXxXaJ74P4Q/exec"
-        title="This week at a glance — Robert Crown Law Library AI events"
-        loading="lazy"
-      ></iframe>
     </div>
   </section>
 
@@ -182,11 +181,11 @@
     <p class="eyebrow">Workshops</p>
     <h2 id="trainings-h">AI trainings</h2>
     <p class="muted" style="max-width: 70ch;">
-      Upcoming sessions are listed on the week-at-a-glance board and the calendar below.
-      Materials and recordings from past trainings are in the archive.
+      Trainings appear in the schedule at the top of this page alongside the drop-in hours, and on the
+      month grid below. Materials and recordings from past trainings are in the archive.
     </p>
     <div class="actions">
-      <a class="secondary" href="#calendar-h">Jump to the calendar</a>
+      <a class="secondary" href="#hours-h">See what is coming up</a>
       <a class="textLink" href="past-events.html">Past events and materials &rarr;</a>
     </div>
   </section>

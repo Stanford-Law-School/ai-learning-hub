@@ -28,11 +28,15 @@ window.HUB_CALENDAR = {
   timeZone: "America/Los_Angeles",
   timeZoneLabel: "PT",
 
-  // How far ahead to ask for, how much to show, and how long a reader moving
-  // between hub pages may keep the same answer.
+  // How far ahead to ask for, how many weeks of it to lay out, and how long a
+  // reader moving between hub pages may keep the same answer. Three weeks is
+  // enough to plan around; more than that, at three standing sessions a week,
+  // is a wall of near-identical rows at the top of the page, and the month grid
+  // at the foot of it is the better tool for looking further out. Weeks with
+  // nothing on them do not count against the three.
   horizonDays: 60,
   maxEvents: 40,
-  maxDaysShown: 6,
+  maxWeeksShown: 3,
   cacheMinutes: 10,
 
   // Set to a string — "curiosity", say — to list only events whose title
