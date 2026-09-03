@@ -5,15 +5,16 @@ student-facing AI Skills it distributes.
 
 The hub is **open to the whole SLS community** — students, staff, and faculty — and
 requires no sign-in. That is the difference between this site and
-[`sls-faculty-ai-skills`](https://github.com/whuggins-RCLL/sls-faculty-ai-skills),
-which is written for faculty and sits behind Stanford authentication. The two sites
-share one design system so they read as one family.
+[`ai-faculty-support`](https://github.com/Stanford-Law-School/ai-faculty-support),
+which is written for faculty, answers on its own hostname at
+`https://ai-faculty.law.stanford.edu/`, and sits behind Stanford authentication. The
+two sites share one design system so they read as one family.
 
 They are otherwise entirely separate: separate repositories, separate deployments,
 separate dependencies, and separate authentication. Nothing of the faculty site is
 copied here, and this site holds no credential of any kind. The only thing joining
-them is a pair of ordinary links — `faculty.html` here points at the faculty site,
-and the faculty site's header points back.
+them is a pair of ordinary links — the "Faculty Support" entry in this site's
+navigation points at the faculty site, and the faculty site's header points back.
 
 The same holds for
 [`The-AI-Upload`](https://github.com/whuggins-RCLL/the-ai-upload), the Library's
@@ -65,7 +66,6 @@ python3 -m http.server 8000
 | `scripts/inject-agent-instructions.py` | Copies that file into the page's copy box |
 | `assets/copy-code.js` | The copy button on the case study's skill template |
 | `assets/install-a-skill-guide.pdf` | Printable skill-installation guide with clickable links to both videos |
-| `faculty.html` | Faculty support landing page &mdash; describes the faculty AI site and links to it |
 | `faculty-publications.html` | SLS faculty publications on AI, embedded within the hub navigation |
 | `ai-upload.html` | The AI Upload landing page &mdash; describes the weekly digest and links to it |
 | `assets/styles.css` | The design system |
@@ -360,32 +360,60 @@ The hub has no account link because there is nothing to sign in to.
 
 ### The two sibling sites, and how this one hands off to them
 
-`faculty.html` is an ordinary hub page: header, footer, navigation, theme toggle,
-and it is in the search index like any other. It describes the faculty AI site,
-lists who may sign in, points students at `skills.html` instead, and carries one
-link — **Access Faculty Resources** — to the faculty site's own address.
+**Faculty Support is a link straight out of this site.** It goes to
+`https://ai-faculty.law.stanford.edu/` — the faculty application, on its own
+hostname, behind Stanford sign-in, and not a page in this repository. The entry is
+in `NAV` in `scripts/nav.py`, which gives any `https://` destination
+`target="_blank"` and the external-link marker, so it is written once and appears
+in the header of every page. The landing page carries the same link on its
+`.crossPromo` card.
+
+**The hostname is the architecture, and it has moved twice.** The faculty site was
+originally a Vercel address, then briefly `/faculty` on this domain, and is now
+`ai-faculty.law.stanford.edu`. The separate origin is the point: an SSO-protected
+application does not get mounted inside an origin that has to stay public, and a
+path on this domain would have meant proxying protected content through the public
+hub. Apache proxies that hostname to the faculty app's own origin. Nothing on this
+side proxies, rewrites, or frames it — the outbound link is the whole integration,
+and `assets/embed.js` leaves it alone because it only rewrites links to hub page
+files.
+
+There used to be a page in between. `faculty.html` was an ordinary hub page that
+described the faculty site, listed who could sign in, pointed students at
+`skills.html`, and then handed the reader on. **It is deleted** — it was causing
+problems in practice, and the round trip through it bought faculty and staff
+nothing but a click. Two consequences worth knowing:
+
+- **The landing-page card is now the only place the eligibility rules live.** Who
+  may sign in, that personal Google accounts are refused, how to request access,
+  and where to email if sign-in fails are all in the card copy on `index.html`
+  rather than a click away. If that card is ever rewritten, they have to go
+  somewhere, not just go.
+- **A student who clicks Faculty Support meets a Stanford sign-in page** rather
+  than an explanation and a pointer to `skills.html`. That is the accepted cost of
+  removing the page. The card's aside — *"Faculty and staff only. Students, the AI
+  Skills are on this site."* — is what warns them beforehand.
 
 It is a link and not an embed, deliberately and permanently. The faculty site is a
-separate application on its own domain with its own Firebase sign-in; SLS IT has
-prohibited embedding it here. Do not reintroduce an iframe, an embedded webview,
-or client-side injection of its markup to get the same effect.
+separate application with its own Firebase sign-in; SLS IT has prohibited embedding
+it here. Do not reintroduce an iframe, an embedded webview, or client-side
+injection of its markup to get the same effect.
 
-Two things about that link are load-bearing:
+`target="_blank"` on that link is load-bearing rather than stylistic. A new
+top-level tab is where Stanford sign-in is most reliable: the redirect chain runs
+at the top level, and a sign-in flow inside a frame is the case browsers restrict.
+Any hub page still being read inside a frame would otherwise load the faculty site
+*within* that frame, recreating the embedding by accident. `_top` would keep it to
+one tab, but an embed sandbox can withhold top-level navigation, so `_blank` is the
+sturdier of the two. `assets/embed.js` only rewrites links to hub page files, so it
+leaves this one alone.
 
-- **`target="_blank"`.** Every hub page is itself a full-page frame on a Google
-  Sites page, so a same-tab link would load the faculty site *inside that frame* —
-  recreating the embedding by accident. A new top-level tab is also where Google
-  sign-in is most reliable, because a pop-up inside a frame is the case browsers
-  restrict. `_top` would keep it to one tab, but Google's embed sandbox can
-  withhold top-level navigation, so `_blank` is the sturdier of the two.
-- **It is a plain cross-origin `<a href>`.** `assets/embed.js` leaves cross-origin
-  links alone, so the Google Sites link rewriting does not touch it.
-
-`ai-upload.html` gets exactly the same treatment, and for the same reason. It was
-the last full-page frame on the site, holding The AI Upload; it is now a landing
-page that says what the digest is, what is in an issue, and links to it with the
-same `target="_blank"`. The digest needs no sign-in, so that page carries no
-eligibility rules and no student referral — it is the simpler of the two.
+`ai-upload.html` still gets the page treatment, and it is now the only one that
+does. It was the last full-page frame on the site, holding The AI Upload; it is a
+landing page that says what the digest is, what is in an issue, and links to it
+with the same `target="_blank"`. The digest needs no sign-in, so it carries no
+eligibility rules and no student referral — which is why it survives as a page
+where the faculty one did not.
 
 **Nothing on this site frames another site any more.** `body.hasEmbed` and
 `.embedFrame` are deleted, `EMBED_PAGES` in `scripts/nav.py` is empty, and
@@ -491,12 +519,16 @@ the two. Because `frame_for()` reads the `src` out of the page rather than from 
 list, deleting each iframe dropped its `frame` key on its own, and the map now
 tells Google Sites to frame the hub page instead.
 
-**The Google Sites side does not update itself.** Until somebody edits them, the
-pages at `/faculty-support` and `/ai-upload` keep framing whatever URL they were
-last given — which is the other site, directly. Open `embed-codes.html`, copy the
-URL it now prints for each, and replace the full-page embed on that Google Sites
-page. The caption above each block says which it is showing, so a block still
-reading *shows `https://…` directly* has not been repointed yet.
+**The Google Sites side does not update itself.** Until somebody edits it, the page
+at `/ai-upload` keeps framing whatever URL it was last given — which is the other
+site, directly. Open `embed-codes.html`, copy the URL it now prints, and replace
+the full-page embed on that Google Sites page. The caption above each block says
+which it is showing, so a block still reading *shows `https://…` directly* has not
+been repointed yet.
+
+`/faculty-support` needs no repointing: `faculty.html` is deleted, so it is absent
+from the map, prints no block, and has nothing left to frame. Remove that page on
+the Google Sites side.
 
 `vercel.json` carries one header: a `frame-ancestors` policy that permits Google
 Sites and the hub domain to frame the site and no one else. It is the one change

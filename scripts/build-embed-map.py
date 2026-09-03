@@ -61,7 +61,9 @@ SLUGS = {
     # The Google Sites root is its own hand-built landing page, so the hub's
     # landing page is a full page embed alongside it rather than at "/".
     "index.html": "/home",
-    "faculty.html": "/faculty-support",
+    # faculty.html used to be here, mapped to "/faculty-support". The page is
+    # deleted: Faculty Support now goes straight to the faculty application at
+    # /faculty, which is not a page in this repository and so has no entry.
 }
 
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
@@ -75,9 +77,9 @@ BLOCK_RE = re.compile(
 # A full-page frame holds someone else's site and carries no links of its own, so
 # there would be nothing on it for the runtime to rewrite.
 #
-# The set is empty: faculty.html and ai-upload.html were the two, and both are
-# ordinary hub pages now, with hub links of their own that the runtime has to
-# remap. Every page gets the runtime.
+# The set is empty: faculty.html and ai-upload.html were the two. ai-upload.html
+# is an ordinary hub page now, with hub links of its own that the runtime has to
+# remap, and faculty.html is deleted. Every page gets the runtime.
 NO_RUNTIME = set()
 
 SCRIPT_BLOCK = (

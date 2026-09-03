@@ -16,13 +16,28 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # The header's primary row is capped at six destinations. Home and search are
 # utility actions in their own row above it, so they do not compete with these
 # section links at laptop widths.
+#
+# Two of the six leave this site entirely. Faculty Support goes straight to the
+# faculty application, which lives on its own hostname behind Stanford sign-in
+# and is not a page in this repository.
+#
+# That hostname is the point. The faculty site was briefly going to answer at
+# /faculty on this domain, and before that it was a Vercel address; it is now
+# ai-faculty.law.stanford.edu, a separate origin so that an SSO-protected
+# application is not mounted inside an origin that has to stay public. Nothing
+# on this side proxies or frames it — an ordinary outbound link is the whole
+# integration, in both directions.
+#
+# header_html() gives any https:// entry target="_blank" and the external-link
+# marker, which is the treatment both outbound destinations want: a new
+# top-level tab is where a Stanford SSO redirect chain is most reliable.
 NAV = [
     ("https://ai-upload-stanford-law.vercel.app/", "The AI Upload"),
     ("tutorials.html", "Tutorials"),
     ("ai-resources.html", "Resources"),
     ("events.html", "Events"),
     ("skills.html", "Skills"),
-    ("faculty.html", "Faculty Support"),
+    ("https://ai-faculty.law.stanford.edu/", "Faculty Support"),
 ]
 
 EXT = '<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span>'
@@ -122,7 +137,8 @@ FOOTER_RE = re.compile(r'<footer class="footer">.*?</footer>', re.S)
 #   faculty-publications.html keeps the hub bar above its embed on purpose, so it
 #     is maintained like any other page;
 #   faculty.html stopped being a frame when SLS IT prohibited embedding the
-#     faculty site, and is now the hub page that describes it and links to it;
+#     faculty site, became a page that described it and linked on to it, and is
+#     now deleted — the nav goes straight to the faculty hostname instead;
 #   ai-upload.html was the last one, and goes the same way for the same reason —
 #     the digest is a separate application on its own domain, reached by a link.
 #

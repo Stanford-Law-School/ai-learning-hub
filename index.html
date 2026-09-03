@@ -36,7 +36,7 @@
     <a href="ai-resources.html">Resources</a>
     <a href="events.html">Events</a>
     <a href="skills.html">Skills</a>
-    <a href="faculty.html">Faculty Support</a>
+    <a href="https://ai-faculty.law.stanford.edu/" target="_blank" rel="noopener noreferrer">Faculty Support<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
     </nav>
   </div>
 </header>
@@ -125,21 +125,43 @@
     </div>
   </section>
 
-  <!-- The one destination on this site that is not open to everyone. It is a
-       link to a separate application on its own domain, not an embed, so the
-       card says who it is for before a reader spends a click on it. -->
+  <!-- The one destination on this site that is not open to everyone, and the
+       only one that leaves it. A link to a separate application, not an embed:
+       SLS IT has prohibited embedding the faculty site here, and that is
+       permanent. Do not reintroduce an iframe or an embedded webview to get the
+       same effect.
+
+       The button goes straight in. There used to be a hub page in between —
+       faculty.html — that described the faculty site, listed who could sign in,
+       and pointed students at skills.html before handing them on. It is
+       deleted, so this card is the only place the eligibility rules are stated
+       and it has to state them: who it is for, and where students should go
+       instead. Both are in the copy below rather than one click away.
+
+       The destination is its own hostname, ai-faculty.law.stanford.edu, not a
+       path on this one. An SSO-protected application does not get mounted inside
+       an origin that has to stay public, so it is a separate origin reached by
+       an ordinary cross-origin link. assets/embed.js only rewrites links to hub
+       page files, so it leaves this one alone, and target="_blank" is what lets
+       the Stanford sign-in redirect chain run at the top level. -->
   <section class="card crossPromo" aria-labelledby="faculty-h">
     <div class="crossPromoText">
       <p class="eyebrow">For faculty and staff</p>
       <h2 id="faculty-h">AI and Technology Support for SLS Faculty</h2>
       <p class="muted">
         The Law Library runs a separate site of teaching guides, skill files, and tutorials written
-        for SLS faculty and staff. It sits behind Stanford sign-in on its own address.
+        for SLS faculty and staff. It opens with Stanford sign-in and accepts
+        <strong>@stanford.edu</strong> or <strong>@law.stanford.edu</strong> accounts only &mdash;
+        personal Google accounts are not accepted. If you are not on the Law Library&rsquo;s list
+        yet, you can request access from the sign-in page. Trouble getting in?
+        <a href="mailto:library@law.stanford.edu">Email the library</a>.
       </p>
     </div>
     <div class="crossPromoActions">
       <div class="actions" style="margin-top: 0;">
-        <a class="primary" href="faculty.html">About faculty resources</a>
+        <a class="primary" href="https://ai-faculty.law.stanford.edu/" target="_blank" rel="noopener noreferrer">
+          Go to the faculty site<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span>
+        </a>
       </div>
       <p class="crossPromoAside">Faculty and staff only. Students, the AI Skills are on this site.</p>
     </div>

@@ -33,10 +33,11 @@ const OUT = join(ROOT, "assets", "search-index.js");
 // embed-code list is a maintenance page no reader is looking for.
 //
 // faculty.html and ai-upload.html were skipped while they were frames carrying
-// someone else's site and nothing of ours. Both are real pages now — they say
-// what the other site is, who it is for, and what is in it — which is exactly
-// what somebody searching "faculty" or "upload" needs to find, so both are
-// indexed.
+// someone else's site and nothing of ours. ai-upload.html is a real page now —
+// it says what the digest is and what is in an issue, which is what somebody
+// searching "upload" needs to find — so it is indexed. faculty.html is deleted;
+// a search for "faculty" now finds the card on the landing page and
+// faculty-publications.html.
 const SKIP = new Set(["search.html", "embed-codes.html"]);
 
 const TYPES = {
