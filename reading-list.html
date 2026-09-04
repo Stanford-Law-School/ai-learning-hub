@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
 <title>AI Reading List | AI Learning Hub | Stanford Law School</title>
-<meta name="description" content="Selected AI reading from the Robert Crown Law Library at Stanford Law School — thirty-two titles held by Stanford Libraries, with SearchWorks links." />
+<meta name="description" content="Selected AI reading from the Robert Crown Law Library at Stanford Law School — 47 titles held by Stanford Libraries, with SearchWorks links." />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
 </head>
@@ -45,15 +45,15 @@
 
   <h1>AI reading list</h1>
   <p class="lede">
-    Thirty-two titles selected for the library&rsquo;s AI display. Every book is held by Stanford
+    <span data-book-count>47</span> titles selected for the library&rsquo;s AI display. Every book is held by Stanford
     Libraries; each title links to its SearchWorks record.
   </p>
   <div class="actions">
-    <a class="primary" href="assets/ai-reading-list.pdf" download="sls-ai-reading-list.pdf" aria-label="Download the AI reading list as a PDF, 32 titles with catalogue links">Download the list (PDF)</a>
+    <a class="primary" href="assets/ai-reading-list.pdf" download="sls-ai-reading-list.pdf" aria-label="Download the AI reading list as a PDF, 47 titles with catalogue links">Download the list (PDF)</a>
     <a class="secondary" href="ai-in-the-library.html#reading">See this list in the AI in the Library display</a>
   </div>
   <p class="muted" style="max-width:70ch;">
-    The PDF holds all thirty-two titles with their annotations, and every SearchWorks link in it stays
+    The PDF holds all <span data-book-count>47</span> titles with their annotations, and every SearchWorks link in it stays
     clickable &mdash; print it for the display, or keep it to read from.
   </p>
 
@@ -93,6 +93,12 @@
 <script src="assets/hub.js"></script>
 <script src="assets/books.js"></script>
 <script>
+  document.querySelectorAll("[data-book-count]").forEach((el) => {
+    el.textContent = String((window.HUB_BOOKS || []).length);
+  });
+  document.querySelectorAll('a[href="assets/ai-reading-list.pdf"][aria-label]').forEach((el) => {
+    el.setAttribute("aria-label", `Download the AI reading list as a PDF, ${(window.HUB_BOOKS || []).length} titles with catalogue links`);
+  });
   window.hubRenderBookGrid("reading-book-grid");
 </script>
 </body>

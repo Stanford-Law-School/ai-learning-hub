@@ -2937,10 +2937,10 @@ main section[id] { scroll-margin-top: 8rem; }
 
 /* ---- Inline embeds --------------------------------------------------------
    Panels that hold a third-party frame inside the normal flow of a page — the
-   week-at-a-glance board, the event calendar, and the faculty publications list.
-   These are the only frames left on the site, and they are the acceptable kind:
-   a bounded panel showing one third-party thing inside a page that is otherwise
-   ours, rather than a viewport-sized frame standing in for a whole site.
+   week-at-a-glance board and the event calendar.
+   These are acceptable bounded utility frames: one third-party thing inside a
+   page that is otherwise ours, rather than a viewport-sized frame standing in
+   for a whole site.
 
    Height is explicit because the framed document cannot report its own, and each
    of these has a fixed amount to show. */
@@ -2954,11 +2954,9 @@ main section[id] { scroll-margin-top: 8rem; }
 .embedPanel iframe { display: block; width: 100%; height: 100%; border: 0; }
 .embedPanel.tall { height: 620px; }
 .embedPanel.board { height: 560px; }
-.embedPanel.publicationsEmbed { height: max(720px, 80vh); }
 @media (max-width: 640px) {
   .embedPanel.tall { height: 520px; }
   .embedPanel.board { height: 620px; }
-  .embedPanel.publicationsEmbed { height: 680px; }
 }
 
 /* ---- Event listings ------------------------------------------------------- */
@@ -3278,7 +3276,7 @@ main section[id] { scroll-margin-top: 8rem; }
 }
 
 /* ---- The book collection --------------------------------------------------
-   Thirty-two titles, each with a cover, the publication facts, and why it is
+   Forty-seven titles, each with a cover, the publication facts, and why it is
    worth reading. Wider minimum than the card grids: a cover beside a paragraph
    needs room, and below that width the pair stacks instead. */
 .bookGrid {

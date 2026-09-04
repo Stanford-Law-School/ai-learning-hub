@@ -1,0 +1,23 @@
+{
+  "name": "ai-learning-hub",
+  "version": "1.0.0",
+  "description": "The Robert Crown Law Library's AI Learning Hub for Stanford Law School, plus the student-facing AI Skills it distributes.",
+  "scripts": {
+    "search:index": "node scripts/build-search-index.mjs",
+    "search:index:check": "node scripts/build-search-index.mjs --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stanford-Law-School/ai-learning-hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stanford-Law-School/ai-learning-hub/issues"
+  },
+  "homepage": "https://github.com/Stanford-Law-School/ai-learning-hub#readme",
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}
