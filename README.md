@@ -44,7 +44,10 @@ python3 -m http.server 8000
 | --- | --- |
 | `index.html` | The hub landing page |
 | `pause-rule.html` | The PAUSE Rule — the AI use workflow |
-| `tutorials.html` | The tutorial library: eight topics, ~34 guides and DIY modules |
+| `tutorials.html` | The tutorial library — three tutorials, and the list they are rendered from |
+| `ai-for-beginners.html` | Introduction to AI for Beginners: the ten-part course |
+| `ai-explained.html` | AI Explained Using Analogies: nineteen concepts, one disclosure each |
+| `ai-playground.html` | Guide to the Stanford AI Playground: use, models, agents, and limits |
 | `ai-resources.html` | AI tools available to the SLS community, and the policy that governs them |
 | `ai-in-the-library.html` | The library's AI display: 7 parts, 24 panels, 32 books |
 | `reading-list.html` | The 32-book shelf on its own page (same data as the display) |
@@ -139,7 +142,7 @@ node scripts/build-search-index.mjs --check    # non-zero if it is out of date
 Re-run it after editing page content and commit the result. It is the one script
 here that needs Playwright, so it is a maintainer step rather than a build step —
 `PLAYWRIGHT_PATH=/path/to/playwright/index.js` points it at a global install if you
-do not want a local dependency. The index is currently 482 entries and about 285 kB,
+do not want a local dependency. The index is currently 552 entries and about 411 kB,
 loaded on `search.html` alone and nowhere else.
 
 Matching is prefix-per-word ("cita" finds "citation", "ation" does not), all terms
@@ -278,11 +281,53 @@ The card on the landing page links to `digital-wellness` rather than
 publicly and Vercel serves every page at its extensionless path. The rest of the
 site still links with `.html`; new visitor-facing links should not.
 
+### The tutorials
+
+`tutorials.html` used to be a list of about thirty-four cards, and almost every one
+of them pointed out of the site to a page on the library's Google Site. Those pages
+are being rewritten as hub pages; three are done and only those three are listed:
+
+| Page | What it is |
+| --- | --- |
+| `ai-for-beginners.html` | The ten-part introduction: what generative AI is, how it works, what it can create, responsible use, prompting, interfaces, data, the tools we do not recommend, and where the field is going |
+| `ai-explained.html` | Nineteen concepts explained by analogy, one `<details>` each |
+| `ai-playground.html` | The Stanford AI Playground: how to use it, which model to pick, what the agents do, and what it leaves out |
+
+The rest are not linked from anywhere rather than linked somewhere that is being
+retired. **The old entries are in the git history** — each carries its title,
+category, and description, which is most of the work of rebuilding the card when its
+page exists again.
+
+Three decisions worth knowing, because they will come up again for the next one:
+
+- **Nothing is restated.** Where the source page duplicated something the hub already
+  has, the port links instead: part five summarizes the PAUSE framework and sends the
+  reader to `pause-rule.html`, the analogies that appear in both pages live on
+  `ai-explained.html` and are linked from the course by anchor, and the block of
+  library-services promotion on the source's first page became one line pointing at
+  `events.html` and `ai-upload.html`. That block also advertised the Tech Club, which
+  this site deliberately retired; a port is not a route for bringing something back.
+- **The hero images did not come across**, by request, and neither did the screenshots
+  the source hotlinked from a free image host. The prose stands without them. If any
+  of those screenshots are worth having, they should be re-taken and committed to
+  `assets/images/` like every other asset here.
+- **The videos did.** All eight Google Drive recordings are the library's own and are
+  publicly shared, so they are embedded in `.tutorialVideo` frames exactly as
+  `api-course.html` does it.
+
+`ai-explained.html` has one structural oddity worth not undoing. Each analogy is a
+`<details>` wrapped in a `<div>` that carries the anchor id, and the concept name is
+an `<h3>` inside the `<summary>`. That is for the search index: it buckets by the
+nearest id'd container and titles each entry from that container's first heading, so
+the wrapper turns one undifferentiated page entry into nineteen that link to the right
+analogy. Flattening it back to a bare `<details id="...">` costs eighteen search
+results.
+
 ### Content that is data, not markup
 
 Two pages keep their content in one array at the bottom of the file and render the
 cards from it, because both are lists that grow and an entry beats a block of copied
-HTML: `tutorials.html` (~34 tutorials) and `ai-in-the-library.html` (7 categories, 24
+HTML: `tutorials.html` (its three tutorials) and `ai-in-the-library.html` (7 categories, 24
 panels). The previous hub's tutorials page worked the same way. Everything else is
 written out as HTML.
 

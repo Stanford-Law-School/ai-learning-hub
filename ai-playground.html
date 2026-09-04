@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Stanford AI Playground | AI Learning Hub | Stanford Law School</title>
+<meta name="description" content="A guide to the Stanford AI Playground from the Robert Crown Law Library: what it is, how to use it, choosing between the OpenAI, Anthropic, Google, and DeepSeek models, the Stanford-specific agents, and what the Playground deliberately leaves out." />
+<link rel="canonical" href="https://ailearninghub.law.stanford.edu/ai-playground" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="siteHeader">
+  <a class="headerLogo" href="index.html" aria-label="AI Learning Hub home">
+    <img src="assets/images/robert-crown-law-library-logo.svg" alt="Stanford Law School | Robert Crown Law Library" width="551" height="139" />
+  </a>
+  <div class="headerNavigation">
+    <div class="headerTools">
+      <a class="homeButton" href="index.html">Home</a>
+      <form class="siteSearch" action="search.html" method="get" role="search">
+        <label class="srOnly" for="site-search">Search the AI Learning Hub</label>
+        <input id="site-search" name="q" type="search" placeholder="Search" required />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <button class="navToggleBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburgerIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <nav id="primary-nav" class="primaryNav" aria-label="Main navigation">
+    <a href="https://ai-upload-stanford-law.vercel.app/" target="_blank" rel="noopener noreferrer">The AI Upload<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="ai-resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="skills.html">Skills</a>
+    <a href="https://ai-faculty.law.stanford.edu/" target="_blank" rel="noopener noreferrer">Faculty Support<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="docPage">
+
+  <p class="crumb"><a href="index.html">AI Learning Hub</a> &rsaquo; <a href="tutorials.html">AI Tutorials</a> &rsaquo; Stanford AI Playground</p>
+
+  <p class="eyebrow">Foundational skills &middot; University tool</p>
+  <h1>Stanford AI Playground</h1>
+  <p class="lede">
+    A university-hosted place to use several leading AI models with your SUNet ID, at no cost, without
+    sending your work to a vendor. This guide covers what it is, how to drive it, which model to reach for,
+    what the agents do &mdash; and what it deliberately leaves out.
+  </p>
+
+  <div class="actions">
+    <a class="primary" href="https://aiplayground.stanford.edu" target="_blank" rel="noopener noreferrer">Launch the Playground<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    <a class="secondary" href="https://uit.stanford.edu/aiplayground/faqs" target="_blank" rel="noopener noreferrer">Playground FAQs<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    <a class="textLink" href="tutorials.html">Back to the tutorials &rarr;</a>
+  </div>
+
+  <dl class="docMeta">
+    <div>
+      <dt>What it is</dt>
+      <dd>A Stanford-run instance of the open-source <a href="https://www.librechat.ai/about" target="_blank" rel="noopener noreferrer">LibreChat<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> platform, maintained by University IT</dd>
+    </div>
+    <div>
+      <dt>Who can use it</dt>
+      <dd>Faculty, staff, students, and other Stanford affiliates, with a SUNet ID</dd>
+    </div>
+    <div>
+      <dt>Cost</dt>
+      <dd>Free to eligible Stanford users</dd>
+    </div>
+    <div>
+      <dt>Not approved for</dt>
+      <dd>High Risk Data, including PHI and PII &mdash; that limit is the point of the next box</dd>
+    </div>
+  </dl>
+
+  <div class="caution" style="margin-top: 1.4rem;">
+    <p><strong>The Playground is not a vault.</strong> It is a Stanford-managed environment, which is a
+    different claim from approved for anything. Do not enter personal, confidential, or High Risk Data,
+    verify facts, citations, and calculations before you rely on them, and keep a person &mdash; you
+    &mdash; responsible for the final decision. Stanford&rsquo;s
+    <a href="https://uit.stanford.edu/security/responsibleai" target="_blank" rel="noopener noreferrer">Responsible AI guidelines<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    are the governing document.</p>
+  </div>
+
+  <!-- Model names date faster than anything else on this page, so the note says
+       when they were checked rather than implying a list that stays true. -->
+  <p class="tutorialCurrency stale" style="margin-top: 1.2rem;">
+    The model names in part two were current in autumn 2025. Vendors rename, retire, and add models
+    constantly; treat the names as examples and the model menu in the Playground as the authority.
+  </p>
+
+  <nav class="docToc" aria-labelledby="toc-h">
+    <p class="eyebrow" id="toc-h">Contents</p>
+    <ol>
+      <li><a href="#part-1">What it is, and how to use it</a><span class="docTocNote">login, prompts, attachments, comparing, sharing</span></li>
+      <li><a href="#part-2">Choosing a model</a><span class="docTocNote">OpenAI, Anthropic, Google, DeepSeek</span></li>
+      <li><a href="#part-3">Agents</a><span class="docTocNote">Stanford handbooks, ScholarAI, Wolfram, image generation</span></li>
+      <li><a href="#part-4">Beyond the Playground</a><span class="docTocNote">what it leaves out, and where to go instead</span></li>
+    </ol>
+  </nav>
+
+  <!-- ===================== Part one ===================== -->
+
+  <div class="docPart" id="part-1">
+    <p class="eyebrow">Part one</p>
+    <h2>What it is, and how to use it</h2>
+    <p class="muted" style="max-width: 70ch;">
+      One secure interface to models from several vendors, reached with the credentials you already have.
+    </p>
+  </div>
+
+  <ul>
+    <li><strong>A secure environment.</strong> You sign in with your SUNet ID, and your chats and data stay inside Stanford&rsquo;s environment rather than going to a vendor account.</li>
+    <li><strong>Several models, one window.</strong> Switch between OpenAI, Anthropic, and Google models mid-conversation, or run two side by side.</li>
+    <li><strong>Stanford-specific tools.</strong> Agents that search the Admin Guide, the Faculty Handbook, and DoResearch policy.</li>
+    <li><strong>Free to the community.</strong> No subscription, no billing, no payment method.</li>
+  </ul>
+
+  <div class="tutorialVideo">
+    <iframe src="https://drive.google.com/file/d/1u8WTAddW8ZXflvso2k8wQD5BMZNIsPGr/preview" title="Video overview: the Playground as your new research assistant" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <h3>Six things to know how to do</h3>
+
+  <div class="steps" style="margin: 1.2rem 0;">
+    <div class="step">
+      <h4 style="margin-top: 0;">1. Log in and set up</h4>
+      <p>
+        Go to <a href="https://aiplayground.stanford.edu" target="_blank" rel="noopener noreferrer">aiplayground.stanford.edu<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        and sign in with your SUNet ID. The first time, you may meet an <em>Information Release</em>
+        screen: choose a duration and accept. Read the data use policies while you are there &mdash; the
+        Playground is not approved for High Risk Data.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">2. Prompt, and attach files</h4>
+      <p>
+        Type in the text field and press Enter. Attach PDFs, CSVs, Word files, or images with the paperclip
+        icon. Once an answer comes back you can edit the prompt and re-run it, copy the reply, or use
+        <em>Fork</em> to branch the conversation and try a different direction without losing the first one.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">3. Explore and compare models</h4>
+      <p>
+        The dropdown at the top switches models mid-conversation. To compare, select one model, click the
+        <strong>+</strong> button, then select a second: your next prompt goes to both and the answers
+        appear side by side. Part two is about which two to pick.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">4. Use assistants and agents</h4>
+      <p>
+        <em>Azure Assistants</em> includes a data and code analyst that can work through a file you upload.
+        <em>Agents</em> connects the model to outside services &mdash; web search, ScholarAI for academic
+        papers, Wolfram for computation, image generation. Part three covers the ones worth knowing at SLS.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">5. Customize and control</h4>
+      <p>
+        The right-hand panel is where you save prompts you reuse, adjust model parameters such as
+        temperature and output length, manage uploaded files, and group conversations with bookmarks.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">6. Share a conversation</h4>
+      <p>
+        <em>Share</em> creates a view-only URL for a conversation. Only someone who can authenticate with a
+        SUNet ID can open it, and you can manage or delete every link you have made under
+        <em>Settings &rarr; Data Controls</em>.
+      </p>
+    </div>
+  </div>
+
+  <h3>How it compares to the public tools</h3>
+  <p>
+    The honest summary is that the Playground trades the newest features for a managed environment. Both
+    halves of that trade are real.
+  </p>
+
+  <div class="tableScroll">
+    <table>
+      <caption class="srOnly">The Stanford AI Playground compared with public AI tools</caption>
+      <thead>
+        <tr><th scope="col">Feature</th><th scope="col">Stanford AI Playground</th><th scope="col">External AI tools</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Security and privacy</th>
+          <td>Stanford-managed environment with single sign-on; data stays within Stanford systems.</td>
+          <td>Data goes to a third-party vendor, under whatever its privacy policy says.</td>
+        </tr>
+        <tr>
+          <th scope="row">Model access</th>
+          <td>Several vetted models &mdash; OpenAI, Google, Anthropic &mdash; in one interface.</td>
+          <td>Usually one vendor&rsquo;s models.</td>
+        </tr>
+        <tr>
+          <th scope="row">Cost</th>
+          <td>Free to eligible Stanford users.</td>
+          <td>Paid subscription or usage-based billing.</td>
+        </tr>
+        <tr>
+          <th scope="row">Newest features</th>
+          <td>Added after Stanford review for safety and compliance, so later.</td>
+          <td>Direct, early access to the newest models and experiments.</td>
+        </tr>
+        <tr>
+          <th scope="row">Best for</th>
+          <td>Safe experimentation, prototyping, and compliant workflows for academic work.</td>
+          <td>Niche capabilities, or the absolute latest version of a model.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Where to ask questions</h3>
+  <p>
+    Two Slack channels, for two different kinds of question.
+  </p>
+  <ul>
+    <li>
+      <a href="https://stanford.enterprise.slack.com/archives/C07EWV1B848" target="_blank" rel="noopener noreferrer"><strong>#ai-playground</strong><span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      &mdash; the official university-wide channel, owned and monitored by University IT. Announcements,
+      technical questions, feedback.
+    </li>
+    <li>
+      <a href="https://stanford.enterprise.slack.com/" target="_blank" rel="noopener noreferrer"><strong>#techchat</strong><span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      &mdash; the SLS channel. Use cases, legal tech, and your own peers.
+    </li>
+  </ul>
+  <p class="muted">
+    For technical support, submit a Help request through Stanford IT; the
+    <a href="https://uit.stanford.edu/service/aiplayground" target="_blank" rel="noopener noreferrer">UIT service page<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    is the official home of the tool, and the Playground itself carries a feedback form.
+  </p>
+
+  <!-- ===================== Part two ===================== -->
+
+  <div class="docPart" id="part-2">
+    <p class="eyebrow">Part two</p>
+    <h2>Choosing a model</h2>
+    <p class="muted" style="max-width: 70ch;">
+      The Playground is not one tool but a menu of them. Knowing what each family is good at is most of
+      the skill, and none of it requires understanding how they work.
+    </p>
+  </div>
+
+  <div class="tutorialVideo">
+    <iframe src="https://drive.google.com/file/d/1C-CPa_TNJeaBTjXuDbSNmnB3QgJ_DWls/preview" title="Video overview: the models available in the Playground" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="grid two" style="margin-top: 1.2rem;">
+    <article class="card">
+      <p class="eyebrow">Azure OpenAI</p>
+      <h3>The ChatGPT models</h3>
+      <p class="muted">
+        The versatile workhorses. For legal work they are good at drafting communications, sketching an
+        initial argument, and turning something complicated into plain English. The more capable ones will
+        analyze a document or write code for computational tasks.
+      </p>
+      <p class="muted">
+        &ldquo;Azure&rdquo; is Microsoft&rsquo;s cloud. An Azure OpenAI model is OpenAI&rsquo;s technology
+        delivered through Microsoft&rsquo;s enterprise cloud, which is the part that matters to Stanford:
+        it is what makes the security and data-handling story different from the consumer app.
+      </p>
+      <p><strong>Best for:</strong> general drafting, complex reasoning, document analysis.</p>
+      <p style="margin-bottom: 0;"><strong>Reach for it when:</strong> you want a reliable writing partner, or a legal concept explained simply.</p>
+    </article>
+    <article class="card">
+      <p class="eyebrow">Anthropic</p>
+      <h3>The Claude models</h3>
+      <p class="muted">
+        Built with an explicit emphasis on safety, and unusually good with long documents. That makes them
+        useful for reviewing a lengthy contract, summarizing a deposition, or working through extensive
+        case law: a large context window means more of the document is in view at once, and the analysis
+        holds together better across it.
+      </p>
+      <p><strong>Best for:</strong> summarizing long texts, code analysis, careful writing.</p>
+      <p style="margin-bottom: 0;"><strong>Reach for it when:</strong> you have a dense document to interrogate, or a nuanced argument to draft.</p>
+    </article>
+    <article class="card">
+      <p class="eyebrow">Google</p>
+      <h3>The Gemini models</h3>
+      <p class="muted">
+        Known for speed and very large context windows. The &ldquo;flash&rdquo; versions are made for quick
+        work &mdash; a translation, an email &mdash; while the Pro versions take an enormous amount of text
+        at once, on the order of a very long book. Useful for deep research across a pile of material, and
+        for reading charts and images rather than only text.
+      </p>
+      <p><strong>Best for:</strong> multimodal analysis, complex coding, deep research.</p>
+      <p style="margin-bottom: 0;"><strong>Reach for it when:</strong> the volume is the problem, or the source is not plain text.</p>
+    </article>
+    <article class="card">
+      <p class="eyebrow">DeepSeek</p>
+      <h3>The model to run here rather than anywhere else</h3>
+      <p class="muted">
+        DeepSeek is an open model, so its architecture is more transparent than its commercial
+        counterparts, and in the Playground it will show its reasoning as it works. For a profession where
+        the rationale matters as much as the conclusion, that is worth having.
+      </p>
+      <p class="muted">
+        It is also the clearest argument for using a managed environment at all: running DeepSeek outside a
+        vetted one carries security and data-privacy risk you do not need to take, and inside the
+        Playground you get the transparency without exposing your work.
+      </p>
+      <p><strong>Best for:</strong> coding, technical questions, math, logic.</p>
+      <p style="margin-bottom: 0;"><strong>Reach for it when:</strong> you want to watch how a model reasons through a problem, step by step.</p>
+    </article>
+  </div>
+
+  <h3>Comparing two models on the same prompt</h3>
+  <p>
+    The Playground&rsquo;s best feature, and the fastest way to learn what the differences actually are:
+    send one prompt to two models and read the answers next to each other.
+  </p>
+  <ol>
+    <li>Select your first model from the dropdown at the top of the page.</li>
+    <li>Click the plus icon (<strong>+</strong>) in the top menu. The selected model&rsquo;s name appears in the prompt field.</li>
+    <li>Select your second model from the dropdown.</li>
+    <li>Type your prompt and press Enter.</li>
+    <li>Read the two answers side by side.</li>
+  </ol>
+
+  <!-- ===================== Part three ===================== -->
+
+  <div class="docPart" id="part-3">
+    <p class="eyebrow">Part three</p>
+    <h2>Agents</h2>
+    <p class="muted" style="max-width: 70ch;">
+      The specialized tools in the model menu, and what the word means here &mdash; which is not what it
+      means in the news.
+    </p>
+  </div>
+
+  <div class="tutorialVideo">
+    <iframe src="https://drive.google.com/file/d/1EXcgLoLAuvmFEHmCdpGimenSUbkH8prG/preview" title="Video overview: a guide to the Playground agents" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <h3>Two different things called &ldquo;agent&rdquo;</h3>
+  <p>
+    In the Playground, an <strong>Agent</strong> is a specialized tool that gives a model one specific
+    capability &mdash; these used to be called plugins. Select ScholarAI and you have equipped the model to
+    search a database of academic papers. It uses the tool; you still direct the process.
+  </p>
+  <p>
+    <strong>Agentic AI</strong>, the phrase in every headline, means something else: a more autonomous
+    system that reasons, plans, and carries out a series of tasks toward a goal without being told each
+    step. The Playground&rsquo;s agents are not that.
+  </p>
+  <blockquote class="pullQuote">
+    Think of the Playground&rsquo;s agents as on-demand specialists you can call in to help a generalist.
+  </blockquote>
+
+  <h3>The agents worth knowing at SLS</h3>
+
+  <h4>Stanford-specific resources</h4>
+  <p>A secure, quick way to query the University&rsquo;s own documents.</p>
+  <ul>
+    <li><strong>Faculty Handbook Search</strong> &mdash; policies, appointments, leave, and governance, answered out of the official handbook.</li>
+    <li><strong>DoResearch Policy Guide</strong> &mdash; grants, compliance, and research administration policy, for anyone with research obligations.</li>
+    <li><strong>Admin Guide Search</strong> &mdash; the operational questions, from procurement to event planning.</li>
+  </ul>
+
+  <h4>Research and scholarship</h4>
+  <p>These connect the model to knowledge bases outside it.</p>
+  <ul>
+    <li><strong>ScholarAI</strong> &mdash; searches and analyzes peer-reviewed articles, journals, and legal publications.</li>
+    <li><strong>Google web search</strong> &mdash; real-time search, for a recent ruling or a legislative change the model was not trained on.</li>
+    <li><strong>Wolfram</strong> &mdash; a computational engine, for law and economics or statistical evidence.</li>
+  </ul>
+
+  <h4>Content generation</h4>
+  <ul>
+    <li><strong>Imagen and DALL&middot;E</strong> &mdash; custom visuals for a presentation or course material, or an illustration of a concept that is hard to describe.</li>
+  </ul>
+
+  <p class="note">
+    <strong>How to turn them on.</strong> Select <em>Agents</em> from the model menu, then choose the
+    specialist that fits the task. The
+    <a href="https://uit.stanford.edu/aiplayground/faqs" target="_blank" rel="noopener noreferrer">Playground FAQs<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    cover the rest, and there is a
+    <a href="https://notebooklm.google.com/notebook/0aa5aa21-8670-46a6-b110-9b115b020302" target="_blank" rel="noopener noreferrer">NotebookLM notebook of this guide<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    you can ask questions of directly.
+  </p>
+
+  <!-- ===================== Part four ===================== -->
+
+  <div class="docPart" id="part-4">
+    <p class="eyebrow">Part four</p>
+    <h2>Beyond the Playground</h2>
+    <p class="muted" style="max-width: 70ch;">
+      What the Playground leaves out is a decision, not an oversight. Knowing what is missing tells you
+      when to open something else &mdash; and what you are accepting when you do.
+    </p>
+  </div>
+
+  <h3>What it intentionally leaves out</h3>
+  <p>Consumer apps carry capabilities the Playground does not offer:</p>
+  <ul>
+    <li>Connections to your personal accounts, such as Gmail and Drive</li>
+    <li>One-click deep research modes that read the live web and return a cited report</li>
+    <li>Canvas-style workspaces for longer writing or live code</li>
+    <li>Built-in data workbenches for spreadsheet and file analysis</li>
+    <li>Real-time voice conversation</li>
+    <li>Creating and sharing your own custom assistants</li>
+  </ul>
+
+  <h3>Six things the consumer apps do that this does not</h3>
+  <div class="steps" style="margin: 1.2rem 0;">
+    <div class="step">
+      <h4 style="margin-top: 0;">Read your Google files and email</h4>
+      <p>
+        Gemini extensions can look through your Gmail or Drive with your permission &mdash; summarize a long
+        thread, pull facts out of a folder, draft a reply with links back to the source. You keep control and
+        can withdraw the access.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">Produce an auto-researched, cited report</h4>
+      <p>
+        Deep research and web search modes browse many pages, compare what they find, and return an
+        organized report with links you can check. Ask for a comparison of three degree programs and you
+        get sections, trade-offs, and references.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">Work in a builder rather than a chat</h4>
+      <p>
+        ChatGPT Canvas and Claude Artifacts open a panel where you and the model co-edit text or code,
+        preview the result, and iterate in one place.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">Run code over your spreadsheet</h4>
+      <p>
+        Upload a file and have the assistant clean it, chart it, and run statistics on it. ChatGPT&rsquo;s
+        advanced data analysis runs Python in a private sandbox to do this.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">Talk to it</h4>
+      <p>
+        ChatGPT, Gemini Live, and Claude support real-time voice, which is the difference between using AI
+        at a desk and using it while walking.
+      </p>
+    </div>
+    <div class="step">
+      <h4 style="margin-top: 0;">Build a reusable assistant</h4>
+      <p>
+        For a task you repeat, ChatGPT has custom GPTs and Gemini has Gems &mdash; your own small expert,
+        with its own instructions and starter files.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid two" style="margin-top: 1.4rem;">
+    <article class="card">
+      <h3>Stay in the Playground when you want to</h3>
+      <ul style="margin-bottom: 0;">
+        <li>Try different models on Stanford-managed infrastructure</li>
+        <li>Draft, summarize, or get coding help without connecting a personal account</li>
+        <li>Keep it simple &mdash; nothing to install, no permissions to grant</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Open a consumer app when you need to</h3>
+      <ul style="margin-bottom: 0;">
+        <li>Search the live web and get a source-backed report</li>
+        <li>Let the model read your own Gmail or Drive</li>
+        <li>Work in a canvas on long writing or live code</li>
+        <li>Upload data and have it analyzed and charted</li>
+        <li>Use your voice</li>
+      </ul>
+    </article>
+  </div>
+
+  <h3>And Perplexity, the &ldquo;answer engine&rdquo;</h3>
+  <p>
+    <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    is a public tool that searches the live web and shows its sources beside each answer. It is built for
+    quick, checkable answers, and it is not a Stanford-managed environment. What it adds:
+  </p>
+  <ul>
+    <li><strong>Cited, live-web answers.</strong> It fetches current pages and shows citations inline, so you can check the source rather than trust the summary.</li>
+    <li><strong>Deeper research modes.</strong> A multi-step search that synthesizes many sources for a complicated question.</li>
+    <li><strong>Focused searches.</strong> An academic mode that aims at scholarly sources when you need papers.</li>
+    <li><strong>Spaces.</strong> Project areas that group related threads, hold files, and take collaborators.</li>
+    <li><strong>Pages.</strong> Turning a finished thread into a clean, shareable write-up.</li>
+  </ul>
+  <p>
+    Good fit for finding and citing current information, or gathering sources you intend to verify. Use the
+    Playground instead when you want the managed environment, or when you are drafting and thinking rather
+    than searching.
+  </p>
+
+  <h3>Other playgrounds worth knowing</h3>
+  <div class="grid two" style="margin-top: 1.2rem;">
+    <a class="card interactive" href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">
+      <h3>Google AI Studio</h3>
+      <p class="muted">A prototyping environment for Gemini models, with prompts exportable to code. Developer-facing.</p>
+      <span class="explore">Open AI Studio &rarr;<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></span>
+    </a>
+    <a class="card interactive" href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">
+      <h3>Hugging Face</h3>
+      <p class="muted">The community&rsquo;s ecosystem: test thousands of models, or read the notebooks and demos other people have published.</p>
+      <span class="explore">Open Hugging Face &rarr;<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></span>
+    </a>
+    <a class="card interactive" href="https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio" target="_blank" rel="noopener noreferrer">
+      <h3>Microsoft Copilot Studio</h3>
+      <p class="muted">A low-code way to build your own copilots and wire them to business data and processes.</p>
+      <span class="explore">Open Copilot Studio &rarr;<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></span>
+    </a>
+    <a class="card interactive" href="https://platform.openai.com/chat/edit" target="_blank" rel="noopener noreferrer">
+      <h3>OpenAI Playground</h3>
+      <p class="muted">A developer environment for OpenAI&rsquo;s newest models. Requires a payment method.</p>
+      <span class="explore">Open the OpenAI Playground &rarr;<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></span>
+    </a>
+  </div>
+
+  <p class="note">
+    <strong>Before you use any of them on real work.</strong> Walk through
+    <a href="pause-rule.html">the PAUSE Rule</a>, and if a term on this page is new, it is probably in
+    <a href="ai-explained.html">AI Explained Using Analogies</a>. This is an unofficial guide maintained by
+    the Robert Crown Law Library; University IT owns the Playground itself.
+  </p>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <nav class="footerNav" aria-label="Site footer">
+      <div class="footerGroup">
+        <h2 class="footerHeading" id="footer-elsewhere">Elsewhere at Stanford</h2>
+        <ul aria-labelledby="footer-elsewhere">
+          <li><a href="https://law.stanford.edu/ai-initiative/" target="_blank" rel="noopener noreferrer">SLS AI Initiative<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/robert-crown-law-library/" target="_blank" rel="noopener noreferrer">Robert Crown Law Library<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://uit.stanford.edu/security/responsibleai" target="_blank" rel="noopener noreferrer">Responsible AI at Stanford<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/office-of-student-affairs/use-of-generative-ai-technology/" target="_blank" rel="noopener noreferrer">Use of Generative AI at SLS<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/hub.js"></script>
+</body>
+</html>

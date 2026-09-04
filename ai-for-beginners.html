@@ -1,0 +1,2493 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Introduction to AI for Beginners | AI Learning Hub | Stanford Law School</title>
+<meta name="description" content="A ten-part introduction to AI from the Robert Crown Law Library at Stanford Law School: what generative AI is, how it works, what it can create, using it responsibly, prompting, the interfaces, preparing data, the tools we do not recommend, and where this is going. No experience assumed." />
+<link rel="canonical" href="https://ailearninghub.law.stanford.edu/ai-for-beginners" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="siteHeader">
+  <a class="headerLogo" href="index.html" aria-label="AI Learning Hub home">
+    <img src="assets/images/robert-crown-law-library-logo.svg" alt="Stanford Law School | Robert Crown Law Library" width="551" height="139" />
+  </a>
+  <div class="headerNavigation">
+    <div class="headerTools">
+      <a class="homeButton" href="index.html">Home</a>
+      <form class="siteSearch" action="search.html" method="get" role="search">
+        <label class="srOnly" for="site-search">Search the AI Learning Hub</label>
+        <input id="site-search" name="q" type="search" placeholder="Search" required />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <button class="navToggleBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburgerIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <nav id="primary-nav" class="primaryNav" aria-label="Main navigation">
+    <a href="https://ai-upload-stanford-law.vercel.app/" target="_blank" rel="noopener noreferrer">The AI Upload<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="ai-resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="skills.html">Skills</a>
+    <a href="https://ai-faculty.law.stanford.edu/" target="_blank" rel="noopener noreferrer">Faculty Support<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="docPage">
+
+  <p class="crumb"><a href="index.html">AI Learning Hub</a> &rsaquo; <a href="tutorials.html">AI Tutorials</a> &rsaquo; Introduction to AI for Beginners</p>
+
+  <p class="eyebrow">Foundational skills &middot; Ten-part course</p>
+  <h1>Introduction to AI for Beginners</h1>
+  <p class="lede">
+    Start here. Ten parts take you from what generative AI actually is to a working strategy for using it:
+    how it works, what it can and cannot make, how to prompt it, how to prepare what you give it, which
+    tools to avoid, and where the field is heading. Nothing assumes you have used AI before.
+  </p>
+
+  <div class="actions">
+    <a class="primary" href="#m1">Start with part one</a>
+    <a class="secondary" href="ai-explained.html">AI explained using analogies</a>
+    <a class="textLink" href="tutorials.html">Back to the tutorials &rarr;</a>
+  </div>
+
+  <dl class="docMeta">
+    <div>
+      <dt>Format</dt>
+      <dd>Ten parts to read, with videos, hands-on activities, and a set of prompts to try</dd>
+    </div>
+    <div>
+      <dt>Length</dt>
+      <dd>An afternoon end to end; each part stands alone and takes fifteen minutes or so</dd>
+    </div>
+    <div>
+      <dt>Written for</dt>
+      <dd>The whole SLS community &mdash; students, faculty, and staff. No technical background assumed</dd>
+    </div>
+    <div>
+      <dt>What you need</dt>
+      <dd>A browser, and a free account on one AI tool if you want to do the activities</dd>
+    </div>
+  </dl>
+
+  <!-- Two things date on this page: model names and the state of the field. The
+       note says when it was written rather than pretending to be evergreen. -->
+  <p class="tutorialCurrency stale" style="margin-top: 1.2rem;">
+    Written in autumn 2025. The concepts hold; the model names, prices, and features in parts three and
+    ten move every few weeks, so read those as examples of a shape rather than a current inventory.
+  </p>
+
+  <div class="note" style="margin-top: 1.2rem;">
+    <p>
+      <strong>Two rules before you start.</strong> Never put personal, confidential, or proprietary
+      information into an AI tool. And if you are a student, check your instructor&rsquo;s policy before
+      using AI on coursework &mdash; permission is theirs to give, and the Honor Code applies either way.
+    </p>
+  </div>
+
+  <nav class="docToc" aria-labelledby="toc-h">
+    <p class="eyebrow" id="toc-h">The ten parts</p>
+    <ol>
+      <li><a href="#m1">What is generative AI?</a><span class="docTocNote">the definition, and your role in the loop</span></li>
+      <li><a href="#m2">A brief history of AI</a><span class="docTocNote">from Talos to the Transformer</span></li>
+      <li><a href="#m3">How it works</a><span class="docTocNote">tokens, prediction, training, hallucination</span></li>
+      <li><a href="#m4">What it can create</a><span class="docTocNote">text, images, code, research, data</span></li>
+      <li><a href="#m5">Responsible AI use</a><span class="docTocNote">your AI stack, and the PAUSE Rule</span></li>
+      <li><a href="#m6">Mastering the prompt</a><span class="docTocNote">C.R.A.F.T., context, and five real pitfalls</span></li>
+      <li><a href="#m7">Anatomy of an AI interface</a><span class="docTocNote">chat, canvas, agents, GPTs, and Gems</span></li>
+      <li><a href="#m8">The art of AI data</a><span class="docTocNote">garbage in, garbage out &mdash; and Stanford policy</span></li>
+      <li><a href="#m9">AI we do not recommend</a><span class="docTocNote">five tools, and why we say no</span></li>
+      <li><a href="#m10">The future, and your AI strategy</a><span class="docTocNote">where this is going, and how to keep up</span></li>
+    </ol>
+  </nav>
+
+  <!-- ===================== Part 1 ===================== -->
+  <section class="module" id="m1" aria-labelledby="m1-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">1</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part one</p>
+        <h2 id="m1-h">What is generative AI?</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Define generative AI in a sentence, without jargon</li>
+        <li>Say what separates it from the AI that was already in your spam filter</li>
+        <li>Name what it is good at, and where it needs you</li>
+        <li>Explain why the co-pilot &mdash; or intern &mdash; framing is the useful one</li>
+      </ul>
+    </div>
+
+    <h3>What it actually is</h3>
+    <div class="answerFirst">
+      <p>
+        Generative AI is software trained on millions of examples that can now produce new content
+        &mdash; text, images, code, music, video &mdash; resembling what it learned but not copied from it.
+      </p>
+    </div>
+    <p>
+      The word doing the work is <em>generative</em>. Ordinary software follows explicit rules. Older AI
+      recognized and sorted things. Generative AI makes something that did not exist before, which is why
+      it is both remarkably creative and reliably wrong some of the time. Those two facts have the same
+      cause.
+    </p>
+
+    <h3>Traditional AI and generative AI are not the same thing</h3>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <p class="eyebrow">Traditional AI</p>
+        <h4 style="margin-top: 0;">Recognizes, analyzes, classifies</h4>
+        <p class="muted" style="margin-bottom: 0.4rem;">It sorts what already exists.</p>
+        <ul style="margin-bottom: 0;">
+          <li>Spam filters, sorting mail</li>
+          <li>Recommendations on Netflix or Amazon</li>
+          <li>Image and face recognition</li>
+          <li>Voice assistants answering commands</li>
+        </ul>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Generative AI</p>
+        <h4 style="margin-top: 0;">Creates something new</h4>
+        <p class="muted" style="margin-bottom: 0.4rem;">It produces content from learned patterns.</p>
+        <ul style="margin-bottom: 0;">
+          <li>ChatGPT, Claude, Gemini &mdash; new text</li>
+          <li>Sora, Veo, and the image tools &mdash; pictures and video</li>
+          <li>GitHub Copilot &mdash; code</li>
+          <li>Suno, ElevenLabs &mdash; music and voice</li>
+        </ul>
+      </article>
+    </div>
+
+    <h3>How it works, in three steps</h3>
+    <div class="steps" style="margin: 1.2rem 0;">
+      <div class="step">
+        <h4 style="margin-top: 0;">1. Training</h4>
+        <p style="margin-bottom: 0;">
+          The model is exposed to enormous amounts of material &mdash; billions of words, millions of
+          images &mdash; and learns the patterns in it: which words tend to follow which, what makes a
+          face a face, which chords sound resolved.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">2. Your prompt</h4>
+        <p style="margin-bottom: 0;">
+          You ask for something. The model works out what you are asking for and pulls up the patterns
+          relevant to it.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">3. Generation</h4>
+        <p style="margin-bottom: 0;">
+          It produces new content by predicting, over and over, what should come next. It is not
+          retrieving anything it saw. It is assembling something that fits the shape of what it saw.
+        </p>
+      </div>
+    </div>
+    <p class="muted">
+      The comparison that makes this click is a chef who has eaten at ten thousand restaurants and
+      memorized every pattern of flavor, technique, and plating. Hand them your ingredients and they do not
+      look up a recipe &mdash; they build something new inside the rules they have internalized. There is a
+      longer version of that idea, and eighteen more like it, in
+      <a href="ai-explained.html">AI explained using analogies</a>.
+    </p>
+
+    <h3>What it can do</h3>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Text</h4>
+        <p class="muted" style="margin-bottom: 0;">Drafting, answering, summarizing, translating, and creative writing.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Images</h4>
+        <p class="muted" style="margin-bottom: 0;">Artwork from a description, photo editing, logos, mockups, style variations.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Code</h4>
+        <p class="muted" style="margin-bottom: 0;">Writing it, debugging it, explaining it, documenting it, translating between languages.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Audio and video</h4>
+        <p class="muted" style="margin-bottom: 0;">Music, voiceover, sound effects, editing, and generated video.</p>
+      </article>
+    </div>
+
+    <h3>What that looks like in practice</h3>
+    <ul>
+      <li><strong>A professional:</strong> drafts client emails, meeting agendas, and summaries of long reports with AI. Thirty minutes of work becomes five &mdash; then gets reviewed and personalized, every time.</li>
+      <li><strong>A student:</strong> asks for the same concept explained three different ways until one lands, then uses it to brainstorm an outline and check their own draft for clarity.</li>
+      <li><strong>A developer:</strong> lets Copilot write the boilerplate and suggest fixes, and verifies that the result actually runs.</li>
+      <li><strong>A designer:</strong> generates concept art to explore directions quickly, before committing time to the one that works.</li>
+    </ul>
+
+    <h3>It is a tool, and you are the editor</h3>
+    <p>
+      AI is not thinking or understanding. It recognizes patterns and applies them statistically to produce
+      output that looks intelligent. It feels like magic because the mechanism is invisible &mdash; and like
+      a magic trick, it stops feeling magical the moment you see behind the curtain.
+    </p>
+    <div class="caution">
+      <p>
+        <strong>It will be confidently wrong.</strong> AI produces incorrect information, reproduces bias,
+        and misreads intent. It will invent facts that sound true &mdash; the term for that is
+        <a href="ai-explained.html#a8">hallucination</a>. This is not a bug being fixed next quarter; it
+        follows from how the thing works. You are the quality control.
+      </p>
+    </div>
+    <blockquote class="pullQuote">
+      Treat it like a brilliant, fast, overconfident intern. It will hand you a first draft in seconds, and
+      it may have invented half of it. You are the editor-in-chief.
+    </blockquote>
+    <p>
+      Which makes your job concrete: set clear expectations, give real instructions, read the output
+      critically, check the claims, add the context and expertise it does not have, and make the decision
+      yourself.
+    </p>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: learn with AI</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>20 minutes</span>
+      </div>
+      <p>
+        Both major tools now have a mode built for learning rather than answering. Try the same question in
+        each and compare what you get.
+      </p>
+      <ol class="guideSteps">
+        <li>
+          <strong>ChatGPT&rsquo;s Study Mode.</strong> Sign in at
+          <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">ChatGPT<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          open the dropdown in the message box, and select <em>Study and Learn</em>. There is
+          <a href="https://openai.com/index/chatgpt-study-mode/" target="_blank" rel="noopener noreferrer">an explanation of the mode<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          if you want the detail.
+        </li>
+        <li>
+          <strong>Gemini&rsquo;s Guided Learning.</strong> In
+          <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          click the plus symbol or <em>Tools</em>, then <em>Guided Learning</em>. Google has
+          <a href="https://blog.google/products/gemini/guided-learning-google-gemini/" target="_blank" rel="noopener noreferrer">written it up here<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+        </li>
+        <li>Paste one of the prompts below into both, and read the two answers side by side.</li>
+      </ol>
+
+      <div class="promptBlock">
+        <div class="promptHead"><p class="eyebrow">Prompts to try</p></div>
+        <pre>Explain the concept of 'AI hallucinations' like I'm a 5th grader. Provide a real-world example of how this could be a problem in a legal context.
+
+Create a simple timeline of the 5 most important milestones in the history of artificial intelligence, starting from the 1950s.
+
+What are the key ethical considerations when using generative AI to create art or music? Present the arguments from two different perspectives.
+
+Describe three ways generative AI is currently being used in the legal profession. For each, list one major benefit and one potential risk.
+
+Act as a tutor and teach me the difference between a Large Language Model (LLM) and a neural network. Use an analogy to help me understand.</pre>
+      </div>
+
+      <p style="margin-bottom: 0;">
+        <strong>Then reflect.</strong> Did the two take different approaches? Was one clearer? Which did
+        you prefer, and can you say why? Noticing the difference is the skill.
+      </p>
+    </div>
+
+    <details class="guideDetails">
+      <summary>A habit worth starting now: keep an AI journal</summary>
+      <p>
+        Log your AI interactions from the beginning. A spreadsheet with five columns is enough: date, tool,
+        prompt, a summary of the output, and your notes. It pays off three ways:
+      </p>
+      <ul>
+        <li><strong>Provenance and citation.</strong> You can always say where something came from, which academic integrity and professional practice both eventually require.</li>
+        <li><strong>Skill.</strong> You start to see which prompts and which tools actually work for which tasks, instead of guessing each time.</li>
+        <li><strong>Reflection.</strong> You end up with a record of how these tools are changing your research, writing, and thinking &mdash; which is worth knowing.</li>
+      </ul>
+    </details>
+
+    <h3>Applied AI, in one example</h3>
+    <p>
+      The video below was made entirely with
+      <a href="https://notebooklm.google/" target="_blank" rel="noopener noreferrer">NotebookLM<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+      a Google tool that grounds Gemini in only the sources you give it and turns them into overviews,
+      mind maps, quizzes, and flashcards. It is one of the most useful things you can add to your toolkit,
+      and you will see more examples like this as the course goes on. The rule from the top of the page
+      still applies: nothing sensitive, confidential, or proprietary goes into it.
+    </p>
+    <div class="tutorialVideo">
+      <iframe src="https://drive.google.com/file/d/1KW2i9gGKeK1hv26WgVuRiQVi6b8yu7vy/preview" title="Video overview generated with NotebookLM" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <p class="note">
+      <strong>The library is part of this.</strong> Drop in at the
+      <a href="events.html">Curiosity Corner</a> to ask anything AI in person, read
+      <a href="ai-upload.html">The AI Upload</a> for what changed this week, or email
+      <a href="mailto:library@law.stanford.edu">library@law.stanford.edu</a> for a one-to-one session.
+    </p>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>Generative AI creates new content from patterns learned in enormous datasets</li>
+        <li>Traditional AI classifies what exists; generative AI produces what does not</li>
+        <li>It is not magic, not sentient, and not reliable &mdash; it is sophisticated pattern matching</li>
+        <li>Your role is expert guide, editor, and quality control</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 2 ===================== -->
+  <section class="module" id="m2" aria-labelledby="m2-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">2</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part two</p>
+        <h2 id="m2-h">A brief history of AI</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Say roughly when the field started, and how old the idea is</li>
+        <li>Name the milestones that mattered, and one that mattered most</li>
+        <li>Explain what an &ldquo;AI winter&rdquo; was, and why progress has not been a straight line</li>
+        <li>Describe what the Transformer changed, and what may replace it</li>
+      </ul>
+    </div>
+
+    <p>
+      Artificial beings with minds are an ancient idea; the scientific pursuit of them is about seventy-five
+      years old. The route from there to here runs through enormous ambition, two long stalls, and a handful
+      of breakthroughs that arrived faster than anyone expected.
+    </p>
+    <div class="note">
+      <p>
+        <strong>Why bother with the history?</strong> Because it calibrates you. It shows what these
+        systems were built to do, it makes the current moment legible rather than magical, and it is the
+        cure for assuming the last three years predict the next three. Progress here has never been
+        inevitable or linear &mdash; it has needed sustained funding, a conceptual breakthrough, and
+        hardware that could keep up, all at once.
+      </p>
+    </div>
+
+    <h3>Before computers</h3>
+    <ul>
+      <li>
+        <strong>Greek myth.</strong> Talos, the bronze automaton, and Hephaestus&rsquo;s mechanical
+        servants. Stanford&rsquo;s own Adrienne Mayor wrote the book on this &mdash;
+        <a href="https://classics.stanford.edu/publications/gods-and-robots-myths-machines-and-ancient-dreams-technology" target="_blank" rel="noopener noreferrer"><em>Gods and Robots: Myths, Machines, and Ancient Dreams of Technology</em><span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+      </li>
+      <li>
+        <strong>Literature.</strong> From Mary Shelley&rsquo;s <em>Frankenstein</em> (1818) to Karel
+        &Ccaron;apek&rsquo;s <em>R.U.R.</em> (1920), which gave us the word <em>robot</em>.
+      </li>
+    </ul>
+
+    <h3>The modern timeline</h3>
+    <div class="steps" style="margin: 1.2rem 0;">
+      <div class="step">
+        <h4 style="margin-top: 0;">1950 &middot; The Turing test</h4>
+        <p style="margin-bottom: 0;">
+          Alan Turing publishes &ldquo;Computing Machinery and Intelligence,&rdquo; proposing a test for
+          whether a machine&rsquo;s behavior is distinguishable from a human&rsquo;s, and asking the
+          question the field has never quite escaped: can machines think?
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">1956 &middot; The field gets a name</h4>
+        <p style="margin-bottom: 0;">
+          The Dartmouth Conference, organized by John McCarthy and others, coins the term
+          <em>artificial intelligence</em> and establishes it as an academic discipline.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">1970s&ndash;1980s &middot; The first AI winter</h4>
+        <p style="margin-bottom: 0;">
+          Early optimism collides with slow computers and hard problems. Critical reports land, funding
+          dries up, and the field spends a decade out of favor.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">1997 &middot; Deep Blue beats Kasparov</h4>
+        <p style="margin-bottom: 0;">
+          IBM&rsquo;s Deep Blue defeats the world chess champion &mdash; the first widely felt
+          demonstration that a machine could outplay the best human at something we considered pure
+          thinking.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">2012 &middot; Deep learning arrives</h4>
+        <p style="margin-bottom: 0;">
+          AlexNet wins the ImageNet competition by a wide margin using deep learning, proving that with
+          enough data and enough compute, neural networks work.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">2017 &middot; The Transformer</h4>
+        <p style="margin-bottom: 0;">
+          &ldquo;Attention Is All You Need&rdquo; introduces the Transformer architecture, which becomes
+          the foundation of GPT, BERT, and effectively every generative model you have used.
+          <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Read the paper<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">2022 &middot; It reaches everyone</h4>
+        <p style="margin-bottom: 0;">
+          DALL&middot;E 2 puts image generation in front of the public, and ChatGPT launches in November
+          and reaches a hundred million users in two months &mdash;
+          <a href="https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/" target="_blank" rel="noopener noreferrer">the fastest consumer adoption on record at the time<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+        </p>
+      </div>
+    </div>
+
+    <h3>The one to understand: attention</h3>
+    <p>
+      If you only remember one moment, remember 2017. Before it, models read text in sequence, one word
+      after another, like a person reading aloud &mdash; which made it hard to hold the beginning of a long
+      document in view, and slow to train.
+    </p>
+    <p>
+      The Transformer let a model take in the whole input at once and, for any given word, weigh how much
+      every other word matters to it. That is the attention mechanism, and it bought two things: a much
+      better grip on context regardless of distance, and training that was far more efficient. The
+      efficiency is what made scale possible &mdash; billions and then trillions of parameters &mdash; and
+      scale is what produced the models we now argue about.
+    </p>
+
+    <h3>What comes after the Transformer</h3>
+    <p>
+      The Transformer is not the end of the story, and its main weakness is cost: attention gets
+      quadratically more expensive as text gets longer, so analyzing a book or a large case file is slow
+      and expensive by construction. Two directions are worth knowing the names of.
+    </p>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <h4 style="margin-top: 0;">State space models &mdash; the efficient reader</h4>
+        <p class="muted">
+          Imagine a speed-reader who scans each line and keeps a running summary in their head, updating it
+          as they go, instead of re-reading the page to understand one sentence. SSMs process sequentially
+          and stay fast over very long inputs.
+          <a href="https://arxiv.org/abs/2312.00752" target="_blank" rel="noopener noreferrer">Mamba<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          is the example to look up.
+        </p>
+      </article>
+      <article class="card">
+        <h4 style="margin-top: 0;">Hybrids &mdash; both engines</h4>
+        <p class="muted">
+          Like a hybrid car using the electric motor around town and the engine on the highway, these
+          combine attention&rsquo;s contextual power with the efficiency of older recurrent designs.
+          <a href="https://arxiv.org/abs/2307.08621" target="_blank" rel="noopener noreferrer">RetNet<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          from Microsoft is one line of that research.
+        </p>
+      </article>
+    </div>
+    <p class="muted">
+      The takeaway is not which one wins. It is that the field is in a permanent race for cheaper and
+      faster, and the next jump in what AI can do may come from architecture rather than from size.
+    </p>
+
+    <h3>See it for yourself</h3>
+    <ul>
+      <li>
+        <a href="https://ourworldindata.org/artificial-intelligence" target="_blank" rel="noopener noreferrer">Our World in Data: Artificial Intelligence<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        &mdash; a comprehensive, chart-driven overview of the field&rsquo;s progress.
+      </li>
+      <li>
+        <a href="https://ourworldindata.org/technology-long-run" target="_blank" rel="noopener noreferrer">Technology over the long run<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        &mdash; the same source&rsquo;s timeline, which puts AI in the context of every other technology.
+      </li>
+      <li>
+        <a href="https://academic.oup.com/nsr/article/12/5/nwaf050/8029900" target="_blank" rel="noopener noreferrer">A scholarly history in <em>National Science Review</em><span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        &mdash; if you want the academic treatment.
+      </li>
+      <li>
+        <a href="https://epoch.ai/data" target="_blank" rel="noopener noreferrer">Epoch AI data<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        &mdash; interactive datasets on models, companies, and compute. The exercise below uses these.
+      </li>
+    </ul>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: be the historian</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>45 minutes</span>
+      </div>
+      <p>
+        This one teaches two things at once: what the raw data of AI progress actually looks like, and how
+        to get a research tool to work from sources you chose rather than the whole internet.
+      </p>
+      <ol class="guideSteps">
+        <li><strong>Pick a dataset.</strong> Go to <a href="https://epoch.ai/data" target="_blank" rel="noopener noreferrer">Epoch AI&rsquo;s data page<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>, choose something that interests you, and download it.</li>
+        <li><strong>Prepare the files.</strong> Unzip it, open each <code>.csv</code> in a spreadsheet program, and export each as a PDF. This step is the unglamorous heart of data work.</li>
+        <li><strong>Load it.</strong> In <a href="https://notebooklm.google/" target="_blank" rel="noopener noreferrer">NotebookLM<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>, create a notebook and upload your PDFs as the sources.</li>
+        <li><strong>Interrogate it.</strong> Ask questions of the data, then use the studio tools to generate an audio overview, a video overview, and a mind map.</li>
+        <li><strong>Record what happened.</strong> In your AI journal: what it got right, what it flattened, and what you would do differently.</li>
+      </ol>
+      <p>The video below is that exercise done with Epoch&rsquo;s AI Companies data, start to finish.</p>
+      <div class="tutorialVideo">
+        <iframe src="https://drive.google.com/file/d/1x5MvlOj1QHrmPFSTBxg-Zr7T3XnxObeZ/preview" title="Video overview generated from Epoch AI company data" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p style="margin-bottom: 0;">
+        <strong>And cite it.</strong> Epoch&rsquo;s data is free to use and redistribute under a
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution license<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        provided you credit the source and authors &mdash; which is the last step of any research, not an
+        optional courtesy.
+      </p>
+    </div>
+
+    <details class="guideDetails">
+      <summary>Sources for this part</summary>
+      <ul class="sourceNotes">
+        <li>Turing, A. M. (1950). &ldquo;Computing Machinery and Intelligence.&rdquo; <em>Mind</em>, 59(236), 433&ndash;460.</li>
+        <li>McCarthy, J., Minsky, M. L., Rochester, N., &amp; Shannon, C. E. (1955). &ldquo;A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence.&rdquo;</li>
+        <li>Lighthill, J. (1973). &ldquo;Artificial Intelligence: A General Survey.&rdquo; Science Research Council.</li>
+        <li>Campbell, M., Hoane, A. J., &amp; Hsu, F. H. (2002). &ldquo;Deep Blue.&rdquo; <em>Artificial Intelligence</em>, 134(1&ndash;2), 57&ndash;83.</li>
+        <li>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). &ldquo;ImageNet classification with deep convolutional neural networks.&rdquo; <em>NeurIPS</em> 25.</li>
+        <li>Vaswani, A., et al. (2017). &ldquo;Attention is all you need.&rdquo; <em>NeurIPS</em> 30.</li>
+        <li>Ramesh, A., et al. (2022). &ldquo;Hierarchical text-conditional image generation with CLIP latents.&rdquo; arXiv.</li>
+        <li>Shelley, M. (1818). <em>Frankenstein</em>; &Ccaron;apek, K. (1920). <em>R.U.R.</em></li>
+      </ul>
+    </details>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>The idea is ancient; the field began in the 1950s</li>
+        <li>Progress has come in bursts separated by AI winters</li>
+        <li>The 2017 Transformer paper is the hinge everything modern turns on</li>
+        <li>More efficient architectures are already being built to succeed it</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 3 ===================== -->
+  <section class="module" id="m3" aria-labelledby="m3-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">3</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part three</p>
+        <h2 id="m3-h">How it works</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Say what a large language model is, and what the &ldquo;large&rdquo; refers to</li>
+        <li>Explain next-token prediction to somebody else</li>
+        <li>Describe the two phases of training, and what each one produces</li>
+        <li>Define tokens and context windows, and notice when you have run out of the latter</li>
+        <li>Say why the same design that makes it fluent makes it hallucinate</li>
+      </ul>
+    </div>
+
+    <h3>The engine: large language models</h3>
+    <p>
+      A large language model is something like an enormously detailed map of human language, built by
+      observing an immense amount of writing. Ask it a question and it behaves like a navigator across that
+      map, predicting the most probable path of words that answers you. It is a map, not a traveler: it has
+      never been anywhere. (The
+      <a href="ai-explained.html#a1">longer version of that analogy</a> is on the analogies page.)
+    </p>
+    <p><strong>&ldquo;Large&rdquo; means three things at once:</strong></p>
+    <ul>
+      <li><strong>Training data</strong> &mdash; billions of pages of text from books, sites, and articles.</li>
+      <li><strong>Parameters</strong> &mdash; the internal settings adjusted during training. Modern models have hundreds of billions of them, and some have trillions.</li>
+      <li><strong>Compute</strong> &mdash; training runs cost millions of dollars in hardware and electricity.</li>
+    </ul>
+
+    <h3>One label, many engines</h3>
+    <p>
+      &ldquo;LLM&rdquo; is a category, not a product. Companies build and tune models for different goals,
+      the way carmakers build engines for speed, towing, or economy. As of late 2025 the families you will
+      meet are the GPT models from OpenAI, Claude from Anthropic, Gemini from Google, Llama from Meta, and
+      Mistral&rsquo;s models &mdash; and the specific version numbers will have moved by the time you read
+      this.
+    </p>
+    <p>What they are known for differs, and it is worth choosing deliberately:</p>
+    <ul>
+      <li><strong>ChatGPT</strong> &mdash; strong general assistant with good conversational memory; the default for everyday work.</li>
+      <li><strong>Claude</strong> &mdash; professional writing and code, long documents, and reasoning that has to hold together over length.</li>
+      <li><strong>Gemini</strong> &mdash; multimodal work across video, images, and audio, often at the lowest cost.</li>
+      <li><strong>Mistral</strong> &mdash; direct, concise answers, with a reputation for accuracy in code and logic.</li>
+    </ul>
+    <p class="muted">
+      A model that is excellent at creative writing is not therefore good at reading a contract. The
+      analogy for this &mdash; a chef who has never tasted food but has documented every dinner party ever
+      held &mdash; is <a href="ai-explained.html#a4">on the analogies page</a>.
+    </p>
+
+    <h3>How they learn</h3>
+    <div class="steps" style="margin: 1.2rem 0;">
+      <div class="step">
+        <h4 style="margin-top: 0;">Phase one: pre-training</h4>
+        <p>
+          The model reads an enormous amount of text and learns to predict the next word, or token, in a
+          sequence. Given &ldquo;The sky is,&rdquo; it learns that &ldquo;blue&rdquo; is highly probable.
+          Repeat across billions of examples and it has absorbed grammar, facts, styles of reasoning
+          &mdash; and whatever biases were in the material.
+        </p>
+        <p style="margin-bottom: 0;" class="muted">Source: Devlin, J., et al. (2019). &ldquo;BERT.&rdquo; <em>NAACL-HLT</em>.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">Phase two: fine-tuning</h4>
+        <p>Then it is shaped for behavior rather than knowledge:</p>
+        <ul>
+          <li><strong>Supervised fine-tuning</strong> &mdash; training on high-quality examples of what a good answer looks like.</li>
+          <li><strong>Reinforcement learning from human feedback</strong> &mdash; human raters score outputs, teaching the model which responses people prefer.</li>
+          <li><strong>Instruction tuning</strong> &mdash; teaching it to follow instructions and hold a conversation at all.</li>
+        </ul>
+        <p style="margin-bottom: 0;" class="muted">Source: Ouyang, L., et al. (2022). &ldquo;Training language models to follow instructions with human feedback.&rdquo; <em>NeurIPS</em>.</p>
+      </div>
+    </div>
+
+    <h3>The core mechanic: predicting the next token</h3>
+    <p>
+      The whole of generation is this, repeated: given everything so far, what is the most likely next
+      token? Take the input &ldquo;The capital of France is.&rdquo; The model has seen that phrase in
+      countless documents, computes that &ldquo;Paris&rdquo; is overwhelmingly the most probable
+      continuation, emits it, and then asks the same question again with &ldquo;Paris&rdquo; now part of
+      the input. It does not know that Paris is the capital. It calculates that the token is likely.
+    </p>
+    <blockquote class="pullQuote">
+      It is the world&rsquo;s most sophisticated autocomplete &mdash; and that is not a dismissal, it is
+      the mechanism.
+    </blockquote>
+    <p>
+      One wrinkle: models do not always take the most probable token, because that produces flat,
+      predictable text. A setting called <strong>temperature</strong> controls how much randomness is
+      allowed. Low temperature is more predictable and more factual; high temperature is more varied and
+      more creative, and drifts further from the safest answer.
+    </p>
+    <p class="muted">Source: Holtzman, A., et al. (2020). &ldquo;The curious case of neural text degeneration.&rdquo; <em>ICLR</em>.</p>
+
+    <h3>Tokens</h3>
+    <p>
+      A token is a chunk of text: a word, part of a word, or a punctuation mark. Models break everything
+      you write into tokens before processing it, which is why they are also the unit of pricing and of
+      limits.
+    </p>
+    <ul>
+      <li>&ldquo;Hello world&rdquo; is 2 tokens &mdash; <code>["Hello", " world"]</code></li>
+      <li>&ldquo;ChatGPT&rdquo; is 2 &mdash; <code>["Chat", "GPT"]</code></li>
+      <li>&ldquo;understanding&rdquo; is 1</li>
+      <li>&ldquo;pre-training&rdquo; is 3 &mdash; <code>["pre", "-", "training"]</code></li>
+    </ul>
+    <p>
+      The video below shows tokenization visually, and
+      <a href="ai-explained.html#a5">the song analogy</a> covers the idea in prose.
+    </p>
+    <div class="tutorialVideo">
+      <iframe src="https://drive.google.com/file/d/14eFBbqqQV6oTDjrcU_EF5Y-JeQLLuAlN/preview" title="Video explainer: what tokenization is" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <h3>Context windows, and the limit you cannot see</h3>
+    <p>
+      Every model has a context window: the maximum number of tokens it can hold at once, counting your
+      prompt, everything you have attached, and its own replies. The window is where the conversation
+      lives, and when material falls out of it, it is gone.
+      <a href="ai-explained.html#a6">The moving train window</a> is the analogy for this.
+    </p>
+    <p>Windows have grown fast:</p>
+    <ul>
+      <li>Models from 2023 often handled 4,000&ndash;8,000 tokens.</li>
+      <li>By 2025, flagship models handle hundreds of thousands.</li>
+      <li>Some models advertise windows of a million tokens or more &mdash; entire books at once.</li>
+    </ul>
+    <div class="caution">
+      <p>
+        <strong>Nothing tells you when you run out.</strong> Chat interfaces do not warn you, and there is
+        no counter. You find out indirectly: the model starts contradicting itself, forgets a detail you
+        established twenty messages ago, or answers as though it has never seen the document. If a long
+        conversation suddenly gets worse, suspect the window before you suspect the model.
+      </p>
+    </div>
+    <div class="note">
+      <p><strong>Two techniques for long work.</strong></p>
+      <ul style="margin-bottom: 0;">
+        <li><strong>Periodic summaries.</strong> Every so often, ask: &ldquo;Summarize the key decisions and important points from our conversation so far.&rdquo; That pulls the essentials back to the front of the window.</li>
+        <li><strong>Chain-summarize into a new chat.</strong> When a conversation is done but the project is not, ask for a comprehensive summary, open a fresh chat, and paste it as the first message. You get a clean window with the history intact.</li>
+      </ul>
+    </div>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: watch text become tokens</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>10 minutes</span>
+      </div>
+      <p>
+        There is no universal standard for tokenization &mdash; each company trains its own. The same
+        sentence might be ten tokens for one model, twelve for another, and nine for a third, which is a
+        concrete example of these engines differing under the hood.
+      </p>
+      <p>Paste the same sentence into each of these and compare. Which model is most efficient with your writing?</p>
+      <ul>
+        <li><a href="https://token-counter.app" target="_blank" rel="noopener noreferrer">Token-Counter.app<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; privacy-focused, counts for several models.</li>
+        <li><a href="https://gptforwork.com/tools/tokenizer" target="_blank" rel="noopener noreferrer">GPT for Work tokenizer<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; a simple interface that shows the split.</li>
+      </ul>
+      <p style="margin-bottom: 0;" class="muted">
+        Try a sentence with unusual words, a citation, and a long compound term. The differences are most
+        visible where language is least ordinary.
+      </p>
+    </div>
+
+    <h3>Under the hood, briefly</h3>
+    <p>
+      Models are built on <strong>neural networks</strong>: layers of artificial neurons, each receiving
+      numbers, transforming them, and passing them on. Training adjusts the connections until the network
+      recognizes patterns. If it helps, picture a spreadsheet with billions of cells, each holding a number
+      that influences how text flows through the system.
+    </p>
+    <p>
+      Modern LLMs specifically use the <strong>Transformer</strong>, whose attention mechanism lets the
+      model weigh how much every word matters to every other word. In &ldquo;The animal didn&rsquo;t cross
+      the street because it was too tired,&rdquo; attention is what lets the model tie
+      &ldquo;it&rdquo; to the animal rather than the street.
+    </p>
+
+    <h3>Does it think?</h3>
+    <div class="answerFirst">
+      <p>
+        No. There are no beliefs, no consciousness, no understanding. Even when a model appears to reason
+        &mdash; and newer ones will show you a chain of steps &mdash; it is producing a sequence of tokens
+        that resembles reasoning it has seen. Pattern matching at extraordinary scale is not a mind.
+      </p>
+    </div>
+    <p>
+      When it writes &ldquo;I understand&rdquo; or &ldquo;I think,&rdquo; those are tokens it learned
+      belong in conversation. Nothing is being understood or thought. The analogy for this &mdash; someone
+      who has studied a million photographs of a city and never walked its streets &mdash; is
+      <a href="ai-explained.html#a3">on the analogies page</a>.
+    </p>
+    <p><strong>What follows from that, practically:</strong></p>
+    <ul>
+      <li>It cannot know whether something is true. It knows what appears often.</li>
+      <li>It cannot reason from first principles about the world. It imitates the shape of reasoning.</li>
+      <li>It has no common sense beyond what was written down.</li>
+      <li>It has no feelings, however well it writes about them.</li>
+      <li>It wants nothing, beyond completing your prompt.</li>
+    </ul>
+    <p class="muted">Source: Bender, E. M., &amp; Koller, A. (2020). &ldquo;Climbing towards NLU.&rdquo; <em>ACL</em>.</p>
+
+    <h3>Why it makes things up</h3>
+    <p>
+      A <strong>hallucination</strong> is not a malfunction. Asked for a fact it does not have, the model
+      still does the only thing it does: produce the most probable continuation. What comes out has the
+      shape of a fact, or a citation, without the substance of one.
+      <a href="ai-explained.html#a8">The remembered birthday party</a> is the analogy.
+    </p>
+    <p>
+      Rates vary enormously by task and model. Top models hallucinate rarely on constrained work like
+      summarizing a document you supplied; loosely grounded questions are far worse, and studies through
+      2024 found chatbots getting scientific references wrong in a large share of cases. One
+      widely-reported example had a model recommending glue in pizza sauce, a &ldquo;fact&rdquo; it had
+      absorbed from a sarcastic forum post. The harder problem is that newer models are more likely to
+      produce a confident, detailed wrong answer than to say they do not know.
+    </p>
+    <p>
+      Researchers do not expect hallucination to be eliminated, because it is a consequence of the
+      architecture rather than a defect in it. The goal is to make it rarer and easier to catch &mdash;
+      which is your job as much as theirs.
+    </p>
+    <p><strong>The other three limits worth naming:</strong></p>
+    <ul>
+      <li><strong>Knowledge cutoff.</strong> A model knows nothing after its training data ends, unless it can search the web.</li>
+      <li><strong>Training bias.</strong> Perspectives and topics that were thin in the training data stay thin in the output, and errors in the data propagate straight through.</li>
+      <li><strong>Math and logic.</strong> It is not computing, it is pattern-matching the appearance of computation, so it makes surprising arithmetic and multi-step reasoning errors.</li>
+    </ul>
+    <div class="note">
+      <p>
+        <strong>What to do about it.</strong> Verify anything that matters, and especially every citation,
+        legal reference, and number. Use AI as the strong start of a piece of work rather than the end of
+        it. And when you are unsure, ask the same question again in a fresh conversation &mdash;
+        inconsistent answers are a reliable tell.
+      </p>
+    </div>
+    <p class="muted">Source: Jones, N. (2025). &ldquo;AI hallucinations can&rsquo;t be stopped &mdash; but these techniques can limit their damage.&rdquo; <em>Nature</em>, 637(8047), 778&ndash;780.</p>
+
+    <details class="guideDetails">
+      <summary>Free training straight from the model builders</summary>
+      <p>
+        The companies that build these tools publish good free material, and it is worth reading them on
+        their own products.
+        <a href="https://academy.openai.com/" target="_blank" rel="noopener noreferrer">OpenAI Academy<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        is the most developed. Two sessions there follow directly from this part &mdash; the recordings
+        move around their catalog, so the guides are linked here and the videos are findable by title:
+      </p>
+      <ul>
+        <li>
+          <strong>ChatGPT 101: a guide to your AI superassistant</strong> &mdash; the interface and the
+          basics of prompting.
+          <a href="https://academy.openai.com/public/clubs/work-users-ynjqu/resources/chatgpt-101-webinar-resource-guide" target="_blank" rel="noopener noreferrer">Resource guide<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        </li>
+        <li>
+          <strong>ChatGPT 102: leveraging AI to do your best work</strong> &mdash; using it as a
+          collaborator on real work.
+          <a href="https://academy.openai.com/public/clubs/work-users-ynjqu/resources/chatgpt-102-webinar-resource-guide" target="_blank" rel="noopener noreferrer">Resource guide<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        </li>
+      </ul>
+    </details>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>An LLM is a pattern engine trained on a vast amount of text</li>
+        <li>Training has two phases: pre-training for patterns, fine-tuning for behavior</li>
+        <li>Generation is next-token prediction, one token at a time</li>
+        <li>The Transformer&rsquo;s attention mechanism is what made this possible</li>
+        <li>It does not understand anything, and hallucination follows from the design</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 4 ===================== -->
+  <section class="module" id="m4" aria-labelledby="m4-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">4</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part four</p>
+        <h2 id="m4-h">What it can create</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Name the main categories of output and a real use for each</li>
+        <li>Say what AI does well and what still needs your expertise</li>
+        <li>Explain why factual research is the hardest of these, and what grounding fixes</li>
+        <li>Set expectations that survive contact with an actual task</li>
+      </ul>
+    </div>
+
+    <div class="answerFirst">
+      <p>
+        AI is good at well-defined, pattern-shaped tasks with plenty of examples behind them. It is bad at
+        anything needing real-world understanding, long chains of reasoning, or expertise its training did
+        not contain. Almost every disappointment traces back to that line.
+      </p>
+    </div>
+
+    <h3>Text</h3>
+    <p>
+      The most mature use, and the one to start with. A professional drafting a client email about
+      something complicated gets structure and clear language from the AI, then supplies the specifics,
+      the relationship, and the accuracy.
+    </p>
+    <p><strong>What it does well:</strong> drafting correspondence, summarizing long documents,
+      marketing and social copy, lesson plans and teaching material, creative writing, translation,
+      reformatting between structures, and brainstorming outlines.</p>
+
+    <h4>The ethics of AI-assisted writing</h4>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Students: permission first</h4>
+        <p class="muted" style="margin-bottom: 0;">Ask your instructor before using AI on any coursework. Even with permission, the accuracy of what you submit is yours.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Authors and creators</h4>
+        <p class="muted" style="margin-bottom: 0;">Be transparent about where AI helped. Many publications now require disclosure, and the norm is moving that way fast.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Legal professionals</h4>
+        <p class="muted" style="margin-bottom: 0;">Never enter confidential client data. Verify every AI-generated authority &mdash; it invents cases. The work product is your responsibility.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Business professionals</h4>
+        <p class="muted" style="margin-bottom: 0;">Good for outlines and polishing email. Not a place for sensitive business or customer data, and not a substitute for strategy.</p>
+      </article>
+    </div>
+
+    <h4>Citing AI: Bluebook Rule 18.3</h4>
+    <p>
+      The Bluebook&rsquo;s 22nd edition (2024) added Rule 18.3 for citing generative AI. It specifies what
+      a citation to AI output must contain, but leaves genuine ambiguity about <em>when</em> you cite
+      &mdash; whether the AI is a source of authority or merely a tool you used. Until that settles, save
+      your outputs so you can produce them.
+    </p>
+    <div class="promptBlock">
+      <div class="promptHead"><p class="eyebrow">The shape of the citation</p></div>
+      <pre>OpenAI, ChatGPT-4, "Exact prompt text" (Date) (conversational artifact on file with author).</pre>
+    </div>
+    <p><strong>Worth reading on this:</strong></p>
+    <ul>
+      <li><a href="https://tarlton.law.utexas.edu/bluebook-legal-citation/how-to-cite/digital-materials" target="_blank" rel="noopener noreferrer">Tarlton Law Library on citing digital materials<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+      <li><a href="https://www.lawnext.com/2025/09/new-bluebook-rule-on-citing-to-ai-generates-criticism-from-legal-scholars-and-" target="_blank" rel="noopener noreferrer">LawNext on the criticism from legal scholars<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+      <li><a href="https://juralnetworks.substack.com/p/citing-ai-in-the-new-bluebook" target="_blank" rel="noopener noreferrer">Jural Networks: citing AI in the new Bluebook<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+    </ul>
+
+    <h4>A word about AI detectors</h4>
+    <div class="caution">
+      <p>
+        <strong>AI detection tools do not work reliably, and the research is consistent about it.</strong>
+        They produce false positives &mdash; flagging human writing as machine-written &mdash; and simple
+        paraphrasing defeats them. Stanford provides
+        <a href="https://library.stanford.edu/ithenticate" target="_blank" rel="noopener noreferrer">iThenticate<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        for plagiarism review, which is a different problem from detecting AI authorship. Treat a detector
+        score as evidence of nothing on its own.
+      </p>
+    </div>
+    <ul class="sourceNotes">
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/38909113/" target="_blank" rel="noopener noreferrer">Performance of AI content detectors in scientific writing (2024)<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; wide variation in accuracy, and a real risk of labeling human work as AI.</li>
+      <li><a href="https://research.umd.edu/articles/ai-generated-content-actually-detectable" target="_blank" rel="noopener noreferrer">Is AI-generated content actually detectable? (2023)<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; argues current detectors are not usable in practice.</li>
+      <li><a href="https://mitsloanedtech.mit.edu/ai/teach/ai-detectors-dont-work/" target="_blank" rel="noopener noreferrer">MIT Sloan: AI detectors don&rsquo;t work, here&rsquo;s what to do instead (2025)<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; alternatives for teaching.</li>
+    </ul>
+
+    <h3>Images and video</h3>
+    <p>
+      From a text description you can generate original images, edit photographs, and produce video; AI
+      also helps across the production workflow rather than only at the point of generation.
+    </p>
+    <p><strong>What it does well:</strong> concept art and illustration, marketing and social visuals,
+      variations on an existing image, background removal and extension, scripts and storyboards, short
+      generated clips, and simple animation.</p>
+    <p class="muted">
+      Sources: Ramesh, A., et al. (2022), &ldquo;Hierarchical text-conditional image generation with CLIP
+      latents&rdquo;; Brooks, T., et al. (2024), &ldquo;Video generation models as world simulators.&rdquo;
+    </p>
+
+    <h3>Code</h3>
+    <p>
+      This has become the most transformative application, and not only for developers. A teacher who has
+      never written a line of code can say: &ldquo;I want a quiz app with multiple-choice questions, a
+      score at the end, and confetti when someone gets everything right&rdquo; &mdash; and after a few
+      rounds of conversation, have something their class can use.
+    </p>
+    <p><strong>What it does well:</strong> boilerplate, explaining code you inherited, finding bugs,
+      translating between languages, regular expressions, unit tests, documentation, and optimization
+      suggestions.</p>
+    <div class="note">
+      <p>
+        <strong>Jargon buster: &ldquo;vibe coding.&rdquo;</strong> Describing what you want in plain
+        language and letting the AI handle the syntax. You are the architect; it is the construction crew.
+        It is genuinely how a lot of software now gets started &mdash; GitHub has reported that Copilot
+        writes a large share of the code in files where it is enabled &mdash; and it is also how you end up
+        with something you cannot debug. Both are true.
+      </p>
+    </div>
+    <p><strong>Tools people actually use:</strong></p>
+    <ul>
+      <li><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; suggestions inline in your editor.</li>
+      <li><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener noreferrer">Gemini CLI<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; an open-source agent that works in the terminal.</li>
+      <li><a href="https://www.cursor.so/" target="_blank" rel="noopener noreferrer">Cursor<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; an editor built around AI rather than with AI added.</li>
+      <li>ChatGPT and Claude &mdash; for generating snippets, debugging, and having something explained.</li>
+    </ul>
+    <p><strong>If you want to learn the underlying craft:</strong>
+      <a href="https://cs50.harvard.edu" target="_blank" rel="noopener noreferrer">Harvard&rsquo;s CS50<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      is the classic introduction and now integrates AI tools, and
+      <a href="https://www.freecodecamp.org" target="_blank" rel="noopener noreferrer">freeCodeCamp<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      is a complete free curriculum with a community attached. The hub&rsquo;s own
+      <a href="api-course.html">Understanding APIs</a> course and
+      <a href="github-portfolio.html">GitHub portfolio guide</a> are the next step from here.</p>
+
+    <h3>Facts and research &mdash; the hard one</h3>
+    <p>
+      AI produces text that looks like facts. That is not the same as producing facts, and this is where
+      it fails most expensively. Four distinct problems stack up:
+    </p>
+    <ul>
+      <li><strong>Knowledge cutoff.</strong> It does not know what happened after its training data ended.</li>
+      <li><strong>Unreliable sources.</strong> A web-enabled model will happily read a bad website.</li>
+      <li><strong>Source melding.</strong> It blends several sources into a claim that appears in none of them.</li>
+      <li><strong>Hallucination.</strong> It invents plausible facts and citations outright.</li>
+    </ul>
+    <p>
+      The safer pattern is to bring your own vetted facts and let AI do the shaping. If you must research
+      with it, use tools built for the job &mdash; a dedicated deep-research mode, or an answer engine like
+      <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      &mdash; and verify every claim and citation anyway.
+    </p>
+    <div class="note">
+      <p>
+        <strong>Grounded AI, or RAG.</strong> Retrieval-augmented generation is the technique that makes AI
+        usable in high-stakes fields: instead of answering from everything it absorbed, the model is
+        restricted to a specific trusted set of documents, and cites from those.
+        <a href="ai-explained.html#a9">Think of it as locking the AI in a library</a> containing only the
+        books you selected. This is what sits behind the AI assistants in
+        <a href="https://law.stanford.edu/robert-crown-law-library/legal-databases/" target="_blank" rel="noopener noreferrer">Westlaw, Lexis, and Bloomberg Law<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+        and it is the reason those answers can be checked when a general chatbot&rsquo;s cannot.
+      </p>
+    </div>
+
+    <h3>Data and spreadsheets</h3>
+    <p>
+      AI is a capable data assistant and a poor data analyst. It will clean and format messy data,
+      categorize text entries, pull information out of unstructured sources, summarize a dataset, suggest
+      a chart type, and write the formula or script you cannot remember. Interpreting what any of it means
+      is still yours.
+    </p>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: a creative break</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>15 minutes</span>
+      </div>
+      <p>Two tools, no experience needed, and a reminder that this technology is also fun.</p>
+      <p>
+        <strong>Make a song.</strong> At
+        <a href="https://suno.com" target="_blank" rel="noopener noreferrer">Suno<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+        try: a blues song about a lawyer who lost a brief; a synth-pop anthem for finals; a folk song about
+        the founding of Stanford.
+      </p>
+      <p>
+        <strong>Make a story.</strong> In
+        <a href="https://gemini.google/overview/storybook/" target="_blank" rel="noopener noreferrer">Gemini&rsquo;s Storybook<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+        try: a law book that comes to life at night; an adventure whose hero is a gavel; a mystery set in
+        the tunnels under campus.
+      </p>
+      <p style="margin-bottom: 0;">
+        Share what you make in
+        <a href="https://stanford.enterprise.slack.com/" target="_blank" rel="noopener noreferrer">#techchat<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        &mdash; then come back, there are six parts left.
+      </p>
+    </div>
+
+    <h3>Fantasy versus reality</h3>
+    <p>
+      Most frustration comes from asking for one enormous thing instead of several specific ones. Two
+      examples of the pattern:
+    </p>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <p class="eyebrow">Formatting</p>
+        <h4 style="margin-top: 0;">&ldquo;Format this 300-page report perfectly&rdquo;</h4>
+        <p class="muted"><strong>What happens:</strong> it loses the thread, times out, and starts creatively rewriting your section titles.</p>
+        <p class="muted" style="margin-bottom: 0;"><strong>What works:</strong> ten to fifteen pages at a time, with explicit formatting rules, processed in chunks you check.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Analysis</p>
+        <h4 style="margin-top: 0;">&ldquo;Analyze this spreadsheet and give me insights&rdquo;</h4>
+        <p class="muted"><strong>What happens:</strong> attractive charts that may mean nothing, and confident conclusions that miss the context of your data.</p>
+        <p class="muted" style="margin-bottom: 0;"><strong>What works:</strong> have it clean the data, suggest chart types, and surface basic patterns &mdash; then interpret them yourself.</p>
+      </article>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>One engine, many outputs: text, code, images, audio, and data work</li>
+        <li>It is strongest on first drafts, repetitive work, pattern-finding, and simplification</li>
+        <li>Strategy, fact-checking, nuance, and judgment stay with you</li>
+        <li>Small specific tasks beat large vague ones, every time</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 5 ===================== -->
+  <!-- The PAUSE Rule has its own page on this site, so this part frames the
+       mindset and summarizes the five steps rather than restating the guide. -->
+  <section class="module" id="m5" aria-labelledby="m5-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">5</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part five</p>
+        <h2 id="m5-h">Responsible AI use</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Hold a realistic view of AI as a tool rather than a replacement</li>
+        <li>Explain what an &ldquo;AI stack&rdquo; is and why one tool is not a strategy</li>
+        <li>Walk through the five steps of the PAUSE framework</li>
+        <li>Apply the two tests &mdash; the front page, and the public billboard</li>
+      </ul>
+    </div>
+
+    <h3>The new power tool in the workshop</h3>
+    <p>
+      Imagine a skilled carpenter whose workshop acquires a fast, versatile new power tool. It cuts, sands,
+      and shapes at astonishing speed. It does not replace the carpenter&rsquo;s judgment about which wood
+      to use, their knowledge of joinery, or their hands on the final pass. Using it to hammer a nail
+      would be foolish &mdash; there is a hammer for that &mdash; and letting it design the piece would
+      produce something generic.
+    </p>
+    <blockquote class="pullQuote">
+      AI is that power tool. It is here to augment your skills, not to replace your thinking.
+    </blockquote>
+
+    <h3>Build a stack, not a habit</h3>
+    <p>
+      You would not use one tool for every job, and you should not use one AI for every task. The goal is a
+      small, deliberate set chosen for specific strengths &mdash; which also stops you developing tunnel
+      vision about whichever tool you happened to start with. You do not need to subscribe to everything
+      that launches; adopt what genuinely saves you time and meets professional standards, and let other
+      people evaluate the rest.
+    </p>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <p class="eyebrow">A working stack</p>
+        <h4 style="margin-top: 0;">Chosen for what each is good at</h4>
+        <ul style="margin-bottom: 0;">
+          <li>Claude for summarizing long depositions and drafting a first memo</li>
+          <li>Lexis or Westlaw AI for grounded, citable research</li>
+          <li>Perplexity for quick, sourced background questions</li>
+          <li>A specialized contract analysis tool for contract analysis</li>
+        </ul>
+      </article>
+      <article class="card">
+        <p class="eyebrow">A misused stack</p>
+        <h4 style="margin-top: 0;">The same tools, wrongly assigned</h4>
+        <ul style="margin-bottom: 0;">
+          <li>A free general chatbot for all legal research &mdash; hallucinated citations waiting to happen</li>
+          <li>A music generator for client-related content &mdash; unprofessional and beside the point</li>
+          <li>An image generator for courtroom sketches &mdash; inappropriate, and not authentic</li>
+        </ul>
+      </article>
+    </div>
+    <p class="muted">
+      <a href="your-ai-stack.html">Your AI Stack</a> on this site is a searchable directory of the tools
+      to choose from, and it lets you save the few that fit your own work. And the honest answer to
+      &ldquo;should I use AI for this?&rdquo; is often no &mdash; recognizing that is the valuable skill,
+      not the tool list.
+    </p>
+    <details class="guideDetails">
+      <summary>Further reading: deep and narrow beats scattershot</summary>
+      <p>
+        A 2025
+        <a href="https://hbr.org/2025/11/stop-running-so-many-ai-pilots" target="_blank" rel="noopener noreferrer"><em>Harvard Business Review</em> article<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        argues against running many small AI pilots and in favor of pointing real resources at
+        transforming one core part of a workflow. It is the organizational version of the same advice: a
+        purposeful stack beats chasing every new tool.
+      </p>
+    </details>
+
+    <h3>The PAUSE framework, in short</h3>
+    <p>
+      PAUSE is the workflow the library teaches for deciding when and how to use AI. It moves you from
+      passively accepting output to actively directing the work. The five steps:
+    </p>
+    <div class="steps" style="margin: 1.2rem 0;">
+      <div class="step">
+        <h4 style="margin-top: 0;">P &mdash; Precisely define your task</h4>
+        <p style="margin-bottom: 0;">
+          Break the goal into concrete tasks. What has to exist at the end? Who is it for? What are the
+          constraints? <strong>Task first, tool second</strong> &mdash; if you picked the tool before
+          defining the task, you will struggle with the tool.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">A &mdash; Is it a good AI fit?</h4>
+        <p style="margin-bottom: 0;">
+          Drafting, brainstorming, and outlining: good fit. Anything fact-based: poor fit, because it
+          hallucinates. And sometimes the right tool is a calculator, a template, or a colleague.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">U &mdash; Use it ethically and securely</h4>
+        <p style="margin-bottom: 0;">
+          Two tests. The <strong>front page test</strong>: would you be comfortable if your use of AI here
+          were reported on the front page? The <strong>public billboard rule</strong>: never paste anything
+          into a public AI that you would not put on a billboard &mdash; which rules out confidential and
+          personally identifiable information entirely.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">S &mdash; Do you have the skills to assess it?</h4>
+        <p style="margin-bottom: 0;">
+          You must be able to tell whether the output is any good. If you cannot evaluate it, you cannot
+          responsibly use AI for it. Back to the intern: brilliant, fast, overconfident, and in need of an
+          editor who knows the subject.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">E &mdash; Does it genuinely enhance your workflow?</h4>
+        <p style="margin-bottom: 0;">
+          Two checks. <strong>Time:</strong> if verifying and fixing takes longer than doing it yourself,
+          do it yourself. <strong>Growth:</strong> is this building your skill or eroding it? Use AI as a
+          tutor and a sparring partner, not only as a shortcut.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <p class="eyebrow">Just &ldquo;do it&rdquo;</p>
+        <p style="margin-bottom: 0;"><em>&ldquo;Write a Python script that scrapes a website.&rdquo;</em></p>
+      </article>
+      <article class="card">
+        <p class="eyebrow">&ldquo;Teach me how&rdquo;</p>
+        <p style="margin-bottom: 0;"><em>&ldquo;Act as a tutor. Explain the steps to write a Python web scraper using BeautifulSoup. Give me commented code for each step, and tell me what could break.&rdquo;</em></p>
+      </article>
+    </div>
+    <p class="note">
+      <strong>This is the short version.</strong> The full framework &mdash; with worked examples,
+      checklists, and a one-page decision flow &mdash; is
+      <a href="pause-rule.html">the PAUSE Rule</a> on this site. Read it before your next real AI task.
+    </p>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: research with answer engines</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>30 minutes</span>
+      </div>
+      <p>
+        An <strong>answer engine</strong> is a different class of tool from a chatbot: rather than a list of
+        links, it synthesizes an answer from several sources and cites them inline. That makes it checkable,
+        which makes it useful &mdash; and makes checking it the whole exercise.
+      </p>
+      <p>Use both:
+        <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        and
+        <a href="https://search.google/ways-to-search/ai-mode/" target="_blank" rel="noopener noreferrer">Google&rsquo;s AI Mode<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+      </p>
+      <div class="promptBlock">
+        <div class="promptHead"><p class="eyebrow">Pick one question</p></div>
+        <pre>What are the best practical tips for using AI ethically in a professional setting?
+
+How can I identify and mitigate bias when using generative AI tools?
+
+What are the most effective ways to use AI in an environmentally responsible way?</pre>
+      </div>
+      <p style="margin-bottom: 0;">
+        <strong>Then verify everything.</strong> Open every source each tool cites. Does the source actually
+        support the claim made? Is the source itself credible? Note the verified facts in your AI journal
+        &mdash; and note anything the tool asserted that its own citation did not support. That happens
+        more than you would expect, and catching it is the skill this exercise builds.
+      </p>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>PAUSE: precise task, AI fit, use ethically, skills to assess, enhance workflow</li>
+        <li>Define the task before choosing the tool</li>
+        <li>You are the human in the loop, and the decision is yours</li>
+        <li>Treat it as a brilliant but fallible intern that needs an editor</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 6 ===================== -->
+  <section class="module" id="m6" aria-labelledby="m6-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">6</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part six</p>
+        <h2 id="m6-h">Mastering the prompt</h2>
+      </div>
+    </div>
+
+    <p>
+      Imagine hiring an extraordinarily capable assistant: they read thousands of pages in seconds, write
+      in any register you need, and spot patterns instantly. The catch is that they are completely
+      literal. Ask them to &ldquo;help with the case&rdquo; and they will wait for instructions. Give them
+      specific, structured direction and the work comes back transformed.
+    </p>
+    <p>
+      That is the whole of it. The difference between people who get remarkable results from AI and people
+      who find it useless is almost never the model &mdash; it is how they communicate with it. Prompt
+      engineering is not arcane knowledge; it is clear thinking, written down.
+    </p>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Build a prompt with the C.R.A.F.T. formula</li>
+        <li>Explain context engineering, and why it matters more than wording</li>
+        <li>Recognize the five pitfalls in your own prompts</li>
+        <li>Manage what an AI can see, deliberately</li>
+      </ul>
+    </div>
+
+    <h3>From vague to specific</h3>
+    <p>
+      Telling a five-year-old to &ldquo;clean your room&rdquo; is a gamble; they are capable, but the
+      instruction is not. Toys go under the bed. &ldquo;Clothes in the hamper, books on the shelf, toys in
+      the bin&rdquo; produces a clean room. Prompting is the same trade: enormous capability, no ability to
+      infer what you meant.
+      <a href="ai-explained.html#a7">The full analogy</a> is on the analogies page.
+    </p>
+
+    <h3>C.R.A.F.T.</h3>
+    <p>A good prompt is a creative brief. Build it from five elements:</p>
+    <div class="steps" style="margin: 1.2rem 0;">
+      <div class="step">
+        <h4 style="margin-top: 0;">C &mdash; Context</h4>
+        <p style="margin-bottom: 0;">Background it cannot guess. Who is involved, why this matters, what has already happened.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">R &mdash; Role</h4>
+        <p style="margin-bottom: 0;">Who it should be. &ldquo;Act as an experienced appellate clerk.&rdquo; &ldquo;You are a patient tutor.&rdquo;</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">A &mdash; Action</h4>
+        <p style="margin-bottom: 0;">The task, as a verb. Summarize. Draft. Compare. Prioritize. Translate. One of them, not five.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">F &mdash; Format</h4>
+        <p style="margin-bottom: 0;">The shape of the output. A bulleted list. A professional email. A table with three named columns.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">T &mdash; Tone</h4>
+        <p style="margin-bottom: 0;">The register. Formal and academic. Friendly and brief. Firm, but not aggressive.</p>
+      </div>
+    </div>
+
+    <h3>The library&rsquo;s prompting coaches</h3>
+    <p>
+      Two custom GPTs the library built for exactly this, and which the exercise below uses:
+    </p>
+    <ul>
+      <li>
+        <a href="https://chatgpt.com/g/g-6854576cace0819184540a04faa65364-prompt-architect" target="_blank" rel="noopener noreferrer">Prompt Architect<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        &mdash; designs and refines complex prompts with you, by asking you the questions you skipped.
+      </li>
+      <li>
+        <strong>Prompt Crafter</strong> &mdash; built specifically for deep-research prompts. Ask at the
+        <a href="events.html">Curiosity Corner</a> for the current link.
+      </li>
+    </ul>
+
+    <h3>The guardrails: what it cannot do</h3>
+    <p>
+      Most disappointment with AI is a gap between expectation and mechanism. People expect the model to
+      infer intent, read between lines, and know unstated context; when the output is mediocre they blame
+      the technology, though they prompted for a capability it does not have. Six limits, and what each one
+      means for how you write the prompt:
+    </p>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Knowledge cutoff</h4>
+        <p class="muted" style="margin-bottom: 0;">It does not know events, cases, or regulations after its training data ends. <strong>So:</strong> state time ranges explicitly, and verify anything recent yourself.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">No live data</h4>
+        <p class="muted" style="margin-bottom: 0;">Without search, it cannot look anything up, check a database, or read a paywalled source. <strong>So:</strong> do not ask what a court ruled yesterday &mdash; give it yesterday&rsquo;s ruling.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Hallucination</h4>
+        <p class="muted" style="margin-bottom: 0;">It will produce fabricated citations and statutes with total confidence. <strong>So:</strong> request sources, and say &ldquo;only cite cases you can quote directly.&rdquo;</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Context limits</h4>
+        <p class="muted" style="margin-bottom: 0;">It sees a bounded amount of text and forgets the rest. <strong>So:</strong> break documents into sections and start new conversations for new topics.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">No real understanding</h4>
+        <p class="muted" style="margin-bottom: 0;">No common sense, no intuition, no experience of the world. <strong>So:</strong> spell out what would be obvious to a colleague.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Inconsistency</h4>
+        <p class="muted" style="margin-bottom: 0;">The same prompt can give different results on different days; it is not deterministic software. <strong>So:</strong> use structured formats and test a prompt more than once.</p>
+      </article>
+    </div>
+
+    <details class="guideDetails">
+      <summary>How to study the limits yourself, instead of taking anyone&rsquo;s word</summary>
+      <ul>
+        <li><strong>Run controlled experiments.</strong> Ask the same question several ways. Ask about a case you know does not exist. Watch where it succeeds and where it fabricates.</li>
+        <li><strong>Read the documentation.</strong> Companies publish model cards describing capabilities, limits, and known failure modes.</li>
+        <li><strong>Follow the community.</strong> Researchers and practitioners find new limitations constantly, in public.</li>
+        <li><strong>Stress-test your own use case.</strong> Before relying on AI for something that matters, run it on examples where you already know the right answer.</li>
+      </ul>
+      <p style="margin-bottom: 0;">
+        <strong>And keep a failure log.</strong> Every time you get an incorrect or problematic response,
+        note what you asked and what went wrong. The patterns that emerge will shape your prompting more
+        than any guide.
+      </p>
+    </details>
+
+    <h3>Five pitfalls, from real legal prompts</h3>
+    <p>Learning what makes a bad prompt is as useful as learning what makes a good one.</p>
+
+    <details class="guideDetails">
+      <summary>Pitfall 1 &mdash; the vague request: &ldquo;Research employment law for me.&rdquo;</summary>
+      <ul>
+        <li>No jurisdiction. Federal? Which state?</li>
+        <li>No issue. Discrimination? Wrongful termination?</li>
+        <li>No context about the actual problem</li>
+        <li>No output format</li>
+      </ul>
+      <p style="margin-bottom: 0;"><strong>Result:</strong> a generic overview that costs you ten minutes and tells you nothing you can act on.</p>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Pitfall 2 &mdash; assumed omniscience: &ldquo;What was the holding in the Johnson case about the non-compete?&rdquo;</summary>
+      <ul>
+        <li>There are thousands of Johnson cases</li>
+        <li>No citation, no jurisdiction</li>
+        <li>No timeframe</li>
+      </ul>
+      <p style="margin-bottom: 0;"><strong>Result:</strong> a confident, plausible, fabricated answer &mdash; or a real holding from the wrong case, which is worse.</p>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Pitfall 3 &mdash; the kitchen sink: &ldquo;Draft a motion to dismiss, research the case law, prepare a brief, outline oral argument, and write a client memo.&rdquo;</summary>
+      <ul>
+        <li>Five tasks in one prompt dilutes all five</li>
+        <li>Each needs different context and a different format</li>
+        <li>You cannot give useful feedback on any of it</li>
+      </ul>
+      <p style="margin-bottom: 0;"><strong>Result:</strong> shallow work on everything. Break it into six or seven focused prompts.</p>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Pitfall 4 &mdash; implicit expertise: &ldquo;Review this contract and tell me if it&rsquo;s good.&rdquo;</summary>
+      <ul>
+        <li>Good for whom &mdash; the buyer or the seller?</li>
+        <li>No concerns identified: liability, payment terms, term length?</li>
+        <li>No jurisdiction, so no applicable standard</li>
+      </ul>
+      <p style="margin-bottom: 0;">
+        <strong>Better:</strong> &ldquo;Review this employment contract from the employer&rsquo;s
+        perspective in California, focusing on the enforceability of the IP assignment and
+        non-solicitation clauses.&rdquo;
+      </p>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Pitfall 5 &mdash; the unconstrained creative request: &ldquo;Write a demand letter for my client.&rdquo;</summary>
+      <ul>
+        <li>No facts and no claim</li>
+        <li>No tone &mdash; aggressive or conciliatory?</li>
+        <li>No desired outcome &mdash; settlement or litigation?</li>
+      </ul>
+      <p style="margin-bottom: 0;"><strong>Result:</strong> a template full of placeholders that needs rewriting from scratch. It needs facts, strategy, and constraints to produce anything usable.</p>
+    </details>
+
+    <h3>Context engineering</h3>
+    <p>
+      A prompt is your instruction. <strong>Context</strong> is everything the model can see: the prompt,
+      the files you attached, and the conversation so far. Managing that is more consequential than
+      phrasing the prompt perfectly.
+    </p>
+    <p class="muted">
+      Think of packing a carry-on. You cannot bring the closet. You choose the clothes that match the
+      itinerary, roll them tight, and buy toiletries when you land &mdash; the right information,
+      structured clearly, supplied when it is needed.
+    </p>
+    <div class="steps" style="margin: 1.2rem 0;">
+      <div class="step">
+        <h4 style="margin-top: 0;">1. Load only what you need</h4>
+        <p style="margin-bottom: 0;">Do not upload a hundred-page report when the conclusion on page 98 is what matters. Give it the relevant pages.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">2. Put important information first</h4>
+        <p style="margin-bottom: 0;">Models attend most to the beginning and end of a long prompt. State the goal and the critical constraints up front.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">3. Use structured templates</h4>
+        <p style="margin-bottom: 0;">Instead of &ldquo;summarize this,&rdquo; ask it to fill fields: a one-sentence summary, key points, open questions. Consistent input, consistent output.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">4. One goal per conversation</h4>
+        <p style="margin-bottom: 0;">Analyzing a report and drafting an email about it are two chats. Start the second with a short summary from the first.</p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">5. Always request sources</h4>
+        <p style="margin-bottom: 0;">Ask for links, page numbers, or direct quotes for every factual claim, so that verifying is possible at all.</p>
+      </div>
+    </div>
+    <div class="tutorialVideo">
+      <iframe src="https://drive.google.com/file/d/18gS6h7oRRnqP9B1lXhrmVNrk8DAmf25g/preview" title="Video explainer: context engineering" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <details class="guideDetails">
+      <summary>For precision: prompting in JSON</summary>
+      <p>
+        You can structure a prompt as a JSON object instead of prose. Rather than one crowded drawer, you
+        get labeled folders. Models were trained on enormous amounts of code, so they read this structure
+        natively and answer it more consistently.
+      </p>
+      <div class="codeBlock">
+        <div class="codeHead"><span class="codeName">a prompt as an object</span></div>
+        <pre><code>{
+  <span class="tok-key">"research_topic"</span>: "renewable energy trends 2024-2025",
+  <span class="tok-key">"focus_areas"</span>: ["solar", "wind", "battery storage"],
+  <span class="tok-key">"output_structure"</span>: {
+    <span class="tok-key">"key_trends"</span>: "5 bullet points with data",
+    <span class="tok-key">"sources"</span>: "minimum 3 credible sources with URLs"
+  }
+}</code></pre>
+      </div>
+    </details>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: fix a bad prompt</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>20 minutes</span>
+      </div>
+      <ol class="guideSteps">
+        <li>Choose one of the five bad prompts above &mdash; &ldquo;Research employment law for me&rdquo; is a good start.</li>
+        <li>Open <a href="https://chatgpt.com/g/g-6854576cace0819184540a04faa65364-prompt-architect" target="_blank" rel="noopener noreferrer">Prompt Architect<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.</li>
+        <li>Paste it in and ask the coach to help you rebuild it. It will interrogate you for context, role, format, and tone &mdash; which is the part you skipped.</li>
+        <li>Run the before and after versions in the same tool and compare what comes back.</li>
+      </ol>
+      <p style="margin-bottom: 0;" class="muted">
+        Twenty minutes of this teaches more than an hour of reading about prompting, because the difference
+        is visible in the output rather than described.
+      </p>
+    </div>
+
+    <details class="guideDetails">
+      <summary>Prompting guides from the model builders, and two for legal work</summary>
+      <ul>
+        <li><a href="https://academy.openai.com/public/clubs/work-users-ynjqu/resources/prompting" target="_blank" rel="noopener noreferrer">OpenAI Academy on prompting<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; clear instructions, context, and describing the ideal output.</li>
+        <li><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer">Anthropic&rsquo;s prompt engineering docs<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; examples, structure, and giving the model a role.</li>
+        <li><a href="https://grow.google/prompting-essentials/" target="_blank" rel="noopener noreferrer">Google&rsquo;s Prompting Essentials<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; a beginner-friendly five-step method.</li>
+        <li><a href="https://docs.perplexity.ai/guides/prompt-guide" target="_blank" rel="noopener noreferrer">Perplexity&rsquo;s prompt guide<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; controlling tone and search behavior.</li>
+        <li><a href="https://www.ibm.com/think/topics/few-shot-prompting" target="_blank" rel="noopener noreferrer">IBM on few-shot prompting<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; giving the model examples to work from.</li>
+        <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener noreferrer">Anthropic on context engineering<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; the advanced treatment of attention budgets and context rot.</li>
+        <li><a href="https://www.lexisnexis.com/documents/20231025032115_small.pdf" target="_blank" rel="noopener noreferrer">Lexis+ AI prompting guide (PDF)<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> &mdash; the five-P framework for legal queries.</li>
+      </ul>
+    </details>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>Prompting is clear communication, not magic words &mdash; use C.R.A.F.T.</li>
+        <li>What you put in the context window matters more than how you phrase it</li>
+        <li>Know the limits, and prompt for what the tool can actually do</li>
+        <li>Be specific about jurisdiction and constraints, and do one task at a time</li>
+        <li>Give it only what it needs, most important first, and start fresh for a new task</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 7 ===================== -->
+  <section class="module" id="m7" aria-labelledby="m7-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">7</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part seven</p>
+        <h2 id="m7-h">Anatomy of an AI interface</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Name the core components of a modern AI interface</li>
+        <li>Tell chat, canvas, and agent modes apart, and know when to use which</li>
+        <li>Say what web search, deep research, and artifacts are for</li>
+        <li>Explain how custom GPTs and Gems extend a tool</li>
+        <li>Find the two settings that matter most for privacy</li>
+      </ul>
+    </div>
+
+    <h3>Beyond the chat box</h3>
+    <p>
+      The chat box is the front door, but these platforms have become workbenches. Knowing which tool is
+      which is the difference between using AI for questions and using it for work.
+    </p>
+
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <p class="eyebrow">Mode</p>
+        <h4 style="margin-top: 0;">Chat</h4>
+        <p class="muted" style="margin-bottom: 0;">Turn by turn. Best for quick questions, brainstorming, and refining an idea by argument. Like texting a well-read colleague.</p>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Mode</p>
+        <h4 style="margin-top: 0;">Canvas or project</h4>
+        <p class="muted" style="margin-bottom: 0;">A persistent workspace for a document or a codebase, where you edit the output directly and prompt for changes in place. Like a shared document whose co-author is the AI.</p>
+      </article>
+    </div>
+
+    <h4>The features worth knowing by name</h4>
+    <ul>
+      <li><strong>Web search</strong> &mdash; lets the model read the live internet, which is how it gets past its knowledge cutoff. Standard in Perplexity, Gemini, and ChatGPT.</li>
+      <li><strong>Deep research</strong> &mdash; a multi-step process that reads many sources and returns a long report with citations. Slower, and much better.</li>
+      <li><strong>Custom GPTs and Gems</strong> &mdash; a version of the model pre-loaded with your instructions and knowledge for a task you repeat.</li>
+      <li><strong>Agent mode</strong> &mdash; breaks a high-level goal into steps and carries them out across sites and apps. The most powerful and the least predictable.</li>
+      <li><strong>Artifacts</strong> &mdash; Claude&rsquo;s way of putting a document, a design, or code in its own panel beside the conversation, where you can use it.</li>
+      <li><strong>Code interpreters</strong> &mdash; the model writes and runs code in a sandbox to analyze data, make charts, and do actual arithmetic rather than predicting it.</li>
+    </ul>
+
+    <h3>Building your own assistants</h3>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <h4 style="margin-top: 0;">Custom GPTs, in ChatGPT</h4>
+        <p class="muted" style="margin-bottom: 0;">
+          A version of ChatGPT with your instructions and your reference files, and optionally web browsing
+          or data analysis switched on. Good for a task you do the same way every week.
+        </p>
+      </article>
+      <article class="card">
+        <h4 style="margin-top: 0;">Custom Gems, in Gemini</h4>
+        <p class="muted" style="margin-bottom: 0;">
+          The same idea in Google&rsquo;s tool: give a Gem a role and standing instructions
+          &mdash; &ldquo;you are a legal research assistant&rdquo; &mdash; and stop re-explaining yourself.
+        </p>
+      </article>
+    </div>
+    <p class="muted">
+      The library publishes a set of ready-made skill files that do this without any building:
+      <a href="skills.html">the AI Skills</a>, with
+      <a href="install.html">installation instructions for ChatGPT and Claude</a>. If you would rather
+      build one from scratch, <a href="writing-partner-agent.html">the Writing Partner agent guide</a>
+      walks through a real example end to end.
+    </p>
+
+    <h3>Somewhere safe to experiment</h3>
+    <p>
+      Before you take a new capability to real work, try it in a controlled environment. For the Stanford
+      community that is the <a href="ai-playground.html">Stanford AI Playground</a>: university-hosted,
+      free, and with several vendors&rsquo; models behind one interface, so your experiments do not go to a
+      consumer account. The hub has a full guide to it.
+    </p>
+    <p>
+      For advanced users, the vendors&rsquo; own playgrounds offer earlier access and more control, usually
+      with an API key or a payment method attached:
+      <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+      <a href="https://platform.openai.com/playground" target="_blank" rel="noopener noreferrer">the OpenAI Playground<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+      <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">Hugging Face<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+      and
+      <a href="https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio" target="_blank" rel="noopener noreferrer">Microsoft Copilot Studio<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+    </p>
+
+    <h3>Reading the fine print</h3>
+    <p>
+      An AI provider&rsquo;s terms of service and privacy policy are your contract with them. They
+      determine how your data is used, who owns what you produce, and what rights you keep. Skipping them
+      is signing something unread &mdash; and the answers differ meaningfully between providers and between
+      the free and paid tiers of the same provider.
+    </p>
+    <div class="note">
+      <p>
+        <strong>Use AI to read them.</strong> Download the terms and the privacy policy, upload both into
+        <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">NotebookLM<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        as sources, and interrogate them in plain language. Because the answers are grounded in the
+        documents you supplied and cite their sections, this is one of the few research tasks where AI is
+        straightforwardly reliable.
+      </p>
+    </div>
+    <div class="promptBlock">
+      <div class="promptHead"><p class="eyebrow">A prompt for the terms of service</p></div>
+      <pre>Act as a data privacy and compliance analyst. Based only on the provided source documents (the Terms of Service and Privacy Policy), answer the following. For each answer, cite the specific section or paragraph.
+
+1. Data usage for training: is my content used to train the models by default? If so, how do I opt out?
+2. Data retention: how long is my data stored?
+3. Confidentiality and access: who can access my content, and under what circumstances?
+4. Content ownership: who owns the output I create?
+5. User data rights: how do I delete my data and my account?</pre>
+    </div>
+
+    <h3>Platform tour: ChatGPT</h3>
+    <p>
+      The layout generalizes, so learning one interface well makes the others legible.
+    </p>
+    <ul>
+      <li><strong>The sidebar.</strong> New chat, search across past chats, and a library holding your GPTs and your projects.</li>
+      <li><strong>The model selector.</strong> Choose the engine: automatic, a fast model for quick answers, or a thinking model for analysis that deserves the wait.</li>
+      <li><strong>The tools menu.</strong> The plus button, where you attach files, turn on web search, start deep research, or hand a task to agent mode.</li>
+      <li><strong>Canvas.</strong> For long-form work, a split view where you edit the text directly instead of asking for another revision.</li>
+      <li><strong>Custom GPTs.</strong> Your own assistants, built from instructions and knowledge files.</li>
+    </ul>
+    <div class="caution">
+      <p>
+        <strong>The one setting to find today.</strong> In <em>Settings &rarr; Data controls</em>, the
+        option named something like &ldquo;improve the model for everyone&rdquo; governs whether your
+        conversations are used for training. Turning it off is the difference between your work being
+        private and your work being training data. Every provider has an equivalent, in a slightly
+        different place.
+      </p>
+    </div>
+    <div class="tutorialVideo">
+      <iframe src="https://drive.google.com/file/d/1BcWYgnasD4wGjqANi6xOqwJjD021V4s8/preview" title="Video walkthrough: the ChatGPT interface" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <h3>Platform tour: Claude</h3>
+    <ul>
+      <li><strong>Chats and projects.</strong> As in ChatGPT, with projects holding the context for a body of work.</li>
+      <li><strong>Artifacts.</strong> Long outputs &mdash; a document, a design, code &mdash; open in their own editable panel, which keeps the conversation readable.</li>
+      <li><strong>Model choice.</strong> A family balancing speed and depth, so you can pick a fast model for a quick pass and a deeper one for real analysis.</li>
+      <li><strong>Extended thinking.</strong> A mode where the model works longer and shows its reasoning, for problems that deserve it.</li>
+      <li><strong>Connectors.</strong> Links to third-party apps such as Drive and Slack, to bring live material in.</li>
+    </ul>
+    <div class="tutorialVideo">
+      <iframe src="https://drive.google.com/file/d/1fJWgU198e9FnUmnhkuyGAWL2eei_Zzv0/preview" title="Video walkthrough: the Claude interface" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <h3>Platform tour: Gemini</h3>
+    <ul>
+      <li><strong>Workspace integration.</strong> Gemini appears inside Docs, Gmail, and Sheets as a side panel that can read the document or thread you are looking at.</li>
+      <li><strong>Contextual buttons.</strong> Rather than a chat box, you meet it as &ldquo;help me write&rdquo; in Docs and Gmail, or &ldquo;help me organize&rdquo; in Sheets.</li>
+      <li><strong>Model choice.</strong> A fast, efficient model for everyday work and a deeper one for analysis.</li>
+      <li><strong>Gems and connectors.</strong> Custom personas, and permission to read your Gmail, Drive, or Calendar to complete multi-step tasks. Powerful, and the single biggest privacy decision on this page.</li>
+    </ul>
+    <div class="tutorialVideo">
+      <iframe src="https://drive.google.com/file/d/1IaGrwOP5hykvKMIYuTRh2QU8L1Y3JaBD/preview" title="Video walkthrough: the Gemini interface" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="muted">
+      If you would rather have fewer of those features switched on than more,
+      <a href="digital-wellness.html">Digital Wellness</a> collects the guidance for reducing AI features
+      in the tools you already use, including a step-by-step guide to the Google ones.
+    </p>
+
+    <h3>Working with your own sources</h3>
+    <p>
+      The video below is a walkthrough of NotebookLM, which is built for exactly this: upload your
+      material, ask questions of it, and generate summaries grounded in what you provided. The interface
+      is specific but the skills transfer &mdash; uploading sources, asking questions of them, and
+      checking the answer against the source is the same everywhere.
+    </p>
+    <div class="tutorialVideo">
+      <iframe src="https://drive.google.com/file/d/1T4issZSyIdJxKlngzMvWYPJb9CIZAH4H/preview" title="Video walkthrough: working with source materials in NotebookLM" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: an interface field study</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>25 minutes</span>
+      </div>
+      <p>
+        Be a digital anthropologist. Go to
+        <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+        ask it a few real questions, and open every menu. Then answer:
+      </p>
+      <ul>
+        <li>What does the <em>Focus</em> control do &mdash; academic, video, and the rest? How is that like or unlike a custom GPT?</li>
+        <li>How does it present sources compared with the tools you have used? More prominent, or less?</li>
+        <li>What is here that you have not seen elsewhere, and what is it for?</li>
+      </ul>
+      <p style="margin-bottom: 0;" class="muted">
+        The point is transferable: the first thing to do with any new AI tool is find out what it is
+        willing to show you about where its answers came from.
+      </p>
+    </div>
+
+    <details class="guideDetails">
+      <summary>Optional: AI skills bingo &mdash; five in a row</summary>
+      <p>Complete any five in a line. The goal is range, not mastery.</p>
+      <ul>
+        <li>Ask for five facts about ancient Rome, then check two of them</li>
+        <li>Draft a professional email to a colleague</li>
+        <li>Generate an image of a cyberpunk library</li>
+        <li>Have a complex topic explained to a five-year-old</li>
+        <li>Build a three-day itinerary for a city you do not know</li>
+        <li>Write a short poem about coffee</li>
+        <li>Summarize a long news article in three bullets</li>
+        <li>Ask for a fifteen-minute workout plan</li>
+        <li>Run a deep research report on something you know well, and grade it</li>
+        <li>Get a recipe from three ingredients you actually have</li>
+        <li>Translate a sentence into five languages</li>
+        <li>Debug a broken code snippet</li>
+        <li>Create a custom GPT or Gem with a personality</li>
+        <li>Use Canvas or Artifacts to produce a document or a block of code</li>
+        <li>Compare two films, and see whether it has opinions or averages</li>
+        <li>Generate interview questions for a job you might want</li>
+        <li>Write a thank-you note that does not sound like a template</li>
+        <li>Use web search for next week&rsquo;s weather, then check it against a real forecast</li>
+        <li>Build a quiz about a hobby</li>
+        <li>Write a social post for a product that does not exist</li>
+        <li>Plan a week of meals</li>
+        <li>Get book recommendations from your favorite author, and see how many are real</li>
+        <li>Ask for a short story in the style of a writer you know well &mdash; and judge the imitation</li>
+        <li>Make a table comparing three phones, then check one specification</li>
+      </ul>
+    </details>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>These are workbenches, not chatbots &mdash; the mode you choose matters</li>
+        <li>Chat for quick work, canvas or a project for anything long</li>
+        <li>Web search beats the knowledge cutoff; deep research beats a single answer</li>
+        <li>GPTs and Gems are specialists you build once and reuse</li>
+        <li>Find the training and data-sharing settings on day one</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 8 ===================== -->
+  <section class="module" id="m8" aria-labelledby="m8-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">8</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part eight</p>
+        <h2 id="m8-h">The art of AI data</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Say why what you provide matters more than how you ask</li>
+        <li>Classify Stanford data correctly before it goes anywhere near a tool</li>
+        <li>Select, structure, and format material so a model can use it</li>
+        <li>Use AI to prepare data for AI</li>
+        <li>Run a pre-upload check in under a minute</li>
+      </ul>
+    </div>
+
+    <div class="answerFirst">
+      <p>
+        Garbage in, garbage out is the oldest rule in computing and the most relevant one here. The model
+        is the engine; what you provide is the fuel. Selecting and formatting it carefully is how you tell
+        the model what to pay attention to.
+      </p>
+    </div>
+    <p>
+      Ask for a summary of a contract and supply the contract plus fifty unrelated emails, and the
+      termination clause you needed is buried in noise. Good material means better accuracy, faster
+      answers, and lower cost, since most platforms charge by how much they have to read.
+    </p>
+
+    <h3>Stanford data governance comes first</h3>
+    <div class="caution">
+      <p>
+        <strong>These are requirements, not suggestions.</strong> Before any data goes into any AI tool,
+        you are obliged to know its classification and the rules attached. Getting this wrong is a
+        compliance problem, not a style problem.
+      </p>
+    </div>
+    <ul>
+      <li>
+        Stanford classifies data as low, moderate, or high risk.
+        <a href="https://uit.stanford.edu/guide/riskclassifications" target="_blank" rel="noopener noreferrer">Review the classifications<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        and know where yours falls. High risk &mdash; protected health information, Social Security
+        numbers &mdash; is generally prohibited from external AI tools outright.
+      </li>
+      <li>
+        Sharing moderate or high risk data with a non-Stanford entity requires a
+        <a href="https://uit.stanford.edu/security/dra" target="_blank" rel="noopener noreferrer">Data Risk Assessment<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+        That is mandatory, and it applies to AI vendors like anyone else.
+      </li>
+      <li>
+        <a href="https://uit.stanford.edu/security/sensitivedata" target="_blank" rel="noopener noreferrer">Protecting Sensitive Data at Stanford<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        reduces to three questions: is your access approved and necessary, are you using an approved
+        service, and are you taking the required security steps?
+      </li>
+      <li>
+        The
+        <a href="https://doresearch.stanford.edu/policies/research-policy-handbook/conduct-research/information-security" target="_blank" rel="noopener noreferrer">Research Policy Handbook, section 1.10<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        sets out principal investigators&rsquo; information security responsibilities, and
+        <a href="https://uit.stanford.edu/security/responsibleai" target="_blank" rel="noopener noreferrer">Responsible AI at Stanford<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        gives the overarching principles.
+      </li>
+    </ul>
+    <div class="note">
+      <p>
+        <strong>A special case: FERPA and student data.</strong> The Family Educational Rights and Privacy
+        Act protects student education records, and it does not bend for a convenient tool. Any AI that
+        handles student data &mdash; assignments, grades, personal information &mdash; has to be compliant,
+        which usually means a contract making the vendor a school official with a legitimate educational
+        interest and real security obligations. The
+        <a href="https://studentprivacy.ed.gov/ferpa" target="_blank" rel="noopener noreferrer">Department of Education&rsquo;s guide<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        is the authority.
+      </p>
+    </div>
+
+    <h3>Be a surgeon, not a shovel</h3>
+    <p>
+      The context window is short-term memory, and overloading it is the most common mistake there is.
+      Provide only what is essential.
+    </p>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Triage your documents</h4>
+        <p class="muted" style="margin-bottom: 0;">Rank them: critical, important, supplemental. Start with the critical ones only, and add more if the answer needs it.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">The five-page rule</h4>
+        <p class="muted" style="margin-bottom: 0;">Uploading more than five pages? Stop and ask whether every page bears on your actual question. Extract the sections instead.</p>
+      </article>
+      <article class="card compact">
+        <h4 style="margin-top: 0;">Be token-aware</h4>
+        <p class="muted" style="margin-bottom: 0;">More material means more tokens, slower answers, and on many platforms a higher bill. Precision is cheaper.</p>
+      </article>
+    </div>
+
+    <h3>Four ways this goes wrong</h3>
+    <ul>
+      <li><strong>The kitchen sink</strong> &mdash; uploading a whole case file when one paragraph is at issue.</li>
+      <li><strong>The Frankenstein</strong> &mdash; pasting text from several sources with no labels, so the model cannot tell them apart.</li>
+      <li><strong>The OCR nightmare</strong> &mdash; text from a bad scan, full of garbled characters that the model will faithfully interpret.</li>
+      <li><strong>The duplicate trap</strong> &mdash; the same information three times, which reads as emphasis it should not have.</li>
+    </ul>
+
+    <h3>Structure is the whole trick</h3>
+    <p>
+      Models do well with organized input. Label everything, keep dates and names in one format, and use
+      lists to show hierarchy. Sixty seconds of formatting saves ten minutes of re-prompting.
+    </p>
+    <div class="codeBlock">
+      <div class="codeHead"><span class="codeName">how to hand over two documents</span></div>
+      <pre><code>### DOCUMENT 1: Employment Agreement
+**Parties:** Jane Doe ("Employee"), Acme Corp. ("Company")
+**Effective Date:** 2024-01-15
+**Key Clause (Section 4.a):** "Employee agrees not to solicit any Company
+client for a period of 12 months following termination."
+---
+### DOCUMENT 2: Termination Email
+**From:** hr@acme.corp
+**To:** jane.doe@email.com
+**Date:** 2025-10-20
+**Subject:** Notice of Employment Termination
+**Body Snippet:** "Your final day of employment will be October 31, 2025."</code></pre>
+    </div>
+
+    <div class="grid two" style="margin-top: 1.2rem;">
+      <article class="card">
+        <h4 style="margin-top: 0;">Your pre-upload checklist</h4>
+        <ul class="checkList" style="margin-bottom: 0;">
+          <li>Is this the minimum data needed?</li>
+          <li>Are my instructions clearly separated from the data?</li>
+          <li>Is every document labeled?</li>
+          <li>Are dates and numbers in one consistent format?</li>
+          <li>Have I removed the duplicates?</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h4 style="margin-top: 0;">Red flags that your data needs work</h4>
+        <ul style="margin-bottom: 0;">
+          <li>The answers are vague or generic</li>
+          <li>It asks you to clarify basic facts</li>
+          <li>It pulls material from the wrong section</li>
+          <li>The response takes unusually long, or fails</li>
+        </ul>
+      </article>
+    </div>
+
+    <details class="guideDetails">
+      <summary>Different data types, different preparation</summary>
+      <ul>
+        <li><strong>Text documents.</strong> Pre-process them. Pasting clean text beats uploading a file with complex formatting or poor OCR.</li>
+        <li><strong>Spreadsheets.</strong> Describe the columns and state the goal: &ldquo;the attached CSV has columns Date, Amount, and Category &mdash; find all Legal Fees transactions in Q3.&rdquo;</li>
+        <li><strong>Transcripts.</strong> Add speaker labels (<code>Attorney Jones:</code>, <code>Witness Smith:</code>) so the model can follow who said what.</li>
+      </ul>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Advanced: two-stage prompting, validation, and practice data</summary>
+      <ul>
+        <li><strong>Two-stage prompting.</strong> First prompt extracts the key clauses; second prompt analyzes only what was extracted. Smaller context, better answer.</li>
+        <li><strong>A validation prompt.</strong> Before the real task, ask it to &ldquo;review this data and flag any inconsistencies or missing information.&rdquo;</li>
+        <li><strong>Practice on public data.</strong> Build the skill on non-sensitive datasets from somewhere like <a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener noreferrer">Kaggle<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a> rather than on anything real.</li>
+      </ul>
+    </details>
+
+    <h3>How AI uses the web, and why that is not the same as research</h3>
+    <p>
+      When a model fetches a page, it looks for patterns; it does not evaluate whether the source is any
+      good. A <code>.org</code> domain guarantees nothing. Cross-check factual claims against a reputable
+      source, and trust your own skepticism &mdash; if an AI-generated claim feels off, verify it by hand
+      rather than asking the same tool again.
+    </p>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: read a robots.txt file</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>15 minutes</span>
+      </div>
+      <p>
+        A <code>robots.txt</code> file is a website&rsquo;s public rulebook for crawlers, AI ones included.
+        It is the closest thing to a public statement of how a site feels about being used as training
+        data, and reading a few is unusually clarifying.
+      </p>
+      <div class="codeBlock">
+        <div class="codeHead"><span class="codeName">Stanford SearchWorks, excerpt</span></div>
+        <pre><code>Sitemap: https://searchworks.stanford.edu/sitemap.xml
+User-agent: AdsBot-Google
+Disallow: /
+User-agent: SemrushBot
+Crawl-delay: 60</code></pre>
+      </div>
+      <p>
+        That tells Google&rsquo;s ad crawler to stay out and one commercial crawler to wait a minute
+        between requests. It is a request, not a wall &mdash; a badly behaved crawler can ignore it.
+        <a href="https://searchworks.stanford.edu/robots.txt" target="_blank" rel="noopener noreferrer">Read the whole file<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+      </p>
+      <div class="codeBlock">
+        <div class="codeHead"><span class="codeName">Canva, excerpt</span></div>
+        <pre><code>User-agent: GPTBot
+Disallow: /
+User-agent: Claude-Bot
+Disallow: /</code></pre>
+      </div>
+      <p>
+        A stricter position: named AI training crawlers are refused the entire site.
+        <a href="https://www.canva.com/robots.txt" target="_blank" rel="noopener noreferrer">Their full file<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+        is long, and worth skimming for how specific the refusals get.
+      </p>
+      <p><strong>Now do it yourself:</strong></p>
+      <ol class="guideSteps">
+        <li>List five websites you rely on.</li>
+        <li>Visit each one with <code>/robots.txt</code> on the end of the domain.</li>
+        <li>Copy the contents of one of them.</li>
+        <li>Paste it into an AI with this prompt: &ldquo;Explain this robots.txt file to me like I&rsquo;m a beginner. Based on these rules, how friendly is this website to AI crawlers?&rdquo;</li>
+      </ol>
+      <p style="margin-bottom: 0;" class="muted">
+        You are checking the model&rsquo;s explanation against a document you can read yourself, which is
+        the safest way to learn how much to trust its explanations.
+      </p>
+    </div>
+
+    <details class="guideDetails">
+      <summary>When policy says you cannot add data to AI</summary>
+      <p>
+        A blanket &ldquo;not allowed&rdquo; usually means &ldquo;not this data, or not this tool.&rdquo;
+        The productive move is to find the permitted workflow rather than to argue or to ignore it.
+      </p>
+      <ol>
+        <li><strong>Clarify the policy.</strong> Find the actual clause and read what it restricts.</li>
+        <li><strong>Classify the data.</strong> Regulated data, secrets, and attorney-client confidences do not go into unapproved tools, full stop.</li>
+        <li><strong>Minimize.</strong> Summarize or excerpt rather than pasting whole documents, and strip identifiers.</li>
+        <li><strong>Prefer the approved tool.</strong> An enterprise or university-hosted option, such as the <a href="ai-playground.html">Stanford AI Playground</a>, over a consumer app.</li>
+      </ol>
+      <p style="margin-bottom: 0;">
+        A script for the conversation with a colleague: &ldquo;Fair concern. Let&rsquo;s confirm the
+        policy, classify the data, and pick the safest permitted workflow. If it is regulated or
+        confidential, we use an approved tool or we redact.&rdquo;
+      </p>
+    </details>
+
+    <details class="guideDetails">
+      <summary>An alternative: synthetic data</summary>
+      <p>
+        Artificially generated data that mimics the statistical shape of the real thing lets you work on a
+        problem without exposing anything. Start from a clear purpose, use clean source data, and involve
+        someone who knows the domain, or you will produce something realistic-looking and wrong.
+      </p>
+      <p><strong>Do:</strong> check statistical fidelity, validate against more than one metric, and treat anonymization as the point rather than a step.</p>
+      <p style="margin-bottom: 0;"><strong>Watch for:</strong> bias inherited from the source data, temporal gaps that make it quietly out of date, and privacy leaks through data that is less anonymous than it looks.</p>
+    </details>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>If you are unsure whether a document is needed, leave it out &mdash; you can add it later</li>
+        <li>Structure is not optional: label, order, and format everything you provide</li>
+        <li>Use a first prompt to clean or extract, and a second to analyze</li>
+        <li>Before your next complex prompt, spend two minutes pulling out only the critical passages</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 9 ===================== -->
+  <!-- Every recommendation here is dated and evidence-based. If a lawsuit
+       settles or a policy changes, this part needs revisiting rather than
+       quietly standing. -->
+  <section class="module" id="m9" aria-labelledby="m9-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">9</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part nine</p>
+        <h2 id="m9-h">AI we do not recommend</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Name specific tools that carry legal, ethical, or operational risk, and say why</li>
+        <li>Spot the red flags in terms of service and data handling</li>
+        <li>Evaluate a new tool on more than its capabilities</li>
+        <li>Recognize how AI is used against users, not just by them</li>
+      </ul>
+    </div>
+
+    <p>
+      Not all AI is equally safe to use. What follows is a risk-based assessment rather than a
+      condemnation: these tools are capable, and the specific problems below are why we do not recommend
+      them for professional or institutional work. The reasoning matters more than the list, because the
+      list will change.
+    </p>
+    <p class="tutorialCurrency stale">
+      Assessed in autumn 2025, on the basis of active litigation, regulatory action, published research,
+      and the terms of service as they then stood. Any of those can change; check before relying on this.
+    </p>
+
+    <details class="guideDetails">
+      <summary>Meta AI &mdash; do not use for anything sensitive</summary>
+      <p>
+        Meta&rsquo;s consumer assistant carries privacy problems serious enough to rule it out for work
+        involving confidential information or institutional content.
+      </p>
+      <ul>
+        <li><strong>Private chats have surfaced publicly.</strong> Its discovery feed has exposed sensitive user prompts &mdash; medical and legal among them &mdash; because the sharing controls are confusing and not private by default.</li>
+        <li><strong>Group conversations are training data.</strong> Its policy allows training on user interactions including group chats, where not everyone present consented to anything.</li>
+        <li><strong>Regulatory and legal exposure.</strong> Ongoing GDPR challenges in Europe and copyright litigation from authors over training data, both of which make the service itself less predictable.</li>
+      </ul>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Apple Intelligence &mdash; not for anything that has to be right</summary>
+      <p>Promising, early, and not yet reliable enough for reference-grade work.</p>
+      <ul>
+        <li><strong>Accuracy.</strong> A documented history of generating false news headlines and pushing them as notifications.</li>
+        <li><strong>Marketing and legal issues.</strong> A class action over advertising features that did not work, and an order from the National Advertising Division to drop misleading &ldquo;available now&rdquo; claims.</li>
+        <li><strong>Availability.</strong> Key features require the newest hardware, and the rollout has been delayed in major markets over regulatory questions.</li>
+      </ul>
+    </details>
+
+    <details class="guideDetails">
+      <summary>DeepSeek, the public version &mdash; use the vetted one instead</summary>
+      <p>
+        The model is genuinely interesting. The public service is at the center of intellectual property
+        disputes, privacy investigations, and poor safety results.
+      </p>
+      <ul>
+        <li><strong>Training provenance.</strong> OpenAI has presented evidence that DeepSeek trained on ChatGPT outputs, and researchers have found linguistic fingerprints suggesting Gemini outputs too.</li>
+        <li><strong>Regulatory scrutiny.</strong> Investigated by regulators in Italy and South Korea over privacy, and flagged for national security review in the United States.</li>
+        <li><strong>Safety.</strong> Audits found a very high misinformation failure rate, easy circumvention of its guardrails, and political censorship in its answers.</li>
+      </ul>
+      <p class="note" style="margin-bottom: 0;">
+        <strong>The safer route.</strong> A vetted DeepSeek runs inside the
+        <a href="ai-playground.html">Stanford AI Playground</a>, where you get its useful transparency
+        about its own reasoning without the data going to the public service. That contrast is the clearest
+        argument for using a managed environment at all.
+      </p>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Midjourney &mdash; not for institutional or commercial use</summary>
+      <ul>
+        <li><strong>The terms shift all liability to you.</strong> If the tool generates an image that infringes somebody&rsquo;s copyright, its terms make that the user&rsquo;s problem, not the platform&rsquo;s.</li>
+        <li><strong>Active litigation from Disney and NBCUniversal</strong>, alleging the service functions as a vending machine for infringing images of their characters. An adverse ruling could change or end the service.</li>
+        <li><strong>Operational unpredictability.</strong> Its terms allow it to change access and pricing at will, and association with a platform accused of large-scale infringement carries its own institutional risk.</li>
+      </ul>
+    </details>
+
+    <details class="guideDetails">
+      <summary>Character.AI &mdash; not for personal or sensitive conversation</summary>
+      <ul>
+        <li><strong>Privacy.</strong> Conversations here are often deeply personal, and the privacy policy contemplates review and use for training, with little clarity about retention.</li>
+        <li><strong>Content and safety.</strong> Users can create any persona, which makes moderation genuinely hard and the environment risky for younger users.</li>
+        <li><strong>Blurred lines.</strong> The design encourages treating the model as a companion, which raises real questions about emotional dependency that the product does not answer.</li>
+      </ul>
+    </details>
+
+    <h3>A resource for researching bad AI</h3>
+    <p>
+      <a href="https://www.themidasproject.com/" target="_blank" rel="noopener noreferrer">The Midas Project<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      is not an assistant; it is a watchdog that tracks and documents AI-driven manipulation,
+      disinformation, and privacy abuse. When you need a verifiable example of AI going wrong &mdash; for
+      a paper, a policy, or an argument &mdash; it is a better starting point than searching.
+    </p>
+
+    <h3>How AI is used against people</h3>
+    <p>
+      The same capabilities that help you are being used to automate and personalize attacks, and knowing
+      the shapes makes them easier to spot.
+    </p>
+    <ul>
+      <li><strong>Phishing and social engineering.</strong> Generated email that is fluent, personalized, and free of the tells people were taught to look for. Voice cloning and deepfakes are used to impersonate executives and authorize fraudulent transfers.</li>
+      <li><strong>Automated cybercrime.</strong> Attackers have used chatbots across nearly the whole attack chain: finding vulnerable targets, writing malware, organizing stolen data, drafting the ransom note.</li>
+      <li><strong>Fake AI websites.</strong> Convincing imitations of popular tools that exist to get you to download malware.</li>
+      <li><strong>Faster vulnerability discovery.</strong> AI helps scan for weaknesses and generate exploits, compressing the time between a flaw existing and being used.</li>
+    </ul>
+
+    <h3>Two literacy skills</h3>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <h4 style="margin-top: 0;">Spotting AI-written books</h4>
+        <p class="muted">
+          Generated titles are appearing in print, often generic, factually shaky, and strangely flat.
+          Look for repetitive phrasing, unnatural word choices, a mechanical tone, and an absence of
+          perspective. Check whether the author exists in any verifiable way, and whether the publisher
+          has a reputation to protect. Read reviews before buying.
+        </p>
+      </article>
+      <article class="card">
+        <h4 style="margin-top: 0;">Context, and the screenshot problem</h4>
+        <p class="muted">
+          A model can be led. Feed it inflammatory or contradictory prompts long enough and it may produce
+          something offensive &mdash; and a screenshot of that output, without the conversation that
+          caused it, can be presented as the AI speaking unprompted. Before believing or sharing any AI
+          output, ask to see the whole conversation.
+        </p>
+      </article>
+    </div>
+
+    <h3>And do not buy prompts</h3>
+    <p>
+      Marketplaces sell &ldquo;expert&rdquo; prompts. It is an unnecessary purchase for four reasons:
+    </p>
+    <ul>
+      <li><strong>Output is not deterministic.</strong> The same prompt does not give the same result twice, so the impressive example you are shown is not what you are buying.</li>
+      <li><strong>You skip the learning.</strong> Writing your own prompts is how you get good at this; buying them keeps you dependent.</li>
+      <li><strong>They do not transfer.</strong> A purchased prompt needs rewriting for your context, tone, and goal &mdash; using exactly the skill you would have built.</li>
+      <li><strong>Quality is unverifiable.</strong> Free documentation, community forums, and the guides in part six are more current and more reliable.</li>
+    </ul>
+
+    <div class="exerciseBlock">
+      <div class="exerciseHead">
+        <h3 style="margin: 0;">Your turn: assess a tool</h3>
+        <span class="pill"><span class="dot" aria-hidden="true"></span>20 minutes</span>
+      </div>
+      <p>
+        <strong>The scenario.</strong> A new tool called &ldquo;Synapse Weaver&rdquo; is spreading through
+        your team. The website promises next-generation insights and looks polished. Its terms say all
+        user data is &ldquo;anonymized and used to improve the service for everyone,&rdquo; and that the
+        company is not liable for any output. Signing up requires connecting your primary Google account.
+      </p>
+      <p><strong>Your job, as the person asked whether to approve it:</strong></p>
+      <ol class="guideSteps">
+        <li>What are the immediate red flags?</li>
+        <li>Which of the tools above do those red flags resemble, and in what specific way?</li>
+        <li>Name three questions you would put to the vendor before any pilot.</li>
+        <li>Approve, deny, or pilot with restrictions &mdash; and justify it in writing, briefly.</li>
+      </ol>
+      <p style="margin-bottom: 0;" class="muted">
+        This is the assessment you will actually be asked to make, usually with less time than this.
+      </p>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>Popularity and capability are not evidence that a tool is safe to use</li>
+        <li>Read the terms, especially on infringement liability and training on your content</li>
+        <li>Private by default is the standard; opt-out privacy is a warning sign</li>
+        <li>Active litigation and regulatory action predict instability you will feel</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== Part 10 ===================== -->
+  <section class="module" id="m10" aria-labelledby="m10-h">
+    <div class="moduleHead">
+      <span class="moduleNum" aria-hidden="true">10</span>
+      <div class="moduleHeadText">
+        <p class="eyebrow">Part ten</p>
+        <h2 id="m10-h">The future, and your AI strategy</h2>
+      </div>
+    </div>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">By the end of this part you should be able to</p>
+      <ul class="checkList">
+        <li>Name the directions the field is actually moving in, with examples</li>
+        <li>Explain why smaller models matter as much as larger ones</li>
+        <li>Describe what agentic tools change, and what they risk</li>
+        <li>Set up a way of keeping current that does not depend on hype</li>
+      </ul>
+    </div>
+
+    <p>
+      You have the fundamentals: what this is, how it works, what it makes, how to direct it, and where it
+      fails. The last thing worth having is a sense of trajectory &mdash; not to predict it, but so that
+      the next announcement lands as a variation on something you understand rather than as news.
+    </p>
+    <p class="tutorialCurrency stale">
+      This part is a snapshot from October 2025. Treat every named model and product as an example of a
+      direction, not as a current release.
+    </p>
+
+    <h3>Where it was heading, as of late 2025</h3>
+
+    <div class="steps" style="margin: 1.2rem 0;">
+      <div class="step">
+        <h4 style="margin-top: 0;">1. Small models with big minds</h4>
+        <p style="margin-bottom: 0;">
+          Samsung&rsquo;s Tiny Recursive Model has around seven million parameters &mdash; thousands of
+          times smaller than a flagship &mdash; and uses recursive reasoning to match or beat far larger
+          models on logic tasks. The implication is that sophisticated reasoning need not require a data
+          center, which changes where AI can run.
+          <a href="https://github.com/SamsungSAILMontreal/TinyRecursiveModels" target="_blank" rel="noopener noreferrer">The code is open<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">2. The chatbot as an operating system</h4>
+        <p style="margin-bottom: 0;">
+          <a href="https://openai.com/index/introducing-apps-in-chatgpt/" target="_blank" rel="noopener noreferrer">Apps inside ChatGPT<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          let you invoke third-party services in the middle of a conversation, in plain language. The
+          chat stops being a tool and starts being a platform &mdash; which is a significant amount of
+          leverage to hand to one interface.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">3. Agentic browsers</h4>
+        <p style="margin-bottom: 0;">
+          The browser is being rebuilt around an assistant that acts:
+          <a href="https://www.perplexity.ai/grow/comet" target="_blank" rel="noopener noreferrer">Perplexity&rsquo;s Comet<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          <a href="https://openai.com/index/introducing-chatgpt-atlas/" target="_blank" rel="noopener noreferrer">OpenAI&rsquo;s Atlas<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          and
+          <a href="https://www.google.com/chrome/ai-innovations/" target="_blank" rel="noopener noreferrer">Gemini inside Chrome<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+          A browser that reads and acts across sites on your behalf is useful and is also a new category
+          of thing to be careful about.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">4. Reasoning as a product decision</h4>
+        <p style="margin-bottom: 0;">
+          <a href="https://openai.com/index/introducing-gpt-5/" target="_blank" rel="noopener noreferrer">GPT-5<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          routes a question to a fast model or a slower thinking model depending on difficulty; Anthropic
+          ships a family that trades speed against depth; Microsoft&rsquo;s
+          <a href="https://www.microsoft.com/en-us/research/articles/phi-reasoning-once-again-redefining-what-is-possible-wi" target="_blank" rel="noopener noreferrer">Phi-4 reasoning models<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          match much larger models on math and code through careful data work. The pattern: paying more
+          compute for hard questions, and not for easy ones.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">5. Generated worlds, and video that obeys physics</h4>
+        <p style="margin-bottom: 0;">
+          <a href="https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/" target="_blank" rel="noopener noreferrer">Genie 2<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          builds playable 3D environments from a single image, and video models such as
+          <a href="https://openai.com/index/sora-2/" target="_blank" rel="noopener noreferrer">Sora 2<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          and
+          <a href="https://gemini.google/overview/video-generation/" target="_blank" rel="noopener noreferrer">Veo<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          produce increasingly physically plausible motion and sound. Useful for simulation and training;
+          also the evidence problem of the next decade.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">6. Science</h4>
+        <p style="margin-bottom: 0;">
+          The
+          <a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/" target="_blank" rel="noopener noreferrer">2024 Nobel Prize in Chemistry<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          went in part to the work behind AlphaFold, which predicted the structure of nearly every known
+          protein and closed a fifty-year problem. This is the strongest existing case that AI changes what
+          is discoverable, not just what is fast.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">7. Efficiency at scale</h4>
+        <p style="margin-bottom: 0;">
+          Mixture-of-experts designs keep an enormous model on disk but activate only a fraction of it per
+          token &mdash; the
+          <a href="https://arxiv.org/abs/2412.19437" target="_blank" rel="noopener noreferrer">DeepSeek-V3 report<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          describes 671 billion parameters with 37 billion active. Large models are getting cheaper to run
+          as well as bigger.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">8. Adoption without payment</h4>
+        <p style="margin-bottom: 0;">
+          <a href="https://menlovc.com/perspective/2025-the-state-of-consumer-ai/" target="_blank" rel="noopener noreferrer">Around 1.8 billion people used AI tools by mid-2025<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          and roughly three percent paid for anything. Whatever else that gap means, it means the business
+          model is unsettled &mdash; and unsettled business models are why free tiers change.
+        </p>
+      </div>
+      <div class="step">
+        <h4 style="margin-top: 0;">9. Open models</h4>
+        <p style="margin-bottom: 0;">
+          Alongside the closed systems, an ecosystem of downloadable models has grown up &mdash;
+          <a href="https://www.llama.com/" target="_blank" rel="noopener noreferrer">Llama<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          <a href="https://deepmind.google/models/gemma/" target="_blank" rel="noopener noreferrer">Gemma<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          <a href="https://mistral.ai/" target="_blank" rel="noopener noreferrer">Mistral<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          and Switzerland&rsquo;s
+          <a href="https://www.swiss-ai.org/" target="_blank" rel="noopener noreferrer">Apertus<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          among them, mostly distributed through
+          <a href="https://huggingface.co/models" target="_blank" rel="noopener noreferrer">Hugging Face<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>.
+          Anyone can run and fine-tune these, which matters for transparency, for research, and for the
+          cases where sending data to a vendor is not an option.
+        </p>
+      </div>
+    </div>
+
+    <h3>Keeping current without drowning</h3>
+    <p>
+      The field produces more announcements than anyone can follow, and most of them will not matter to
+      your work. A small number of habits beats trying to keep up.
+    </p>
+    <div class="grid two" style="margin-top: 1rem;">
+      <article class="card">
+        <h4 style="margin-top: 0;">Read one weekly digest</h4>
+        <p class="muted" style="margin-bottom: 0;">
+          <a href="ai-upload.html">The AI Upload</a>, the library&rsquo;s own, comes out on Fridays and is
+          written for this community. One digest read properly beats five feeds skimmed.
+        </p>
+      </article>
+      <article class="card">
+        <h4 style="margin-top: 0;">Listen while you do something else</h4>
+        <p class="muted" style="margin-bottom: 0;">
+          <a href="https://www.youtube.com/@LatentSpacePod" target="_blank" rel="noopener noreferrer">Latent Space<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          for builders,
+          <a href="https://www.youtube.com/@EverydayAI_/videos" target="_blank" rel="noopener noreferrer">Everyday AI<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          for practical daily use,
+          <a href="https://www.youtube.com/@twimlai" target="_blank" rel="noopener noreferrer">TWIML<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          for research, and the
+          <a href="https://ai-podcast.nvidia.com/" target="_blank" rel="noopener noreferrer">NVIDIA AI Podcast<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          for applications.
+        </p>
+      </article>
+      <article class="card">
+        <h4 style="margin-top: 0;">Learn from the source</h4>
+        <p class="muted" style="margin-bottom: 0;">
+          <a href="https://blog.google/outreach-initiatives/education/google-skills/" target="_blank" rel="noopener noreferrer">Google Skills<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          <a href="https://academy.openai.com/" target="_blank" rel="noopener noreferrer">OpenAI Academy<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>,
+          and
+          <a href="https://learn.microsoft.com/en-us/training/organizations" target="_blank" rel="noopener noreferrer">Microsoft Learn<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          all publish free training on their own tools, which is where the accurate detail is.
+        </p>
+      </article>
+      <article class="card">
+        <h4 style="margin-top: 0;">Compare models yourself</h4>
+        <p class="muted" style="margin-bottom: 0;">
+          <a href="https://lmarena.ai/" target="_blank" rel="noopener noreferrer">Chatbot Arena<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          runs the same prompt through two anonymous models and asks you which is better, and its
+          <a href="https://lmarena.ai/leaderboard" target="_blank" rel="noopener noreferrer">leaderboard<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+          is a better guide than a press release. So is the
+          <a href="ai-playground.html">Stanford AI Playground</a>, where two models answer side by side.
+        </p>
+      </article>
+    </div>
+
+    <h3>Your strategy, in five lines</h3>
+    <div class="worthRepeating">
+      <p class="eyebrow">Worth repeating</p>
+      <p class="worthRepeatingText">
+        Keep learning continuously, aim AI at a few high-value tasks rather than everything, choose tools
+        deliberately, follow the data policies without exception, and stay the person who decides.
+      </p>
+    </div>
+
+    <p class="note">
+      <strong>Where to go from here.</strong> Walk through <a href="pause-rule.html">the PAUSE Rule</a>
+      before your next real task. Download <a href="skills.html">the AI Skills</a> if you want structured
+      help with writing and research. Browse <a href="your-ai-stack.html">Your AI Stack</a> to build the
+      set of tools that fits your work. Drop in at the <a href="events.html">Curiosity Corner</a> with a
+      question, or email <a href="mailto:library@law.stanford.edu">library@law.stanford.edu</a> for a
+      one-to-one session. And if the useful next step is <em>less</em> AI rather than more, that is what
+      <a href="digital-wellness.html">Digital Wellness</a> is for.
+    </p>
+
+    <div class="doneWhen">
+      <p class="doneWhenHead">Key takeaways</p>
+      <ul class="checkList">
+        <li>The field is moving toward efficient reasoning, deeper integration, and multimodal work</li>
+        <li>Smaller and open models matter as much as the flagship releases</li>
+        <li>A personal strategy is continuous learning plus a few high-value uses</li>
+        <li>Institutional data policy is not optional, whatever a tool makes easy</li>
+        <li>Keep human oversight, and apply the PAUSE Rule before you start</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="docPart" id="done">
+    <p class="eyebrow">That is the course</p>
+    <h2>You are done</h2>
+    <p class="muted" style="max-width: 70ch;">
+      Ten parts, and you now have what you need to use these tools deliberately: what they are, what they
+      cannot do, how to direct them, what to give them, and which to refuse. Keep experimenting, keep the
+      journal, and keep the judgment on your side of the table.
+    </p>
+    <div class="actions">
+      <a class="primary" href="pause-rule.html">Read the PAUSE Rule</a>
+      <a class="secondary" href="ai-playground.html">Try it in the Stanford AI Playground</a>
+      <a class="textLink" href="tutorials.html">Back to the tutorials &rarr;</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <nav class="footerNav" aria-label="Site footer">
+      <div class="footerGroup">
+        <h2 class="footerHeading" id="footer-elsewhere">Elsewhere at Stanford</h2>
+        <ul aria-labelledby="footer-elsewhere">
+          <li><a href="https://law.stanford.edu/ai-initiative/" target="_blank" rel="noopener noreferrer">SLS AI Initiative<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/robert-crown-law-library/" target="_blank" rel="noopener noreferrer">Robert Crown Law Library<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://uit.stanford.edu/security/responsibleai" target="_blank" rel="noopener noreferrer">Responsible AI at Stanford<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/office-of-student-affairs/use-of-generative-ai-technology/" target="_blank" rel="noopener noreferrer">Use of Generative AI at SLS<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/hub.js"></script>
+</body>
+</html>

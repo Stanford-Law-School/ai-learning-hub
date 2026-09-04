@@ -3750,3 +3750,24 @@ main section[id] { scroll-margin-top: 8rem; }
 @media (max-width: 860px) {
   .dwResource { grid-template-columns: 1fr; }
 }
+
+/* ---- AI Explained Using Analogies ------------------------------------------
+   Nineteen concepts as a list of disclosures. Collapsed, the list is its own
+   table of contents: every row names the concept and the comparison, so a
+   reader can scan all nineteen and open the two they came for. The original
+   was a grid of tiles opening a modal; a <details> needs no script, works with
+   the keyboard by itself, and leaves the text on the page for search. */
+.analogyList { margin: 1.4rem 0 0; }
+.analogyList .guideDetails { margin: 0 0 0.6rem; }
+.analogyList .guideDetails > summary { display: list-item; }
+/* A real heading, so each analogy is its own search result, but inline so the
+   summary row still reads as one line. */
+.analogyName { display: inline; margin: 0; font-family: var(--font-serif); font-size: 1.12rem; }
+/* The comparison sits on its own line below the name at narrow widths, and
+   reads as the quieter half of the pair in both themes. */
+.analogyLine { display: block; margin-top: 0.15rem; font-weight: 400; color: var(--muted); font-size: 0.95rem; }
+.analogyList .guideDetails p { max-width: 74ch; }
+@media (min-width: 760px) {
+  .analogyLine { display: inline; margin-top: 0; }
+  .analogyLine::before { content: "\2014\00a0"; }
+}
