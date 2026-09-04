@@ -1,8 +1,8 @@
 // =============================================================================
 // Build the search index the hub searches.
 //
-//     node scripts/build-search-index.mjs           # write assets/search-index.js
-//     node scripts/build-search-index.mjs --check   # non-zero if it is out of date
+//     npm run search:index          # write assets/search-index.js
+//     npm run search:index:check    # non-zero if it is out of date
 //
 // The header search used to hand the query to Google with a site: filter, which
 // only ever worked if Google had crawled the deployment. It had not, so the
@@ -16,9 +16,9 @@
 // indexes what a reader actually sees, and keeps working when a page changes
 // how it is built.
 //
-// Needs Playwright, like nothing else in this repository, so it is a maintainer
-// step rather than a build step: re-run it after editing page content and commit
-// the result.
+// Needs Playwright, like nothing else in this repository, so it is kept as a
+// local dev dependency and remains a maintainer step rather than a build step:
+// re-run it after editing page content and commit the result.
 // =============================================================================
 
 import { createServer } from "node:http";

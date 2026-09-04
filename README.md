@@ -75,7 +75,7 @@ python3 -m http.server 8000
 | `assets/install-a-skill-guide.pdf` | Printable skill-installation guide with clickable links to both videos |
 | `digital-wellness.html` | Digital Wellness — the three themes, and the guide to reducing Gemini and AI features in Google tools |
 | `assets/images/reduce-gemini-google-tools-page-1.png` | First-page preview of that guide, rendered from the Google Docs PDF export |
-| `faculty-publications.html` | SLS faculty publications on AI, embedded within the hub navigation |
+| `faculty-publications.html` | Fallback page linking out to Stanford Law School faculty publications on AI |
 | `ai-upload.html` | The AI Upload landing page &mdash; describes the weekly digest and links to it |
 | `assets/styles.css` | The design system |
 | `your-ai-stack.html` | Your AI Stack — the searchable directory of 113 AI tools |
@@ -136,15 +136,14 @@ per id'd section otherwise, so a result links to the place it was found rather t
 the top of a long page.
 
 ```
-node scripts/build-search-index.mjs            # write assets/search-index.js
-node scripts/build-search-index.mjs --check    # non-zero if it is out of date
+npm run search:index          # write assets/search-index.js
+npm run search:index:check    # non-zero if it is out of date
 ```
 
 Re-run it after editing page content and commit the result. It is the one script
-here that needs Playwright, so it is a maintainer step rather than a build step —
-`PLAYWRIGHT_PATH=/path/to/playwright/index.js` points it at a global install if you
-do not want a local dependency. The index is currently 557 entries and about 426 kB,
-loaded on `search.html` alone and nowhere else.
+here that needs Playwright, so Playwright is kept as a local development
+dependency. The index is currently 557 entries and about 426 kB, loaded on
+`search.html` alone and nowhere else.
 
 Matching is prefix-per-word ("cita" finds "citation", "ation" does not), all terms
 must appear, and a heading hit outweighs a passing mention. Snippets are built as
@@ -530,15 +529,13 @@ it survives as a page where the faculty one did not.
 **Nothing on this site frames another site any more, and nothing frames this one.**
 `body.hasEmbed` and `.embedFrame` are deleted, and so is `.digestEmbed`, which the
 faculty site used for its own frame around the same digest. `vercel.json` and
-`customHttp.yml` allow `frame-ancestors 'self'` and nothing else. The only frames
-left are the bounded inline panels — the event calendar and the faculty
-publications list — which show one third-party thing inside a page that is
-otherwise ours. A frame around somebody else's whole site is not a pattern to
-reintroduce.
+`customHttp.yml` allow `frame-ancestors 'self'` and nothing else. The remaining
+frames are bounded media, slide, and event calendar panels. A frame around
+somebody else's site is not a pattern to reintroduce.
 
-`faculty-publications.html` embeds the Stanford Law School faculty AI publications
-list within a standard hub page, preserving the hub header, footer, and navigation
-around the external content.
+The home page card for SLS faculty publications links directly to the Stanford
+Law School publications page. `faculty-publications.html` is only a fallback for
+old links and sends readers onward without embedding the external page.
 
 ### How the site is served
 
