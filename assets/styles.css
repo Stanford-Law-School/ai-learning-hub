@@ -3771,3 +3771,8 @@ main section[id] { scroll-margin-top: 8rem; }
   .analogyLine { display: inline; margin-top: 0; }
   .analogyLine::before { content: "\2014\00a0"; }
 }
+
+/* A session's slide deck, inline at the deck's own proportions. Google Slides
+   embeds are 16:9, so the panel takes its height from its width and the iframe
+   fills it — no fixed pixel height to go wrong at a narrow width. */
+.embedPanel.slides { aspect-ratio: 16 / 9; }

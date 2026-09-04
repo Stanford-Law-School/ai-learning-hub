@@ -58,7 +58,8 @@ python3 -m http.server 8000
 | `assets/curiosity-corner.js` | Draws the next three weeks of the AI calendar as a native list |
 | `assets/calendar-config.js` | Which calendar it reads; the API key is injected at deploy time |
 | `scripts/build-calendar-config.mjs` | Writes that key in from the Amplify environment |
-| `past-events.html` | Archive of past sessions and Tech Club meetings |
+| `past-events.html` | Archive of past sessions, each linking to its own materials page |
+| `event-*.html` | One page per past session: slides, instructions, and files |
 | `skills.html` | The twenty-one downloadable AI skills, the three one-click sets, and the practice drafts |
 | `skills/bundles.json` | Which skills each set holds, and in what order |
 | `scripts/build-skill-bundles.py` | Builds `assets/bundles/*.zip` from that manifest |
@@ -142,7 +143,7 @@ node scripts/build-search-index.mjs --check    # non-zero if it is out of date
 Re-run it after editing page content and commit the result. It is the one script
 here that needs Playwright, so it is a maintainer step rather than a build step —
 `PLAYWRIGHT_PATH=/path/to/playwright/index.js` points it at a global install if you
-do not want a local dependency. The index is currently 552 entries and about 411 kB,
+do not want a local dependency. The index is currently 557 entries and about 426 kB,
 loaded on `search.html` alone and nowhere else.
 
 Matching is prefix-per-word ("cita" finds "citation", "ation" does not), all terms
@@ -177,9 +178,9 @@ The **SLS Tech Club** section — the club charter, the mission statement, the
 governance notes, and the Slack link — is off this page, as is the framed
 week-at-a-glance board. Events is now about what the library runs and when you can
 turn up to it, and a monthly club's charter is not that.
-The Tech Club's meeting archive is unchanged on `past-events.html`, whose intro
-paragraph now points at the `#techclub` Slack channel for the charter rather than at
-the anchor on this page that no longer exists.
+The Tech Club is off `past-events.html` too — the six meeting cards and the charter
+paragraph are deleted, not moved. Nothing on the site advertises the club now, which
+is the finished state rather than a step toward one.
 
 The Google Calendar iframe stays at the foot of the page as the month grid, for
 looking further ahead than three weeks, and the list points at it when there is more
@@ -322,6 +323,42 @@ nearest id'd container and titles each entry from that container's first heading
 the wrapper turns one undifferentiated page entry into nineteen that link to the right
 analogy. Flattening it back to a bare `<details id="...">` costs eighteen search
 results.
+
+### The past events archive
+
+`past-events.html` is the index; each session that has materials has its own page,
+named `event-<slug>.html`:
+
+| Page | Session |
+| --- | --- |
+| `event-assessing-ai-output.html` | Assessing Output in CoCounsel and Protégé — the VET process and an evaluation checklist |
+| `event-ai-writing-partner.html` | Creating a Personalized AI Writing Partner — the five-step roadmap and the ethics of it |
+| `event-notebooklm-trends.html` | Identifying Trends in a Corpus of Documents Using NotebookLM — limits, cautions, and plan caps |
+| `event-lightning-workshops.html` | Session Two: seven breakout rooms, each with its trained chat, instructions, and Drive folder |
+| `event-staff-introduction.html` | Session One: the first staff introduction, which is the deck |
+
+Each page carries a `.tutorialCurrency stale` note saying when the session was given,
+because these date faster than anything else here — one of them assumes a paid ChatGPT
+account for things that are now free. Each also carries the session's own privacy
+warning, which is the one piece of repetition on the site that is worth having on every
+page rather than one click away.
+
+The slide decks are inline in an `.embedPanel.slides` — a bounded 16:9 panel showing
+one third-party thing, which is the only kind of frame this site uses — with the `.pptx`
+export and the Slides link beside it as ordinary buttons.
+
+Two things deliberately did not come across:
+
+- **The Tech Club.** Six meeting cards and the club's charter paragraph are gone, and
+  the source archive's "upcoming Tech Club meeting" block with them.
+- **Every "materials coming soon" card.** Two sessions had no materials and said so;
+  they are deleted rather than listed. One session — Professional Writing Workflows —
+  keeps its card because it happened, but has no button, because its materials live in
+  the Editing with AI tutorial that has not been ported yet. It gets one then.
+
+The source page also carried a Zoom join link with the passcode in the query string for
+a meeting held in August 2025. That was not carried over, and a live meeting credential
+should not be published on this site at all.
 
 ### Content that is data, not markup
 
