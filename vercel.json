@@ -6,7 +6,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'self' https://ailearninghub.law.stanford.edu https://sites.google.com https://*.google.com https://*.googleusercontent.com"
+          "value": "frame-ancestors 'self'"
         }
       ]
     }

@@ -3718,3 +3718,61 @@ main section[id] { scroll-margin-top: 8rem; }
   .stackDetails > *:not(summary) { display: revert !important; }
   .stackCardCat, .stackBadge { color: #444 !important; }
 }
+
+/* ---- Digital Wellness ------------------------------------------------------
+   One featured resource: a first-page preview beside the description and the
+   two controls. The preview is capped at 300px so it stays a preview rather
+   than becoming the page, and it is first in the DOM, so when the grid
+   collapses at the site's own 860px breakpoint it stacks above the text with
+   no reordering. */
+.dwResource {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+  /* The preview is taller than the two paragraphs beside it, so the text is
+     centered against it rather than stranded at the top, as in .videoDemo. */
+  align-items: center;
+  /* A page-wide card would leave the preview stranded beside two short
+     paragraphs. Capped, the two columns read as one block, and the description
+     keeps a comfortable measure. */
+  max-width: 54rem;
+}
+.dwPreview {
+  display: block; width: 100%; max-width: 300px; height: auto;
+  border: 1px solid var(--glass-border); border-radius: 12px;
+  /* The guide is a paper document in both themes; the image is opaque, so this
+     shows only at the rounded corners. */
+  background: #fff;
+}
+.dwResourceBody .actions { margin-top: 1.1rem; }
+.dwResourceBody > :last-child { margin-bottom: 0; }
+
+@media (max-width: 860px) {
+  .dwResource { grid-template-columns: 1fr; }
+}
+
+/* ---- AI Explained Using Analogies ------------------------------------------
+   Nineteen concepts as a list of disclosures. Collapsed, the list is its own
+   table of contents: every row names the concept and the comparison, so a
+   reader can scan all nineteen and open the two they came for. The original
+   was a grid of tiles opening a modal; a <details> needs no script, works with
+   the keyboard by itself, and leaves the text on the page for search. */
+.analogyList { margin: 1.4rem 0 0; }
+.analogyList .guideDetails { margin: 0 0 0.6rem; }
+.analogyList .guideDetails > summary { display: list-item; }
+/* A real heading, so each analogy is its own search result, but inline so the
+   summary row still reads as one line. */
+.analogyName { display: inline; margin: 0; font-family: var(--font-serif); font-size: 1.12rem; }
+/* The comparison sits on its own line below the name at narrow widths, and
+   reads as the quieter half of the pair in both themes. */
+.analogyLine { display: block; margin-top: 0.15rem; font-weight: 400; color: var(--muted); font-size: 0.95rem; }
+.analogyList .guideDetails p { max-width: 74ch; }
+@media (min-width: 760px) {
+  .analogyLine { display: inline; margin-top: 0; }
+  .analogyLine::before { content: "\2014\00a0"; }
+}
+
+/* A session's slide deck, inline at the deck's own proportions. Google Slides
+   embeds are 16:9, so the panel takes its height from its width and the iframe
+   fills it — no fixed pixel height to go wrong at a narrow width. */
+.embedPanel.slides { aspect-ratio: 16 / 9; }

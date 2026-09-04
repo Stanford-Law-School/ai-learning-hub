@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Creating a Personalized AI Writing Partner | AI Learning Hub | Stanford Law School</title>
+<meta name="description" content="Materials from the Robert Crown Law Library workshop on building a personalized AI writing partner with Gemini Gems: the five-step roadmap, the ethics of using one, the instructions document, and the slide deck." />
+<link rel="canonical" href="https://ailearninghub.law.stanford.edu/event-ai-writing-partner" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="siteHeader">
+  <a class="headerLogo" href="index.html" aria-label="AI Learning Hub home">
+    <img src="assets/images/robert-crown-law-library-logo.svg" alt="Stanford Law School | Robert Crown Law Library" width="551" height="139" />
+  </a>
+  <div class="headerNavigation">
+    <div class="headerTools">
+      <a class="homeButton" href="index.html">Home</a>
+      <form class="siteSearch" action="search.html" method="get" role="search">
+        <label class="srOnly" for="site-search">Search the AI Learning Hub</label>
+        <input id="site-search" name="q" type="search" placeholder="Search" required />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <button class="navToggleBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburgerIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <nav id="primary-nav" class="primaryNav" aria-label="Main navigation">
+    <a href="https://ai-upload-stanford-law.vercel.app/" target="_blank" rel="noopener noreferrer">The AI Upload<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="ai-resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="skills.html">Skills</a>
+    <a href="https://ai-faculty.law.stanford.edu/" target="_blank" rel="noopener noreferrer">Faculty Support<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="docPage">
+
+  <p class="crumb"><a href="index.html">AI Learning Hub</a> &rsaquo; <a href="events">Events</a> &rsaquo; <a href="past-events">Past events</a> &rsaquo; Creating a Personalized AI Writing Partner</p>
+
+  <p class="eyebrow">Past session &middot; 31 October 2025</p>
+  <h1>Creating a Personalized AI Writing Partner</h1>
+  <p class="lede">
+    A writing partner is a set of standing instructions plus a small library of your own work, so the
+    feedback you get is about your writing rather than writing in general. This is the do-it-yourself
+    version of the workshop: why you would build one, what to be careful about, and the five steps.
+  </p>
+
+  <dl class="docMeta">
+    <div>
+      <dt>Presented</dt>
+      <dd>Friday, 31 October 2025, in SLS 290</dd>
+    </div>
+    <div>
+      <dt>Presented by</dt>
+      <dd>
+        Grace Lo (<a href="mailto:gracelo@law.stanford.edu">gracelo@law.stanford.edu</a>), Reference and
+        Research Instruction Librarian, Robert Crown Law Library
+      </dd>
+    </div>
+    <div>
+      <dt>Built with</dt>
+      <dd>Gemini Gems, which a free Google Workspace account can use</dd>
+    </div>
+  </dl>
+
+  <p class="tutorialCurrency stale" style="margin-top: 1.2rem;">
+    This was accurate when presented. The tools discussed and their interfaces may have changed since,
+    and what is free on which plan changes most often of all.
+  </p>
+
+  <h2>The basics</h2>
+  <h3>How you make one</h3>
+  <p>
+    Several platforms let you save a set of standing instructions that behaves like a small custom AI.
+    ChatGPT has custom GPTs and Claude has Projects, but both of those need a paid account. The session
+    used <strong>Gemini Gems</strong>, which are available at no cost to anyone with a Google Workspace
+    account &mdash; which is why the walkthrough is reproducible for everybody.
+  </p>
+
+  <h3>Why bother</h3>
+  <p>
+    A partner you have configured is available whenever you are, and it reads a long document far faster
+    than a person can. It is not a substitute for a human reader; it is something you can use at eleven at
+    night on a draft nobody else has time for.
+  </p>
+
+  <h3>What it can actually do</h3>
+  <ul>
+    <li>Review a long document in a few minutes</li>
+    <li>Identify issues affecting clarity, consistency, and persuasiveness</li>
+    <li>Give feedback on the specific things you told it to watch for</li>
+  </ul>
+
+  <h2>Ethics, before you build anything</h2>
+  <div class="grid two" style="margin-top: 1rem;">
+    <article class="card">
+      <h3 style="margin-top: 0;">Policy questions to answer first</h3>
+      <ul style="margin-bottom: 0;">
+        <li><strong>Coursework:</strong> does the class policy permit AI use?</li>
+        <li><strong>Publications:</strong> what is the journal&rsquo;s or publisher&rsquo;s policy?</li>
+        <li><strong>Clinic work:</strong> do your supervisors and your clients permit it?</li>
+        <li><strong>Any legal work:</strong> does this involve confidential or sensitive information?</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3 style="margin-top: 0;">Three cautions</h3>
+      <ul style="margin-bottom: 0;">
+        <li><strong>Hallucinations:</strong> check the accuracy of every suggested change.</li>
+        <li><strong>Copyright:</strong> being litigated now, and the outcome may affect what can lawfully be used to train these tools.</li>
+        <li><strong>Plagiarism:</strong> AI offers existing writing and ideas without attributing them.</li>
+      </ul>
+    </article>
+  </div>
+
+  <h2>The roadmap</h2>
+  <div class="steps" style="margin: 1.2rem 0;">
+    <div class="step">
+      <h3 style="margin-top: 0;">1. Gather precedents</h3>
+      <p style="margin-bottom: 0;">Collect a representative sample of your own previous writing &mdash; the work you would want new drafts to resemble.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">2. Create feedback checklists</h3>
+      <p style="margin-bottom: 0;">Run those samples through a few different models and have each produce a checklist of the recurring problems and things to watch for.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">3. Form a knowledge base</h3>
+      <p style="margin-bottom: 0;">Collect those checklists together with any other feedback documents or style guidance you rely on.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">4. Write the instructions</h3>
+      <p style="margin-bottom: 0;">Decide what the partner is for: the scope of feedback you want, and the form you want it in.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">5. Build the Gem</h3>
+      <p style="margin-bottom: 0;">Attach the knowledge base, paste in the instructions, then test it on a draft you already have opinions about.</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="secondary" href="https://docs.google.com/document/u/1/d/e/2PACX-1vSUXsOW9fDRlHLOvOz9m4HPFuhbHjQSWftunLgqBdS3WRJaJRedZYpaLDH_GvwQXnJnJrxuARPQtRkE/pub" target="_blank" rel="noopener noreferrer">The instructions and prompts document<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+  </div>
+
+  <h2>The presentation</h2>
+  <p>
+    Open the slides and follow along; the explanations are in the speaker notes.
+  </p>
+
+  <div class="embedPanel slides">
+    <iframe src="https://docs.google.com/presentation/d/1eaSuvGFFyQ73A4_lD5AgmQGsf_zcAxDM-tLIAB6SrD0/embed?start=false&amp;loop=false&amp;delayms=3000" title="Slides: creating a personalized AI writing partner" loading="lazy" allowfullscreen></iframe>
+  </div>
+
+  <div class="actions">
+    <a class="primary" href="https://docs.google.com/presentation/d/1eaSuvGFFyQ73A4_lD5AgmQGsf_zcAxDM-tLIAB6SrD0/export/pptx">Download the deck (.pptx)</a>
+    <a class="secondary" href="https://docs.google.com/presentation/d/1eaSuvGFFyQ73A4_lD5AgmQGsf_zcAxDM-tLIAB6SrD0/edit" target="_blank" rel="noopener noreferrer">Open in Google Slides<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+  </div>
+  <p class="muted">
+    For the speaker notes, use the three-dot menu in the player and choose <em>Open speaker notes</em>.
+  </p>
+
+  <h2>Where to go next</h2>
+  <ul>
+    <li>
+      <a href="https://gemini.google.com/gems/view" target="_blank" rel="noopener noreferrer">Gemini Gems<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      &mdash; where you build the thing. A Google Workspace account is enough.
+    </li>
+    <li>
+      <a href="ai-playground">The Stanford AI Playground</a> &mdash; try the same instructions
+      against several models before you commit to one.
+    </li>
+    <li>
+      <a href="writing-partner-agent">Build a Writing Partner agent in ChatGPT</a> &mdash; the
+      hub&rsquo;s longer guide, which loads ten library-built writing skills into a single agent, plus
+      <a href="skills">the skill files themselves</a> if you would rather not build from scratch.
+    </li>
+  </ul>
+
+  <div class="caution">
+    <p>
+      <strong>Privacy and confidentiality.</strong> Check how a tool treats your data before you upload
+      your own writing to it &mdash; and remember that a writing sample can be as sensitive as anything
+      else you handle. If you would not want it on the front page of the newspaper, do not upload it.
+    </p>
+  </div>
+
+  <p class="note">
+    <strong>Questions?</strong> Bring them to the <a href="events">AI Curiosity Corner</a>, or email
+    <a href="mailto:library@law.stanford.edu">library@law.stanford.edu</a>.
+    <a href="past-events">All past sessions</a> are in the archive.
+  </p>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <nav class="footerNav" aria-label="Site footer">
+      <div class="footerGroup">
+        <h2 class="footerHeading" id="footer-elsewhere">Elsewhere at Stanford</h2>
+        <ul aria-labelledby="footer-elsewhere">
+          <li><a href="https://law.stanford.edu/ai-initiative/" target="_blank" rel="noopener noreferrer">SLS AI Initiative<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/robert-crown-law-library/" target="_blank" rel="noopener noreferrer">Robert Crown Law Library<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://uit.stanford.edu/security/responsibleai" target="_blank" rel="noopener noreferrer">Responsible AI at Stanford<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/office-of-student-affairs/use-of-generative-ai-technology/" target="_blank" rel="noopener noreferrer">Use of Generative AI at SLS<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/hub.js"></script>
+</body>
+</html>

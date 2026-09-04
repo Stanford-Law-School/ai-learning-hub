@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Identifying Trends in a Corpus of Documents Using NotebookLM | AI Learning Hub | Stanford Law School</title>
+<meta name="description" content="Materials from the Robert Crown Law Library workshop on using NotebookLM to find trends across a set of documents: what it is good for, upload and usage limits, its blind spots, and the slide deck." />
+<link rel="canonical" href="https://ailearninghub.law.stanford.edu/event-notebooklm-trends" />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="siteHeader">
+  <a class="headerLogo" href="index.html" aria-label="AI Learning Hub home">
+    <img src="assets/images/robert-crown-law-library-logo.svg" alt="Stanford Law School | Robert Crown Law Library" width="551" height="139" />
+  </a>
+  <div class="headerNavigation">
+    <div class="headerTools">
+      <a class="homeButton" href="index.html">Home</a>
+      <form class="siteSearch" action="search.html" method="get" role="search">
+        <label class="srOnly" for="site-search">Search the AI Learning Hub</label>
+        <input id="site-search" name="q" type="search" placeholder="Search" required />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <button class="navToggleBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburgerIcon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <nav id="primary-nav" class="primaryNav" aria-label="Main navigation">
+    <a href="https://ai-upload-stanford-law.vercel.app/" target="_blank" rel="noopener noreferrer">The AI Upload<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="ai-resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="skills.html">Skills</a>
+    <a href="https://ai-faculty.law.stanford.edu/" target="_blank" rel="noopener noreferrer">Faculty Support<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="docPage">
+
+  <p class="crumb"><a href="index.html">AI Learning Hub</a> &rsaquo; <a href="events">Events</a> &rsaquo; <a href="past-events">Past events</a> &rsaquo; Identifying Trends with NotebookLM</p>
+
+  <p class="eyebrow">Past session &middot; 17 October 2025</p>
+  <h1>Identifying Trends in a Corpus of Documents Using NotebookLM</h1>
+  <p class="lede">
+    Your next insight is buried somewhere in your documents. This is the do-it-yourself version of the
+    workshop on turning a pile of them into a knowledge base you can question &mdash; what NotebookLM is
+    for, where it fails, and the limits worth knowing before you start.
+  </p>
+
+  <dl class="docMeta">
+    <div>
+      <dt>Presented</dt>
+      <dd>Friday, 17 October 2025, on Zoom</dd>
+    </div>
+    <div>
+      <dt>Presented by</dt>
+      <dd>
+        Heather Joy (<a href="mailto:hnjoy@law.stanford.edu">hnjoy@law.stanford.edu</a>), Reference and
+        Student Scholarship Librarian, Robert Crown Law Library
+      </dd>
+    </div>
+    <div>
+      <dt>Format</dt>
+      <dd>Slides with speaker notes, plus the limits and cautions written out below</dd>
+    </div>
+  </dl>
+
+  <p class="tutorialCurrency stale" style="margin-top: 1.2rem;">
+    This was accurate when presented. NotebookLM changes often, and the plan limits below are the ones
+    that applied in October 2025 &mdash; check the current ones before you rely on a number.
+  </p>
+
+  <h2>Three terms</h2>
+  <h3>What NotebookLM is</h3>
+  <p>
+    An AI research assistant from Google that is grounded in the sources <em>you</em> provide. Unlike a
+    general-purpose chatbot it answers from the documents you upload and cites them, which cuts out one
+    whole category of hallucination &mdash; though not all of them.
+  </p>
+
+  <h3>What we mean by trends</h3>
+  <ul>
+    <li>A preemption check</li>
+    <li>Judicial trends across a set of opinions</li>
+    <li>Patterns across interviews</li>
+    <li>How a term is most often defined</li>
+    <li>Where viewpoints diverge</li>
+  </ul>
+
+  <h3>What we mean by a corpus</h3>
+  <ul>
+    <li>Litigation documents</li>
+    <li>Judicial opinions</li>
+    <li>Interview transcripts</li>
+    <li>Scholarly articles</li>
+    <li>A set of statutes or regulations</li>
+  </ul>
+
+  <h2>What the session covers</h2>
+  <div class="steps" style="margin: 1.2rem 0;">
+    <div class="step">
+      <h3 style="margin-top: 0;">1. Explain</h3>
+      <p style="margin-bottom: 0;">Say what NotebookLM is, and how being grounded in your sources changes what it can be trusted with.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">2. Evaluate</h3>
+      <p style="margin-bottom: 0;">Weigh the pros and cons for analyzing a specific corpus &mdash; including whether to use it for this task at all.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">3. Apply</h3>
+      <p style="margin-bottom: 0;">Build a notebook from your own documents and work out the practices that suit the analysis you need.</p>
+    </div>
+  </div>
+
+  <h2>The presentation</h2>
+  <p>Open the slides and follow along; the explanations are in the speaker notes.</p>
+
+  <div class="embedPanel slides">
+    <iframe src="https://docs.google.com/presentation/d/1fG-PEEGxrcS5VZSKaHVDkAxdLczjWkuDnSEUbFe9VGQ/embed?start=false&amp;loop=false&amp;delayms=3000" title="Slides: identifying trends in a corpus of documents using NotebookLM" loading="lazy" allowfullscreen></iframe>
+  </div>
+
+  <div class="actions">
+    <a class="primary" href="https://docs.google.com/presentation/d/1fG-PEEGxrcS5VZSKaHVDkAxdLczjWkuDnSEUbFe9VGQ/export/pptx">Download the deck (.pptx)</a>
+    <a class="secondary" href="https://docs.google.com/presentation/d/1fG-PEEGxrcS5VZSKaHVDkAxdLczjWkuDnSEUbFe9VGQ/edit" target="_blank" rel="noopener noreferrer">Open in Google Slides<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+  </div>
+  <p class="muted">
+    For the speaker notes, use the three-dot menu in the player and choose <em>Open speaker notes</em>.
+  </p>
+
+  <h2>Top tips</h2>
+
+  <h3>Reach for it when</h3>
+  <ul class="checkList">
+    <li>You have a specific task in mind, not a vague hope</li>
+    <li>You have a defined set of material to work from, in one format or several</li>
+    <li>The material is not confidential</li>
+    <li>You want to lower the risk of hallucination</li>
+    <li>You want output in more than one form</li>
+  </ul>
+
+  <h3>What you can upload</h3>
+  <p>
+    PDFs, Google Docs, Google Slides, plain text, URLs that contain text, audio files, and links to
+    videos that have captions.
+  </p>
+
+  <details class="guideDetails">
+    <summary>The plan limits as of October 2025</summary>
+    <ul>
+      <li><strong>Free:</strong> 100 notebooks, up to 50 sources each; each source capped at 500,000 words or 200&nbsp;MB. Fifty chat queries, three audio and three video overviews, ten reports, ten quizzes, ten flashcard sets per day.</li>
+      <li><strong>Paid:</strong> 500 notebooks, up to 300 sources each. Five hundred chat queries, twenty audio and twenty video overviews, and a hundred each of reports, quizzes, and flashcard sets.</li>
+      <li><strong>A day means twenty-four hours</strong>, not a calendar day &mdash; you cannot make three videos at 11:30pm and three more after midnight.</li>
+    </ul>
+  </details>
+
+  <h3>Where it falls down</h3>
+  <ul>
+    <li>It misses sarcasm and tone</li>
+    <li>It cannot read facial expressions in video</li>
+    <li>Hallucinations still happen &mdash; usually as wrong or confused data drawn from your own uploads, or as formatting problems</li>
+    <li>It does not always do what you asked, so check the output every time</li>
+  </ul>
+
+  <h2>Where to go next</h2>
+  <ul>
+    <li>
+      <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer">Try NotebookLM<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      with your own sources.
+    </li>
+    <li>
+      <a href="https://support.google.com/notebooklm/?hl=en" target="_blank" rel="noopener noreferrer">Google&rsquo;s help center<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a>
+      for the official how-to and the current limits.
+    </li>
+    <li>
+      <a href="ai-for-beginners#m8">Part eight of the beginners course</a> covers preparing the
+      documents you are about to upload, which is most of what makes this work.
+    </li>
+  </ul>
+
+  <div class="caution">
+    <p>
+      <strong>Privacy and confidentiality.</strong> Grounded in your sources still means your sources went
+      somewhere. Check how the tool treats your data before uploading, keep confidential material out, and
+      if you would not want it on the front page of the newspaper, do not upload it.
+    </p>
+  </div>
+
+  <p class="note">
+    <strong>Questions?</strong> Bring them to the <a href="events">AI Curiosity Corner</a>, or email
+    <a href="mailto:library@law.stanford.edu">library@law.stanford.edu</a>.
+    <a href="past-events">All past sessions</a> are in the archive.
+  </p>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <nav class="footerNav" aria-label="Site footer">
+      <div class="footerGroup">
+        <h2 class="footerHeading" id="footer-elsewhere">Elsewhere at Stanford</h2>
+        <ul aria-labelledby="footer-elsewhere">
+          <li><a href="https://law.stanford.edu/ai-initiative/" target="_blank" rel="noopener noreferrer">SLS AI Initiative<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/robert-crown-law-library/" target="_blank" rel="noopener noreferrer">Robert Crown Law Library<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://uit.stanford.edu/security/responsibleai" target="_blank" rel="noopener noreferrer">Responsible AI at Stanford<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+          <li><a href="https://law.stanford.edu/office-of-student-affairs/use-of-generative-ai-technology/" target="_blank" rel="noopener noreferrer">Use of Generative AI at SLS<span class="externalLinkIcon" aria-hidden="true">&#8599;</span><span class="srOnly"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/hub.js"></script>
+</body>
+</html>

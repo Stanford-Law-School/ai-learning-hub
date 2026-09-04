@@ -4,14 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
-<title>Google Sites embed codes | AI Learning Hub | Stanford Law School</title>
-<meta name="description" content="Maintenance page: the iframe to paste into each Google Sites page, and the Google Sites URL that page must have." />
-<meta name="robots" content="noindex" />
+<title>Session One: An Introduction for SLS Staff | AI Learning Hub | Stanford Law School</title>
+<meta name="description" content="Slides from the Robert Crown Law Library's first AI training session for Stanford Law School staff, June 2025: a problem-first introduction to generative AI and where it fits in staff work." />
+<link rel="canonical" href="https://ailearninghub.law.stanford.edu/event-staff-introduction" />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
-<!-- The map is needed before this page can render itself, so it is loaded here
-     rather than waiting for the copy at the end of the body. -->
-<script src="assets/embed-map.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -43,56 +40,67 @@
   </div>
 </header>
 
-<main id="main">
+<main id="main" class="docPage">
 
-  <p class="crumb"><a href="index.html">AI Learning Hub</a> &rsaquo; Google Sites embed codes</p>
+  <p class="crumb"><a href="index.html">AI Learning Hub</a> &rsaquo; <a href="events">Events</a> &rsaquo; <a href="past-events">Past events</a> &rsaquo; Session One: An Introduction for SLS Staff</p>
 
-  <p class="eyebrow">Maintenance page &mdash; not linked from the site</p>
-  <h1>Google Sites embed codes</h1>
-
+  <p class="eyebrow">Past session &middot; 24 June 2025</p>
+  <h1>Session One: An Introduction for SLS Staff</h1>
   <p class="lede">
-    The hub is served from Vercel and read inside Google Sites. Every hub page needs a Google Sites
-    page of its own at <strong id="embedOrigin">the hub domain</strong>, holding one full-page frame.
-    This page prints those <span id="embedCount">&mdash;</span> frames, built from the same map the
-    site itself uses, so the two cannot drift apart.
+    The first of the library&rsquo;s staff AI trainings: what generative AI is, what it is useful for, and
+    how to approach it problem-first rather than tool-first. The presentation is below.
   </p>
 
-  <section aria-labelledby="how-h">
-    <h2 id="how-h">Building a page</h2>
-    <ol>
-      <li>In the Google Sites <em>Pages</em> panel, press <em>+</em> and choose
-        <strong>New full page embed</strong>. Paste the URL under each block below. A full page
-        embed sizes itself to the page, so there is no block to drag and no height to guess at.</li>
-      <li>The <em>Name</em> becomes the label in the Google Sites navigation bar, so give it the
-        name a reader should see &mdash; <em>Tutorials</em>, not <em>tutorials</em>.</li>
-      <li>Open <em>Advanced</em> and set the custom path to match the path shown above the block.
-        The path has to match, or the hub&rsquo;s own navigation will send readers to a page that
-        does not exist.</li>
-      <li>Publish, then open the Google Sites URL and click a link inside the frame. The browser
-        address bar should move to another <code>ailearninghub.law.stanford.edu</code> page, not
-        stay where it was.</li>
-    </ol>
+  <dl class="docMeta">
+    <div>
+      <dt>Presented</dt>
+      <dd>Tuesday, 24 June 2025</dd>
+    </div>
+    <div>
+      <dt>Facilitators</dt>
+      <dd>Taryn Marks and Will Huggins, Robert Crown Law Library</dd>
+    </div>
+    <div>
+      <dt>Written for</dt>
+      <dd>Stanford Law School staff, with no prior AI experience assumed</dd>
+    </div>
+  </dl>
 
-    <p class="note">
-      <strong>If the address bar does not move.</strong> Google wraps an embed in a sandbox, and a
-      sandbox that withholds top-level navigation will swallow those clicks: the frame changes but
-      the address bar does not. That is the one thing worth testing before building all
-      <span id="embedCount2"></span> pages. If it happens, change <code>LINK_TARGET</code> in
-      <code>scripts/build-embed-map.py</code> from <code>"_top"</code> to <code>"_blank"</code> and
-      rebuild &mdash; links then open the right Google Sites page in a new tab instead.
-    </p>
-  </section>
+  <p class="tutorialCurrency stale" style="margin-top: 1.2rem;">
+    From June 2025, and the earliest material in this archive. The framing holds; the specific tools and
+    screenshots are two generations old by now. For a current introduction, read
+    <a href="ai-for-beginners">Introduction to AI for Beginners</a>.
+  </p>
 
-  <section aria-labelledby="codes-h">
-    <h2 id="codes-h">The frames</h2>
-    <div id="embedCodes"></div>
-  </section>
+  <h2>The presentation</h2>
+
+  <div class="embedPanel slides">
+    <iframe src="https://docs.google.com/presentation/d/1uFd9dcxc7-ctXfTQ7bsve1UMi46Thi8A/embed?start=false&amp;loop=false&amp;delayms=3000" title="Slides: a problem-based approach to AI training, an introduction for SLS staff" loading="lazy" allowfullscreen></iframe>
+  </div>
+
+  <p class="muted">
+    Use the three-dot menu in the player to open the speaker notes or to view the deck full screen.
+  </p>
+
+  <h2>What followed it</h2>
+  <ul>
+    <li>
+      <a href="event-lightning-workshops">Session two: breakout room lightning workshops</a> &mdash; the
+      hands-on follow-up two months later, with seven rooms and all their materials.
+    </li>
+    <li>
+      <a href="ai-for-beginners">Introduction to AI for Beginners</a> &mdash; the ten-part course
+      this session grew into, and the place to send anyone starting now.
+    </li>
+    <li>
+      <a href="pause-rule">The PAUSE Rule</a> &mdash; the problem-first workflow, written down.
+    </li>
+  </ul>
 
   <p class="note">
-    <strong>Search stays inside the frame.</strong> Google Sites cannot pass a query string on its own
-    URL through to the frame it hosts, so a Google Sites <code>/search</code> page would always come up
-    empty. Search runs inside whichever frame the reader is already in, and its results link out to the
-    right Google Sites page like any other hub link.
+    <strong>Running an introduction for your own team?</strong> Email
+    <a href="mailto:library@law.stanford.edu">library@law.stanford.edu</a> &mdash; we will come and do it,
+    or help you run it yourself. <a href="past-events">All past sessions</a> are in the archive.
   </p>
 
 </main>
@@ -114,11 +122,5 @@
 </footer>
 
 <script src="assets/hub.js"></script>
-<script src="assets/embed-codes.js"></script>
-<script src="assets/copy-code.js"></script>
-
-<!-- embed-map: generated by scripts/build-embed-map.py -->
-<script src="assets/embed-map.js"></script>
-<script src="assets/embed.js"></script>
 </body>
 </html>
