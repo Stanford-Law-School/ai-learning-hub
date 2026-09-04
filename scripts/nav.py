@@ -1,6 +1,6 @@
 """Write the canonical header and footer into every hub page.
 
-Ten static pages cannot each carry their own hand-typed copy of the navigation
+The static pages cannot each carry their own hand-typed copy of the navigation
 without drifting, so the copy lives here and this replaces the block in place.
 It is idempotent: the committed files stay plain HTML with no build step, and a
 future edit is an ordinary HTML edit. Run it again after changing the nav.
@@ -127,26 +127,10 @@ def footer_html():
 HEADER_RE = re.compile(r'<header class="siteHeader">.*?</header>', re.S)
 FOOTER_RE = re.compile(r'<footer class="footer">.*?</footer>', re.S)
 
-# The pages that are a full-viewport frame and nothing else, marked in the HTML
-# with <body class="hasEmbed">. Such a page gets no header and no footer, and
-# this script leaves it alone, because the framed site would carry its own
-# navigation and two bars on one screen is two sets of destinations.
-#
-# The set is empty, and nothing frames anything from this site any more:
-#
-#   faculty-publications.html keeps the hub bar above its embed on purpose, so it
-#     is maintained like any other page;
-#   faculty.html stopped being a frame when SLS IT prohibited embedding the
-#     faculty site, became a page that described it and linked on to it, and is
-#     now deleted — the nav goes straight to the faculty hostname instead;
-#   ai-upload.html was the last one, and goes the same way for the same reason —
-#     the digest is a separate application on its own domain, reached by a link.
-#
-# The mechanism is kept rather than deleted because it is generic and cheap: if
-# the hub ever needs a full-page frame again, adding the page here is the whole
-# change. What it must not become is a habit — a frame around somebody else's
-# site is the pattern both of the pages above were removed from.
-EMBED_PAGES = set()
+# Every page gets the bar and the footer. There is no exception list any more:
+# the hub used to have pages that were a full-viewport frame around another site
+# and so carried no navigation of their own, and it no longer has any. A frame
+# around somebody else's site is not a pattern to reintroduce.
 
 
 def main():
@@ -154,14 +138,6 @@ def main():
     if not pages:
         sys.exit("no pages found")
     for page in pages:
-        if page.name in EMBED_PAGES:
-            # Not merely skipped: if one of these ever grows a bar, that is a
-            # mistake this script should report rather than quietly maintain.
-            if HEADER_RE.search(page.read_text()):
-                sys.exit(f"{page.name} is a full-page embed but carries a .siteHeader block")
-            print(f"skipped {page.name} (full-page embed)")
-            continue
-
         text = page.read_text()
         original = text
 

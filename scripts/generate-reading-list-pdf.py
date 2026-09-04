@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "assets" / "books.js"
 OUTPUT = ROOT / "assets" / "ai-reading-list.pdf"
 
-SOURCE_PAGE = "https://sites.google.com/law.stanford.edu/ailearninghub/"
+SOURCE_PAGE = "https://ailearninghub.law.stanford.edu/"
 CONTACT = "library@law.stanford.edu"
 
 MAROON = "8c1515"

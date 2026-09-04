@@ -29,16 +29,16 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "assets", "search-index.js");
 
-// The search page itself would only ever match its own furniture, and the
-// embed-code list is a maintenance page no reader is looking for.
+// The search page itself would only ever match its own furniture.
 //
 // faculty.html and ai-upload.html were skipped while they were frames carrying
 // someone else's site and nothing of ours. ai-upload.html is a real page now —
 // it says what the digest is and what is in an issue, which is what somebody
 // searching "upload" needs to find — so it is indexed. faculty.html is deleted;
 // a search for "faculty" now finds the card on the landing page and
-// faculty-publications.html.
-const SKIP = new Set(["search.html", "embed-codes.html"]);
+// faculty-publications.html. embed-codes.html was a maintenance page for the
+// Google Sites frames, and is deleted with them.
+const SKIP = new Set(["search.html"]);
 
 const TYPES = {
   ".html": "text/html", ".css": "text/css", ".js": "text/javascript",

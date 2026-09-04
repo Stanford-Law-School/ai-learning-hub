@@ -23,10 +23,13 @@ points at it, and its header points back. Both sibling sites were embedded in th
 one until SLS IT prohibited embedding the faculty site; both are now reached by an
 ordinary link, and nothing here frames either.
 
-This site is read inside Google Sites — one full-page frame per hub page. See
-[Inside Google Sites](#inside-google-sites) for how the two stay in step. That
-sentence used to begin "Like the faculty site"; the faculty site is no longer
-framed anywhere, and this site's own framing is unrelated to it.
+The site is read directly at `https://ailearninghub.law.stanford.edu`. It used to
+be read inside Google Sites, one full-page frame per hub page, which needed a
+generated map of Google Sites paths and a runtime that rewrote every internal link
+to move the browser out of the frame. **That layer is gone** — `assets/embed.js`,
+`assets/embed-map.js`, `scripts/build-embed-map.py`, and `embed-codes.html` are
+deleted, no page loads an embed runtime, and links between hub pages are ordinary
+links again. Nothing frames this site, and nothing here frames another.
 
 ## The site
 
@@ -66,6 +69,8 @@ python3 -m http.server 8000
 | `scripts/inject-agent-instructions.py` | Copies that file into the page's copy box |
 | `assets/copy-code.js` | The copy button on the case study's skill template |
 | `assets/install-a-skill-guide.pdf` | Printable skill-installation guide with clickable links to both videos |
+| `digital-wellness.html` | Digital Wellness — the three themes, and the guide to reducing Gemini and AI features in Google tools |
+| `assets/images/reduce-gemini-google-tools-page-1.png` | First-page preview of that guide, rendered from the Google Docs PDF export |
 | `faculty-publications.html` | SLS faculty publications on AI, embedded within the hub navigation |
 | `ai-upload.html` | The AI Upload landing page &mdash; describes the weekly digest and links to it |
 | `assets/styles.css` | The design system |
@@ -77,11 +82,7 @@ python3 -m http.server 8000
 | `assets/search.js` | The matching and drawing behind it |
 | `assets/search-index.js` | The index it searches (generated) |
 | `scripts/build-search-index.mjs` | Builds that index from the rendered pages |
-| `assets/embed-map.js` | Generated: which Google Sites page holds each hub page |
-| `assets/embed.js` | Sends hub links to those Google Sites pages when the hub is framed |
-| `scripts/build-embed-map.py` | Builds that map and wires the pages to it |
-| `embed-codes.html` | Maintenance page: the frame to paste into each Google Sites page |
-| `vercel.json` | Who is allowed to frame the site |
+| `vercel.json` | Who is allowed to frame the site: this origin and no one else |
 
 All of it is ported from the previous AI Learning Hub, which was a set of
 standalone Tailwind and React pages, into the one design system below.
@@ -98,6 +99,11 @@ navigation. Secondary pages are linked from relevant landing-page content.
 
 The PAUSE Rule is not in the bar. It is a short link on the home hero rather than
 a primary call to action or a destination card that restates the nav.
+
+Digital Wellness is not in the bar either, and adding it would mean either a
+seventh destination or dropping one of the six. It is reached from a card in the
+landing page's featured row and from site search, which is the pattern for a
+section somebody looks for rather than a route they need kept open.
 
 The bar and footer are the same markup on every page that has them, which no one
 should be retyping eleven times. They are written by `scripts/nav.py`: it replaces
@@ -133,7 +139,7 @@ node scripts/build-search-index.mjs --check    # non-zero if it is out of date
 Re-run it after editing page content and commit the result. It is the one script
 here that needs Playwright, so it is a maintainer step rather than a build step —
 `PLAYWRIGHT_PATH=/path/to/playwright/index.js` points it at a global install if you
-do not want a local dependency. The index is currently 473 entries and about 286 kB,
+do not want a local dependency. The index is currently 482 entries and about 285 kB,
 loaded on `search.html` alone and nowhere else.
 
 Matching is prefix-per-word ("cita" finds "citation", "ation" does not), all terms
@@ -240,6 +246,38 @@ it is a calendar that is already public. It is the opposite trade from the Gemin
 "AI Curator" key described below, which would have been a write-capable key on a paid
 API — that one we did not take.
 
+### Digital Wellness
+
+`digital-wellness.html` states what the section is for — three themes, written as
+short explanations rather than links — and carries the one resource that exists so
+far: the library's own guide to reducing Gemini and AI features in Google tools. The
+themes are deliberately not clickable tiles. A tile that looks like a destination
+promises pages that are not written yet; when a theme has its own material, it can
+become a link then.
+
+The guide itself lives in Google Docs and is not copied here. The page offers the two
+routes to it — the PDF export, which Google serves with
+`Content-Disposition: attachment` so the link downloads rather than opening a tab,
+and the document itself. Neither is framed: no iframe, no document viewer.
+
+What *is* committed is a preview of the first page,
+`assets/images/reduce-gemini-google-tools-page-1.png`, at 639px for a slot that is
+never wider than 300, so it stays sharp on a 2x screen. It was rendered from the PDF
+export on macOS and is the one image asset here that is not vector:
+
+```
+curl -L "https://docs.google.com/document/d/<id>/export?format=pdf" -o guide.pdf
+qlmanage -t -s 828 -o . guide.pdf
+```
+
+Re-render it if the document's first page changes; a stale preview is worse than
+none, because it shows a reader something the download does not contain.
+
+The card on the landing page links to `digital-wellness` rather than
+`digital-wellness.html`, because the clean path is how the page is addressed
+publicly and Vercel serves every page at its extensionless path. The rest of the
+site still links with `.html`; new visitor-facing links should not.
+
 ### Content that is data, not markup
 
 Two pages keep their content in one array at the bottom of the file and render the
@@ -255,7 +293,7 @@ rendered by both `reading-list.html` and the Selected Reading section of
 ### Your AI Stack
 
 `your-ai-stack.html` was its own repository — `whuggins-RCLL/Your-AI-Stack`, a Vite +
-React + Tailwind app. The hub link used to point at a Google Sites page wrapping it.
+React + Tailwind app, reached through a wrapper page rather than living here.
 The directory now runs natively here: 113 tools, 29 retired products, the same
 categories, and the guide sections, in the hub's design system with no build step.
 
@@ -374,9 +412,7 @@ originally a Vercel address, then briefly `/faculty` on this domain, and is now
 application does not get mounted inside an origin that has to stay public, and a
 path on this domain would have meant proxying protected content through the public
 hub. Apache proxies that hostname to the faculty app's own origin. Nothing on this
-side proxies, rewrites, or frames it — the outbound link is the whole integration,
-and `assets/embed.js` leaves it alone because it only rewrites links to hub page
-files.
+side proxies, rewrites, or frames it — the outbound link is the whole integration.
 
 There used to be a page in between. `faculty.html` was an ordinary hub page that
 described the faculty site, listed who could sign in, pointed students at
@@ -402,139 +438,38 @@ injection of its markup to get the same effect.
 `target="_blank"` on that link is load-bearing rather than stylistic. A new
 top-level tab is where Stanford sign-in is most reliable: the redirect chain runs
 at the top level, and a sign-in flow inside a frame is the case browsers restrict.
-Any hub page still being read inside a frame would otherwise load the faculty site
-*within* that frame, recreating the embedding by accident. `_top` would keep it to
-one tab, but an embed sandbox can withhold top-level navigation, so `_blank` is the
-sturdier of the two. `assets/embed.js` only rewrites links to hub page files, so it
-leaves this one alone.
 
-`ai-upload.html` still gets the page treatment, and it is now the only one that
-does. It was the last full-page frame on the site, holding The AI Upload; it is a
-landing page that says what the digest is, what is in an issue, and links to it
-with the same `target="_blank"`. The digest needs no sign-in, so it carries no
-eligibility rules and no student referral — which is why it survives as a page
-where the faculty one did not.
+`ai-upload.html` gets the same treatment. It was once a full-page frame holding The
+AI Upload; it is now a landing page that says what the digest is, what is in an
+issue, and links to it with the same `target="_blank"`. The digest needs no
+sign-in, so it carries no eligibility rules and no student referral — which is why
+it survives as a page where the faculty one did not.
 
-**Nothing on this site frames another site any more.** `body.hasEmbed` and
-`.embedFrame` are deleted, `EMBED_PAGES` in `scripts/nav.py` is empty, and
-`NO_RUNTIME` in `scripts/build-embed-map.py` is empty. `.digestEmbed`, which the
-faculty site used for its own frame around the same digest, is deleted from both
-stylesheets. The only frames left are the bounded inline panels — the event
-calendar, the week-at-a-glance board, the faculty publications list — which show
-one third-party thing inside a page that is otherwise ours.
-
-The `EMBED_PAGES` and `frame_for()` machinery is kept even though both sets are
-empty. It is generic and cheap, and it is what made removing these frames
-self-correcting: because `frame_for()` reads the iframe `src` out of the page
-rather than from a list, deleting an iframe drops the `frame` key from the map by
-itself. What it must not become is a habit.
+**Nothing on this site frames another site any more, and nothing frames this one.**
+`body.hasEmbed` and `.embedFrame` are deleted, and so is `.digestEmbed`, which the
+faculty site used for its own frame around the same digest. `vercel.json` and
+`customHttp.yml` allow `frame-ancestors 'self'` and nothing else. The only frames
+left are the bounded inline panels — the event calendar and the faculty
+publications list — which show one third-party thing inside a page that is
+otherwise ours. A frame around somebody else's whole site is not a pattern to
+reintroduce.
 
 `faculty-publications.html` embeds the Stanford Law School faculty AI publications
 list within a standard hub page, preserving the hub header, footer, and navigation
 around the external content.
 
-### Inside Google Sites
+### How the site is served
 
-The hub is served from Vercel but read inside Google Sites: every hub page is a
-full-page frame on a matching Google Sites page under
-`https://ailearninghub.law.stanford.edu`. Nothing about the domain changes — the
-Google Site stays the address, and Vercel stays where the site is built.
+Vercel builds and serves the repository, and `https://ailearninghub.law.stanford.edu`
+answers from it directly. There is no wrapper, no frame, and nothing to keep in step:
+adding a page to the hub is adding an HTML file and running `scripts/nav.py`.
 
-The problem that creates is navigation. A click on "Tutorials" inside a frame
-swaps the document in the frame and leaves the address bar showing whichever
-Google Sites page the reader started on. The address is then wrong, the back
-button steps out of the site rather than back a page, and any URL a reader copies
-sends someone else to the wrong place.
+Vercel also serves every page at its extensionless path, so `/digital-wellness` is
+`digital-wellness.html`. That is the form to use in a visitor-facing link.
 
-So `assets/embed.js` rewrites, when — and only when — the page is being read
-inside a frame, every link to another hub page into the Google Sites page that
-holds it, and points it at the top window. The whole tab moves, Google Sites
-loads its own page, and that page's frame loads the page the reader asked for.
-The address bar keeps up, the back button works, and every URL is shareable.
-
-Read directly on Vercel the file does nothing: links stay ordinary relative
-links, so the site is still testable on its own and still works if the Google
-Sites side is ever taken down.
-
-The map both halves read is generated, not kept by hand:
-
-```
-python3 scripts/build-embed-map.py            # write the map, wire the pages
-python3 scripts/build-embed-map.py --check    # non-zero if either is stale
-```
-
-It derives `assets/embed-map.js` from the pages that exist — the Google Sites
-path is the file name without `.html`, with any exception listed in `SLUGS` —
-and makes sure every page loads the runtime. Adding a page to the hub is still
-just adding an HTML file; re-run this afterwards.
-
-`index.html` is one of those exceptions: it sits at `/home` rather than `/`,
-because the Google Sites root is that site's own hand-built landing page and the
-hub's landing page is a full page embed alongside it.
-
-To see the rewriting without Google Sites, open any page with `?embed=1` on the
-end. That is the same switch the frame check sets, so the links change in an
-ordinary tab and can be hovered and read. Without it, on Vercel, links stay
-Vercel links — that is the file doing its job, not failing to.
-
-`embed-codes.html` is the maintenance page that turns the map into work. It
-prints, for every published page, the Google Sites path that page must have and
-the Vercel URL to give it, built from the same map the site uses, so the two
-cannot drift. It renders whichever origin it is being served from, so a preview
-deployment prints correct URLs too. It is not linked from the site and is kept
-out of the search index.
-
-The Google Sites pages are built as **full page embeds** — the Pages panel, *+*,
-*New full page embed* — which take a URL and size themselves to the page. The
-custom path under *Advanced* has to match the path the map records, or the hub's
-own navigation will point at a page that does not exist. Each block also carries
-the iframe for the other route, *Insert > Embed > Embed code*, for a Google Sites
-page that has to hold something besides the hub; that one is a block on the page
-and has to be dragged to full width and height by hand.
-
-Three things are worth knowing before building the Google Sites pages.
-
-**Top-level navigation has to be allowed.** Google wraps pasted embed code in a
-sandbox, and a sandbox that withholds top-level navigation swallows these clicks:
-the frame changes and the address bar does not. Test one page before building all
-of them. If it happens, change `LINK_TARGET` in `scripts/build-embed-map.py` from
-`"_top"` to `"_blank"` and re-run — links then open the right Google Sites page
-in a new tab instead, which is worse but not broken.
-
-**Search stays inside the frame.** Google Sites cannot pass a query string on its
-own URL through to the frame it hosts, so a Google Sites `/search` page would
-always come up empty. `search.html` is marked `inframe` in the map: it runs inside
-whichever frame the reader is already in, and its results link out to the right
-Google Sites page like any other hub link. A cross-page `#fragment` is dropped for
-the same reason — a kept fragment would promise a section Google Sites cannot
-scroll the frame to, so the reader lands at the top of the right page instead and
-the shared URL stays honest. `KEEP_HASH` turns that off if the Google Sites pages
-ever grow matching anchors.
-
-**No page is framed directly any more, and two Google Sites pages need repointing
-by hand.** A page that was nothing but a frame around another site used to be
-recorded in the map with a `frame` key, so Google Sites could frame that site
-directly rather than nesting three deep. `faculty.html` and `ai-upload.html` were
-the two. Because `frame_for()` reads the `src` out of the page rather than from a
-list, deleting each iframe dropped its `frame` key on its own, and the map now
-tells Google Sites to frame the hub page instead.
-
-**The Google Sites side does not update itself.** Until somebody edits it, the page
-at `/ai-upload` keeps framing whatever URL it was last given — which is the other
-site, directly. Open `embed-codes.html`, copy the URL it now prints, and replace
-the full-page embed on that Google Sites page. The caption above each block says
-which it is showing, so a block still reading *shows `https://…` directly* has not
-been repointed yet.
-
-`/faculty-support` needs no repointing: `faculty.html` is deleted, so it is absent
-from the map, prints no block, and has nothing left to frame. Remove that page on
-the Google Sites side.
-
-`vercel.json` carries one header: a `frame-ancestors` policy that permits Google
-Sites and the hub domain to frame the site and no one else. It is the one change
-here that can fail loudly — if Google ever serves embed code from an origin the
-list does not cover, the frame goes blank. Deleting `vercel.json` restores the
-previous behaviour, which was to let anyone frame the site.
+`vercel.json` (and `customHttp.yml`, for Amplify) carries one header: a
+`frame-ancestors 'self'` policy, so no other origin may frame the site. It was
+briefly wider, to let Google Sites frame each page; that arrangement is over.
 
 ## The skills
 

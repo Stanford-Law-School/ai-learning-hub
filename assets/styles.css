@@ -3718,3 +3718,35 @@ main section[id] { scroll-margin-top: 8rem; }
   .stackDetails > *:not(summary) { display: revert !important; }
   .stackCardCat, .stackBadge { color: #444 !important; }
 }
+
+/* ---- Digital Wellness ------------------------------------------------------
+   One featured resource: a first-page preview beside the description and the
+   two controls. The preview is capped at 300px so it stays a preview rather
+   than becoming the page, and it is first in the DOM, so when the grid
+   collapses at the site's own 860px breakpoint it stacks above the text with
+   no reordering. */
+.dwResource {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+  /* The preview is taller than the two paragraphs beside it, so the text is
+     centered against it rather than stranded at the top, as in .videoDemo. */
+  align-items: center;
+  /* A page-wide card would leave the preview stranded beside two short
+     paragraphs. Capped, the two columns read as one block, and the description
+     keeps a comfortable measure. */
+  max-width: 54rem;
+}
+.dwPreview {
+  display: block; width: 100%; max-width: 300px; height: auto;
+  border: 1px solid var(--glass-border); border-radius: 12px;
+  /* The guide is a paper document in both themes; the image is opaque, so this
+     shows only at the rounded corners. */
+  background: #fff;
+}
+.dwResourceBody .actions { margin-top: 1.1rem; }
+.dwResourceBody > :last-child { margin-bottom: 0; }
+
+@media (max-width: 860px) {
+  .dwResource { grid-template-columns: 1fr; }
+}
