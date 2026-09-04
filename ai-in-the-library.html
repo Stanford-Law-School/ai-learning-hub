@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="dark light" />
 <title>AI in the Library | AI Learning Hub | Stanford Law School</title>
-<meta name="description" content="AI in the Library — the Robert Crown Law Library's AI display, as a companion page: Law Library resources, the PAUSE and V.E.T. frameworks, keeping the lawyer in the loop, AI at Stanford, SLS faculty scholarship, and 32 selected books." />
+<meta name="description" content="AI in the Library — the Robert Crown Law Library's AI display, as a companion page: Law Library resources, the PAUSE and V.E.T. frameworks, keeping the lawyer in the loop, AI at Stanford, SLS faculty scholarship, and 47 selected books." />
 <link rel="stylesheet" href="assets/styles.css" />
 <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')==='light'?'light':'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
 </head>
@@ -49,7 +49,7 @@
     The library&rsquo;s AI display, in full. It exists in two places: as a physical display on the first floor
     of the Robert Crown Law Library, and here. Seven parts &mdash; the library&rsquo;s own resources, the rules
     worth adopting, keeping human judgment in the loop, vetting AI legal research, Stanford&rsquo;s wider AI
-    ecosystem, SLS faculty scholarship, and a shelf of thirty-two books.
+    ecosystem, SLS faculty scholarship, and a shelf of 47 books.
   </p>
   <div class="actions">
     <a class="primary" href="reading-list.html">Open the reading list</a>
@@ -162,7 +162,7 @@
 <script src="assets/books.js"></script>
 <script>
 // The display's content, carried over from the original app's constants.tsx —
-// seven categories and twenty-four panels. The thirty-two books live in
+// seven categories and twenty-four panels. The books live in
 // assets/books.js so this page and reading-list.html share one shelf.
 //
 // The Gemini "AI Curator" chat is deliberately absent: it needed an API key, and
@@ -375,7 +375,7 @@ const sections = CATEGORIES.map((cat) => {
       ? `<div class="readingShelfHead">
            <h3>On the shelf &mdash; ${books.length} titles</h3>
            <p class="muted" style="max-width:70ch;">Every title is held by Stanford Libraries; each links to its SearchWorks record. <a href="reading-list.html">Open the reading list on its own page</a>.</p>
-           <div class="actions"><a class="secondary" href="assets/ai-reading-list.pdf" download="sls-ai-reading-list.pdf" aria-label="Download the AI reading list as a PDF, 32 titles with catalogue links">Download the list (PDF)</a></div>
+           <div class="actions"><a class="secondary" href="assets/ai-reading-list.pdf" download="sls-ai-reading-list.pdf" aria-label="Download the AI reading list as a PDF, ${books.length} titles with catalogue links">Download the list (PDF)</a></div>
          </div>
          <div class="bookGrid" id="exhibit-book-grid"></div>`
       : "";

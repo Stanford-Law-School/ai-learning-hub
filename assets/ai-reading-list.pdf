@@ -4,7 +4,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [9 0 R 16 0 R 24 0 R 32 0 R 40 0 R 47 0 R 51 0 R] /Count 7 >>
+<< /Type /Pages /Kids [9 0 R 16 0 R 24 0 R 32 0 R 40 0 R 47 0 R 54 0 R 60 0 R 66 0 R 72 0 R] /Count 10 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
@@ -13,14 +13,14 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<< /Length 4271 >>
+<< /Length 4272 >>
 stream
 0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
 BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
 BT /F2 10 Tf 0.549 0.082 0.082 rg 1 0 0 1 42.0 718.0 Tm (ROBERT CROWN LAW LIBRARY) Tj ET
 BT /F2 26 Tf 0.067 0.094 0.153 rg 1 0 0 1 42.0 680.0 Tm (AI reading list) Tj ET
 0.824 0.663 0.000 rg 42.0 662.0 72.0 4.0 re f
-BT /F1 11 Tf 0.122 0.161 0.216 rg 1 0 0 1 42.0 634.0 Tm (32 titles selected for the library's AI display, from the shelf on the first floor of the Robert Crown Law Library.) Tj ET
+BT /F1 11 Tf 0.122 0.161 0.216 rg 1 0 0 1 42.0 634.0 Tm (47 titles selected for the library's AI display, from the shelf on the first floor of the Robert Crown Law Library.) Tj ET
 BT /F1 11 Tf 0.122 0.161 0.216 rg 1 0 0 1 42.0 618.0 Tm (Every book is held by Stanford Libraries, and every entry below links to its SearchWorks record.) Tj ET
 0.973 0.953 0.910 rg 42.0 536.0 528.0 62.0 re f
 BT /F2 10 Tf 0.549 0.082 0.082 rg 1 0 0 1 56.0 578.0 Tm (HOW TO USE THIS LIST) Tj ET
@@ -55,7 +55,7 @@ BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 174.0 Tm (View in SearchWorks) T
 0.898 0.906 0.922 rg 42.0 160.5 528.0 0.5 re f
 0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
 BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
-BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 548.7 38.0 Tm (1 of 7) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (1 of 10) Tj ET
 endstream
 endobj
 6 0 obj
@@ -71,7 +71,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R /Annots [6 0 R 7 0 R 8 0 R] >>
 endobj
 10 0 obj
-<< /Length 4861 >>
+<< /Length 4862 >>
 stream
 0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
 BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
@@ -119,7 +119,7 @@ BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 195.5 Tm (View in SearchWorks) T
 0.898 0.906 0.922 rg 42.0 182.0 528.0 0.5 re f
 0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
 BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
-BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 548.7 38.0 Tm (2 of 7) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (2 of 10) Tj ET
 endstream
 endobj
 11 0 obj
@@ -132,7 +132,7 @@ endobj
 << /Type /Annot /Subtype /Link /Rect [50.0 403.5 146.1 417.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861293) >> >>
 endobj
 14 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 298.0 146.1 311.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861293) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 298.0 146.1 311.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861290) >> >>
 endobj
 15 0 obj
 << /Type /Annot /Subtype /Link /Rect [50.0 192.5 146.1 206.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861297) >> >>
@@ -141,7 +141,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R /Annots [11 0 R 12 0 R 13 0 R 14 0 R 15 0 R] >>
 endobj
 17 0 obj
-<< /Length 5623 >>
+<< /Length 5624 >>
 stream
 0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
 BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
@@ -196,7 +196,7 @@ BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 103.5 Tm (View in SearchWorks) T
 0.898 0.906 0.922 rg 42.0 90.0 528.0 0.5 re f
 0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
 BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
-BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 548.7 38.0 Tm (3 of 7) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (3 of 10) Tj ET
 endstream
 endobj
 18 0 obj
@@ -221,7 +221,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R /Annots [18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R] >>
 endobj
 25 0 obj
-<< /Length 5564 >>
+<< /Length 5751 >>
 stream
 0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
 BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
@@ -236,71 +236,72 @@ BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 646.0 Tm (View in SearchWorks) T
 BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 612.5 Tm (16. The Cambridge Handbook of the Law, Ethics and Policy of Artificial Intelligence) Tj ET
 BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 597.5 Tm (Nathalie A. Smuha \(ed.\)) Tj ET
 BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 584.5 Tm (Cambridge University Press \267 February 2025 \267 ISBN 9781009367813) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 569.5 Tm (An interdisciplinary handbook on AI's legal, ethical, and policy implications, with particular focus on European) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 556.0 Tm (frameworks including the EU AI Act, covering healthcare, finance, education, media, labour, and law enforcement.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 540.5 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 538.5 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 527.0 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 507.0 Tm (17. AI and the Legal Profession: Transforming the Future of Law \(Second Edition\)) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 492.0 Tm (Francesca Ramadan \(ed.\)) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 479.0 Tm (Globe Law and Business \267 June 2025 \267 ISBN 9781837230884) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 464.0 Tm (A guide for legal professionals navigating AI in practice: how it is changing legal research, document review, and) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 450.5 Tm (predictive analytics, and the concerns about ethics, privacy, and algorithmic bias.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 435.0 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 433.0 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 421.5 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 401.5 Tm (18. The Singularity Is Nearer: When We Merge with AI) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 386.5 Tm (Ray Kurzweil) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 373.5 Tm (Viking \267 June 2024 \267 ISBN 9780399562761) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 358.5 Tm (The long-awaited sequel to The Singularity Is Near, reaffirming Kurzweil's predictions that AI will reach human-level) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 345.0 Tm (intelligence by 2029 and that humans will merge with machines by 2045.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 329.5 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 327.5 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 316.0 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 296.0 Tm (19. How To Think About AI: A Guide for the Perplexed) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 281.0 Tm (Richard Susskind) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 268.0 Tm (Oxford University Press \267 March 2025 \267 ISBN 9780198941927) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 253.0 Tm (Drawing on four decades in artificial intelligence, the legal technology pioneer offers an accessible, balanced guide \227) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 239.5 Tm (equipping readers with the frameworks and vocabulary to think critically about AI rather than handing them answers.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 224.0 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 222.0 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 210.5 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 190.5 Tm (20. The Optimist: Sam Altman, OpenAI, and the Race to Invent the Future) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 175.5 Tm (Keach Hagey) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 162.5 Tm (W. W. Norton & Company \267 May 2025 \267 ISBN 9781324075967) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 147.5 Tm (The first major biography of Sam Altman, based on more than 250 interviews including extensive time with Altman) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 134.0 Tm (himself, charting his rise from St. Louis through Y Combinator to building OpenAI.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 118.5 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 116.5 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 105.0 528.0 0.5 re f
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 569.5 Tm (This interdisciplinary reference maps the legal, ethical, and policy questions raised by AI and algorithmic systems. Its) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 556.0 Tm (contributors connect foundational concepts with sector-specific uses and regulatory responses, with particular attention) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 542.5 Tm (to European law, human rights, democratic institutions, and the challenge of governing AI across domains.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 527.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 525.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 513.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 493.5 Tm (17. AI and the Legal Profession: Transforming the Future of Law \(Second Edition\)) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 478.5 Tm (Francesca Ramadan \(ed.\)) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 465.5 Tm (Globe Law and Business \267 June 2025 \267 ISBN 9781837230884) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 450.5 Tm (A guide for legal professionals navigating AI in practice: how it is changing legal research, document review, and) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 437.0 Tm (predictive analytics, and the concerns about ethics, privacy, and algorithmic bias.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 421.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 419.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 408.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 388.0 Tm (18. The Singularity Is Nearer: When We Merge with AI) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 373.0 Tm (Ray Kurzweil) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 360.0 Tm (Viking \267 June 2024 \267 ISBN 9780399562761) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 345.0 Tm (The long-awaited sequel to The Singularity Is Near, reaffirming Kurzweil's predictions that AI will reach human-level) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 331.5 Tm (intelligence by 2029 and that humans will merge with machines by 2045.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 316.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 314.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 302.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 282.5 Tm (19. How To Think About AI: A Guide for the Perplexed) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 267.5 Tm (Richard Susskind) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 254.5 Tm (Oxford University Press \267 March 2025 \267 ISBN 9780198941927) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 239.5 Tm (Drawing on four decades in artificial intelligence, the legal technology pioneer offers an accessible, balanced guide \227) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 226.0 Tm (equipping readers with the frameworks and vocabulary to think critically about AI rather than handing them answers.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 210.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 208.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 197.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 177.0 Tm (20. The Optimist: Sam Altman, OpenAI, and the Race to Invent the Future) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 162.0 Tm (Keach Hagey) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 149.0 Tm (W. W. Norton & Company \267 May 2025 \267 ISBN 9781324075967) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 134.0 Tm (The first major biography of Sam Altman, based on more than 250 interviews including extensive time with Altman) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 120.5 Tm (himself, charting his rise from St. Louis through Y Combinator to building OpenAI.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 105.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 103.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 91.5 528.0 0.5 re f
 0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
 BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
-BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 548.7 38.0 Tm (4 of 7) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (4 of 10) Tj ET
 endstream
 endobj
 26 0 obj
 << /Type /Annot /Subtype /Link /Rect [50.0 643.0 146.1 656.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861299) >> >>
 endobj
 27 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 537.5 146.1 551.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000426630) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 524.0 146.1 537.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000426630) >> >>
 endobj
 28 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 432.0 146.1 445.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000451305) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 418.5 146.1 432.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000451305) >> >>
 endobj
 29 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 326.5 146.1 340.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/?search_field=search&q=The+Singularity+Is+Nearer) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 313.0 146.1 326.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/?search_field=search&q=The+Singularity+Is+Nearer) >> >>
 endobj
 30 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 221.0 146.1 234.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861298) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 207.5 146.1 221.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861298) >> >>
 endobj
 31 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 115.5 146.1 129.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861300) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 102.0 146.1 115.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861300) >> >>
 endobj
 32 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 25 0 R /Annots [26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R] >>
 endobj
 33 0 obj
-<< /Length 5685 >>
+<< /Length 5686 >>
 stream
 0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
 BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
@@ -355,7 +356,7 @@ BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 105.0 Tm (View in SearchWorks) T
 0.898 0.906 0.922 rg 42.0 91.5 528.0 0.5 re f
 0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
 BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
-BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 548.7 38.0 Tm (5 of 7) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (5 of 10) Tj ET
 endstream
 endobj
 34 0 obj
@@ -380,77 +381,79 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 33 0 R /Annots [34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R] >>
 endobj
 41 0 obj
-<< /Length 4979 >>
+<< /Length 5268 >>
 stream
 0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
 BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
 BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 718.0 Tm (27. Digitalization and Artificial Intelligence in Courts: Opportunities and Challenges) Tj ET
 BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 703.0 Tm (Fernando Esteban de la Rosa et al. \(eds.\)) Tj ET
 BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 690.0 Tm (Oxford University Press \267 September 2025 \267 ISBN 9780198918721) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 675.0 Tm (How digitalisation and AI are transforming global justice systems, from online dispute resolution to the contested idea of) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 661.5 Tm (AI judges, with rigorous analysis of algorithmic bias, data privacy, and cybersecurity.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 646.0 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 644.0 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 632.5 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 612.5 Tm (28. Shared Wisdom: Cultural Evolution in the Age of AI) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 597.5 Tm (Alex Pentland) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 584.5 Tm (MIT Press \267 November 2025 \267 ISBN 9780262050999) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 569.5 Tm (Pentland argues that humanity's greatest breakthroughs emerged not from individual genius but from cultural inventions) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 556.0 Tm (that accelerated collective wisdom \227 and offers a framework for ensuring AI amplifies rather than replaces human) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 542.5 Tm (deliberation.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 527.0 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 525.0 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 513.5 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 493.5 Tm (29. Generative AI and Libraries: Claiming Our Place in the Center of a Shared Future) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 478.5 Tm (Michael Hanegan and Chris Rosser) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 465.5 Tm (ALA Editions/Core \267 June 2025 \267 ISBN 9798892553100) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 450.5 Tm (Makes the case that libraries are uniquely positioned to lead AI's ethical and human-centered integration, with practical) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 437.0 Tm (frameworks for evaluating AI tools and navigating ethical considerations.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 421.5 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 419.5 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 408.0 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 388.0 Tm (30. Power and Progress: Our Thousand-Year Struggle Over Technology and Prosperity) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 373.0 Tm (Daron Acemoglu and Simon Johnson) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 360.0 Tm (PublicAffairs \267 May 2023 \267 ISBN 9781541702530) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 345.0 Tm (Two Nobel Prize-winning MIT economists demonstrate that technological progress does not automatically benefit) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 331.5 Tm (everyone \227 it depends on political, social, and economic choices \227 and offer a manifesto for redirecting innovation) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 318.0 Tm (toward shared prosperity.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 302.5 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 300.5 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 289.0 528.0 0.5 re f
-BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 269.0 Tm (31. The AI and Data Revolution: Understanding the New Data Landscape) Tj ET
-BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 254.0 Tm (Martin De Saulles) Tj ET
-BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 241.0 Tm (Facet Publishing \267 June 2025 \267 ISBN 9781783307081) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 226.0 Tm (How AI-driven innovations represent a step-change in how organisations extract value from data, tracing 30 years from) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 212.5 Tm (mass media and the internet through mobile computing, social networks, and generative AI.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 197.0 Tm (View in SearchWorks) Tj ET
-0.549 0.082 0.082 rg 50.0 195.0 96.1 0.6 re f
-0.898 0.906 0.922 rg 42.0 183.5 528.0 0.5 re f
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 675.0 Tm (This comparative collection examines how digital tools and AI are changing court administration, cross-border) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 661.5 Tm (cooperation, online dispute resolution, and access to justice. It weighs possible gains in efficiency and accessibility) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 648.0 Tm (against risks involving privacy, cybersecurity, algorithmic bias, procedural fairness, and proposals for AI-assisted or) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 634.5 Tm (automated judging.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 619.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 617.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 605.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 585.5 Tm (28. Shared Wisdom: Cultural Evolution in the Age of AI) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 570.5 Tm (Alex Pentland) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 557.5 Tm (MIT Press \267 November 2025 \267 ISBN 9780262050999) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 542.5 Tm (Pentland argues that humanity's greatest breakthroughs emerged not from individual genius but from cultural inventions) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 529.0 Tm (that accelerated collective wisdom \227 and offers a framework for ensuring AI amplifies rather than replaces human) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 515.5 Tm (deliberation.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 500.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 498.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 486.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 466.5 Tm (29. Generative AI and Libraries: Claiming Our Place in the Center of a Shared Future) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 451.5 Tm (Michael Hanegan and Chris Rosser) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 438.5 Tm (ALA Editions/Core \267 June 2025 \267 ISBN 9798892553100) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 423.5 Tm (Makes the case that libraries are uniquely positioned to lead AI's ethical and human-centered integration, with practical) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 410.0 Tm (frameworks for evaluating AI tools and navigating ethical considerations.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 394.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 392.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 381.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 361.0 Tm (30. Power and Progress: Our Thousand-Year Struggle Over Technology and Prosperity) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 346.0 Tm (Daron Acemoglu and Simon Johnson) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 333.0 Tm (PublicAffairs \267 May 2023 \267 ISBN 9781541702530) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 318.0 Tm (Two Nobel Prize-winning MIT economists demonstrate that technological progress does not automatically benefit) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 304.5 Tm (everyone \227 it depends on political, social, and economic choices \227 and offer a manifesto for redirecting innovation) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 291.0 Tm (toward shared prosperity.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 275.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 273.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 262.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 242.0 Tm (31. The AI and Data Revolution: Understanding the New Data Landscape) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 227.0 Tm (Martin De Saulles) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 214.0 Tm (Facet Publishing \267 June 2025 \267 ISBN 9781783307081) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 199.0 Tm (How AI-driven innovations represent a step-change in how organisations extract value from data, tracing 30 years from) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 185.5 Tm (mass media and the internet through mobile computing, social networks, and generative AI.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 170.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 168.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 156.5 528.0 0.5 re f
 0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
 BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
-BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 548.7 38.0 Tm (6 of 7) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (6 of 10) Tj ET
 endstream
 endobj
 42 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 643.0 146.1 656.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861316) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 616.0 146.1 629.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861316) >> >>
 endobj
 43 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 524.0 146.1 537.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861328) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 497.0 146.1 510.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861328) >> >>
 endobj
 44 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 418.5 146.1 432.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861319) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 391.5 146.1 405.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000861319) >> >>
 endobj
 45 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 299.5 146.1 313.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/14859366) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 272.5 146.1 286.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/14859366) >> >>
 endobj
 46 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50.0 194.0 146.1 207.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000869722) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 167.0 146.1 180.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000869722) >> >>
 endobj
 47 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 41 0 R /Annots [42 0 R 43 0 R 44 0 R 45 0 R 46 0 R] >>
 endobj
 48 0 obj
-<< /Length 1843 >>
+<< /Length 5631 >>
 stream
 0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
 BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
@@ -462,82 +465,334 @@ BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 661.5 Tm (addressing ethics, tra
 BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 646.0 Tm (View in SearchWorks) Tj ET
 0.549 0.082 0.082 rg 50.0 644.0 96.1 0.6 re f
 0.898 0.906 0.922 rg 42.0 632.5 528.0 0.5 re f
-0.953 0.957 0.965 rg 42.0 532.5 528.0 84.0 re f
-BT /F2 10 Tf 0.549 0.082 0.082 rg 1 0 0 1 56.0 602.5 Tm (THE LIST ONLINE) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 56.0 584.5 Tm (The same shelf is on the AI Learning Hub, where each cover, annotation, and catalogue link is kept current. For) Tj ET
-BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 56.0 571.0 Tm (access to AI tools, legal research, or technical help, email library@law.stanford.edu.) Tj ET
-BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 56.0 555.5 Tm (Open the AI Learning Hub) Tj ET
-0.549 0.082 0.082 rg 56.0 553.5 117.2 0.6 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 612.5 Tm (33. The Eye of the Master: A Social History of Artificial Intelligence) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 597.5 Tm (Matteo Pasquinelli) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 584.5 Tm (Verso \267 2023 \267 ISBN 9781788730068) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 569.5 Tm (Pasquinelli traces AI\222s lineage through the history of labor, measurement, and managerial control rather than treating it) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 556.0 Tm (as an imitation of the human mind. Moving from Babbage\222s calculating engines to machine learning and computer) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 542.5 Tm (vision, he argues that automated systems encode social organization and the extraction of collective knowledge.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 527.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 525.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 513.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 493.5 Tm (34. A Lawyer's Guide to AI: Ten Essential Concepts) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 478.5 Tm (Matthew T. Henshon) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 465.5 Tm (ABA Book Publishing \267 2026 \267 ISBN 9781639056842) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 450.5 Tm (Henshon gives lawyers a nontechnical introduction to ten core AI concepts, combining the technology\222s history and) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 437.0 Tm (mechanics with issues such as content creation, fair use, bias, privacy, employment, and accountability. The result is a) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 423.5 Tm (broad orientation to how AI works and why its legal implications matter.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 408.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 406.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 394.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 374.5 Tm (35. The Cambridge Handbook of Generative AI and the Law) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 359.5 Tm (Mimi Zou, Cristina Poncibo, Martin Ebers, and Ryan Calo \(eds.\)) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 346.5 Tm (Cambridge University Press \267 2025 \267 ISBN 9781009492584) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 331.5 Tm (This wide-ranging handbook examines generative AI from technical, ethical, regulatory, and practice-oriented) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 318.0 Tm (perspectives. Comparative chapters address governance across jurisdictions and explore consequences for privacy,) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 304.5 Tm (nondiscrimination, intellectual property, corporate governance, criminal law, public administration, and the day-to-day) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 291.0 Tm (work of the legal sector.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 275.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 273.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 262.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 242.0 Tm (36. AI for Good: How Real People Are Using Artificial Intelligence to Fix Things That Matter) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 227.0 Tm (Josh Tyrangiel) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 214.0 Tm (Simon & Schuster \267 2026 \267 ISBN 9781668082508) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 199.0 Tm (Tyrangiel reports on teachers, doctors, public servants, and other practitioners using AI to solve concrete problems in) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 185.5 Tm (education, medicine, government, logistics, and human connection. The book shifts attention away from grand) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 172.0 Tm (predictions toward the institutional work, human judgment, setbacks, and incremental gains that determine whether an) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 158.5 Tm (AI project helps.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 143.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 141.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 129.5 528.0 0.5 re f
 0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
 BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
-BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 548.7 38.0 Tm (7 of 7) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (7 of 10) Tj ET
 endstream
 endobj
 49 0 obj
 << /Type /Annot /Subtype /Link /Rect [50.0 643.0 146.1 656.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000996315) >> >>
 endobj
 50 0 obj
-<< /Type /Annot /Subtype /Link /Rect [56.0 552.5 173.2 566.0] /Border [0 0 0] /A << /S /URI /URI (https://ailearninghub.law.stanford.edu/) >> >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 524.0 146.1 537.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000027035) >> >>
 endobj
 51 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 48 0 R /Annots [49 0 R 50 0 R] >>
+<< /Type /Annot /Subtype /Link /Rect [50.0 405.0 146.1 418.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00001003187) >> >>
+endobj
+52 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 272.5 146.1 286.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000854147) >> >>
+endobj
+53 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 140.0 146.1 153.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00001180884) >> >>
+endobj
+54 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 48 0 R /Annots [49 0 R 50 0 R 51 0 R 52 0 R 53 0 R] >>
+endobj
+55 0 obj
+<< /Length 5086 >>
+stream
+0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
+BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 718.0 Tm (37. Bacteria to AI: Human Futures with Our Nonhuman Symbionts) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 703.0 Tm (N. Katherine Hayles) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 690.0 Tm (University of Chicago Press \267 2025 \267 ISBN 9780226835983) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 675.0 Tm (Hayles proposes an integrated cognitive framework that treats meaning-making as a capacity shared across living) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 661.5 Tm (organisms and some artificial systems. Drawing on biology, computer science, literary studies, and ecology, she asks) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 648.0 Tm (how humans might understand intelligence relationally and build more responsible forms of coexistence with biological) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 634.5 Tm (and technological partners.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 619.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 617.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 605.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 585.5 Tm (38. Inclusive Innovation in the Age of AI and Big Data) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 570.5 Tm (Daryl Lim and Peter K. Yu \(eds.\)) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 557.5 Tm (Oxford University Press \267 2026 \267 ISBN 9780197799413) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 542.5 Tm (Lim and Yu assemble interdisciplinary and global perspectives on who participates in\227and benefits from\227innovation) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 529.0 Tm (shaped by AI and big data. The collection examines gender, race, socioeconomic inequality, patent and copyright) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 515.5 Tm (systems, diversity measurement, and structural barriers, then offers policy approaches for making innovation) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 502.0 Tm (ecosystems more inclusive.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 486.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 484.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 473.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 453.0 Tm (39. Artificial Intelligence and Foreign Affairs: AI, Human Rights, Ethics and Global Governance) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 438.0 Tm (Mario Torres Jarr\355n \(ed.\)) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 425.0 Tm (Peter Lang \267 2025 \267 ISBN 9783034353397) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 410.0 Tm (This compact edited collection approaches AI as a foreign-affairs and human-rights issue, linking geopolitics, corporate) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 396.5 Tm (power, algorithmic bias, disinformation, neurotechnology, and the EU AI Act. Contributions from European and Latin) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 383.0 Tm (American perspectives consider how ethics and international governance might respond to technology that crosses) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 369.5 Tm (borders and redistributes power.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 354.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 352.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 340.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 320.5 Tm (40. LegalTech and Legal-AI in Business: Major and Promising Sectors of Economy) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 305.5 Tm (Agnessa Inshakova, Denis Matytsin, and Iolanta Baltutite \(eds.\)) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 292.5 Tm (Springer \267 2025 \267 ISBN 9783031934735) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 277.5 Tm (This interdisciplinary volume surveys how legal technology, AI, robotics, and other digital systems are being integrated) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 264.0 Tm (into business operations and regulation. Its chapters span contracts, intellectual property, investment, e-commerce,) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 250.5 Tm (transportation, and dispute resolution, with emphasis on governance mechanisms and practical approaches to) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 237.0 Tm (managing business risk.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 221.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 219.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 208.0 528.0 0.5 re f
+0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (8 of 10) Tj ET
+endstream
+endobj
+56 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 616.0 146.1 629.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00001003144) >> >>
+endobj
+57 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 483.5 146.1 497.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00001431297) >> >>
+endobj
+58 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 351.0 146.1 364.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00001010957) >> >>
+endobj
+59 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 218.5 146.1 232.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000715728) >> >>
+endobj
+60 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 55 0 R /Annots [56 0 R 57 0 R 58 0 R 59 0 R] >>
+endobj
+61 0 obj
+<< /Length 4968 >>
+stream
+0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
+BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 718.0 Tm (41. AI in Legal Tech: How Generative AI Is Transforming Legal Technology and the Practice of) Tj ET
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 703.0 Tm (Law) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 688.0 Tm (Cat Casey) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 675.0 Tm (Wiley \267 2025 \267 ISBN 9781394304721) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 660.0 Tm (Casey introduces generative AI for nontechnical legal professionals, explaining core concepts alongside its effects on) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 646.5 Tm (legal workflows, ethics, careers, and the technology market. Practical sections cover tools, prompting, professional) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 633.0 Tm (adaptation, and terminology while stressing that useful adoption requires attention to both capability and risk.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 617.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 615.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 604.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 584.0 Tm (42. Regulating the Synthetic Society: Generative AI, Legal Questions, and Societal Challenges) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 569.0 Tm (Bart van der Sloot) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 556.0 Tm (Hart Publishing \267 2024 \267 ISBN 9781509974948) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 541.0 Tm (Van der Sloot investigates how deepfakes, humanoid robots, augmented reality, and virtual reality can blur the) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 527.5 Tm (boundary between authentic and synthetic experience. He connects their uses and abuses to trust, autonomy,) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 514.0 Tm (democracy, journalism, and courts, then evaluates European legal responses across privacy, expression, procedure,) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 500.5 Tm (tort, and AI regulation.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 485.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 483.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 471.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 451.5 Tm (43. The Augmented Lawyer: AI and the Future of Legal Practice) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 436.5 Tm (Sateesh Nori) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 423.5 Tm (ABA Publishing \267 2026 \267 ISBN 9781639057658) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 408.5 Tm (Nori argues that lawyers should use AI, data, and automation to expand their capacity rather than replace professional) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 395.0 Tm (judgment. Combining practical examples from research, drafting, document review, contracts, and client intake with) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 381.5 Tm (questions about service delivery and professional values, the book presents augmentation as both a workflow and) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 368.0 Tm (ethical challenge.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 352.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 350.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 339.0 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 319.0 Tm (44. Artificial Intelligence and the Legal Profession) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 304.0 Tm (Michael Legg and Felicity Bell) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 291.0 Tm (Hart Publishing \267 2020 \267 ISBN 9781509931811) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 276.0 Tm (Legg and Bell examine how AI affects the work lawyers perform across litigation, transactions, dispute resolution,) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 262.5 Tm (compliance, criminal practice, advice, and strategy. Using examples from several jurisdictions, they explain the) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 249.0 Tm (technology, identify opportunities and limits, and consider professional ethics, regulation, and the lawyer\222s continuing) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 235.5 Tm (responsibility to the rule of law.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 220.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 218.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 206.5 528.0 0.5 re f
+0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 544.0 38.0 Tm (9 of 10) Tj ET
+endstream
+endobj
+62 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 614.5 146.1 628.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000926718) >> >>
+endobj
+63 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 482.0 146.1 495.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000088153) >> >>
+endobj
+64 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 349.5 146.1 363.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00001132090) >> >>
+endobj
+65 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 217.0 146.1 230.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/13681287) >> >>
+endobj
+66 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 61 0 R /Annots [62 0 R 63 0 R 64 0 R 65 0 R] >>
+endobj
+67 0 obj
+<< /Length 4326 >>
+stream
+0.549 0.082 0.082 rg 0.0 756.0 612.0 36.0 re f
+BT /F2 9 Tf 1.000 1.000 1.000 rg 1 0 0 1 42.0 769.0 Tm (STANFORD LAW SCHOOL  |  ROBERT CROWN LAW LIBRARY) Tj ET
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 718.0 Tm (45. Artificial Intelligence and the Practice of Law in a Nutshell) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 703.0 Tm (Korin A. Munsterman) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 690.0 Tm (West Academic Publishing \267 2026 \267 ISBN 9798892090988) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 675.0 Tm (Munsterman provides a comprehensive practice-focused reference on AI foundations, legal tools,) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 661.5 Tm (professional-responsibility guidance, court rules, governance, bias, liability, deepfakes, and changing business models.) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 648.0 Tm (Designed for students and practitioners, it pairs doctrinal and ethical analysis with prompts, policy models, and) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 634.5 Tm (checklists for evaluating vendors and workflows.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 619.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 617.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 605.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 585.5 Tm (46. The Line: AI and the Future of Personhood) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 570.5 Tm (James Boyle) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 557.5 Tm (The MIT Press \267 2024 \267 ISBN 9780262049160) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 542.5 Tm (Boyle uses AI to revisit the legal and moral boundary between persons and things. By comparing debates over machine) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 529.0 Tm (consciousness with earlier conflicts about corporate, animal, and human personhood, he shows how rights, empathy,) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 515.5 Tm (anthropomorphism, and legal categories may shape future claims made for artificial entities.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 500.0 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 498.0 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 486.5 528.0 0.5 re f
+BT /F2 11.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 50.0 466.5 Tm (47. Project Maven: A Marine Colonel, His Team, and the Dawn of AI Warfare) Tj ET
+BT /F1 10 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 451.5 Tm (Katrina Manson) Tj ET
+BT /F1 9 Tf 0.420 0.447 0.502 rg 1 0 0 1 50.0 438.5 Tm (W. W. Norton & Company \267 2026 \267 ISBN 9781324123316) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 423.5 Tm (Drawing on extensive reporting, Manson reconstructs the Pentagon effort that moved AI from experimental analysis of) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 410.0 Tm (drone imagery into military targeting and command systems. The account follows the people, contractors, bureaucratic) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 396.5 Tm (battles, and worker protests behind Project Maven while confronting reliability, accountability, human oversight, and the) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 50.0 383.0 Tm (prospect of autonomous warfare.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 50.0 367.5 Tm (View in SearchWorks) Tj ET
+0.549 0.082 0.082 rg 50.0 365.5 96.1 0.6 re f
+0.898 0.906 0.922 rg 42.0 354.0 528.0 0.5 re f
+0.953 0.957 0.965 rg 42.0 254.0 528.0 84.0 re f
+BT /F2 10 Tf 0.549 0.082 0.082 rg 1 0 0 1 56.0 324.0 Tm (THE LIST ONLINE) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 56.0 306.0 Tm (The same shelf is on the AI Learning Hub, where each cover, annotation, and catalogue link is kept current. For) Tj ET
+BT /F1 9.8 Tf 0.122 0.161 0.216 rg 1 0 0 1 56.0 292.5 Tm (access to AI tools, legal research, or technical help, email library@law.stanford.edu.) Tj ET
+BT /F2 9.5 Tf 0.549 0.082 0.082 rg 1 0 0 1 56.0 277.0 Tm (Open the AI Learning Hub) Tj ET
+0.549 0.082 0.082 rg 56.0 275.0 117.2 0.6 re f
+0.898 0.906 0.922 rg 42.0 52.0 528.0 0.6 re f
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 42.0 38.0 Tm (AI reading list \267 Robert Crown Law Library \267 library@law.stanford.edu) Tj ET
+BT /F1 8.5 Tf 0.420 0.447 0.502 rg 1 0 0 1 539.3 38.0 Tm (10 of 10) Tj ET
+endstream
+endobj
+68 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 616.0 146.1 629.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000882590) >> >>
+endobj
+69 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 497.0 146.1 510.5] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00000235879) >> >>
+endobj
+70 0 obj
+<< /Type /Annot /Subtype /Link /Rect [50.0 364.5 146.1 378.0] /Border [0 0 0] /A << /S /URI /URI (https://searchworks.stanford.edu/view/in00001143085) >> >>
+endobj
+71 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 274.0 173.2 287.5] /Border [0 0 0] /A << /S /URI /URI (https://ailearninghub.law.stanford.edu/) >> >>
+endobj
+72 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 67 0 R /Annots [68 0 R 69 0 R 70 0 R 71 0 R] >>
 endobj
 xref
-0 52
-0000000000 65535 f 
-0000000015 00000 n 
-0000000064 00000 n 
-0000000163 00000 n 
-0000000260 00000 n 
-0000000362 00000 n 
-0000004685 00000 n 
-0000004857 00000 n 
-0000005029 00000 n 
-0000005201 00000 n 
-0000005365 00000 n 
-0000010279 00000 n 
-0000010452 00000 n 
-0000010625 00000 n 
-0000010798 00000 n 
-0000010971 00000 n 
-0000011144 00000 n 
-0000011327 00000 n 
-0000017003 00000 n 
-0000017176 00000 n 
-0000017349 00000 n 
-0000017522 00000 n 
-0000017695 00000 n 
-0000017868 00000 n 
-0000018036 00000 n 
-0000018226 00000 n 
-0000023843 00000 n 
-0000024016 00000 n 
-0000024189 00000 n 
-0000024362 00000 n 
-0000024565 00000 n 
-0000024738 00000 n 
-0000024911 00000 n 
-0000025101 00000 n 
-0000030839 00000 n 
-0000031012 00000 n 
-0000031185 00000 n 
-0000031358 00000 n 
-0000031531 00000 n 
-0000031704 00000 n 
-0000031877 00000 n 
-0000032067 00000 n 
-0000037099 00000 n 
-0000037272 00000 n 
-0000037445 00000 n 
-0000037618 00000 n 
-0000037786 00000 n 
-0000037959 00000 n 
-0000038142 00000 n 
-0000040038 00000 n 
-0000040211 00000 n 
-0000040372 00000 n 
+0 73
+0000000000 65535 f
+0000000015 00000 n
+0000000064 00000 n
+0000000185 00000 n
+0000000282 00000 n
+0000000384 00000 n
+0000004708 00000 n
+0000004880 00000 n
+0000005052 00000 n
+0000005224 00000 n
+0000005388 00000 n
+0000010303 00000 n
+0000010476 00000 n
+0000010649 00000 n
+0000010822 00000 n
+0000010995 00000 n
+0000011168 00000 n
+0000011351 00000 n
+0000017028 00000 n
+0000017201 00000 n
+0000017374 00000 n
+0000017547 00000 n
+0000017720 00000 n
+0000017893 00000 n
+0000018061 00000 n
+0000018251 00000 n
+0000024055 00000 n
+0000024228 00000 n
+0000024401 00000 n
+0000024574 00000 n
+0000024777 00000 n
+0000024950 00000 n
+0000025123 00000 n
+0000025313 00000 n
+0000031052 00000 n
+0000031225 00000 n
+0000031398 00000 n
+0000031571 00000 n
+0000031744 00000 n
+0000031917 00000 n
+0000032090 00000 n
+0000032280 00000 n
+0000037601 00000 n
+0000037774 00000 n
+0000037947 00000 n
+0000038120 00000 n
+0000038288 00000 n
+0000038461 00000 n
+0000038644 00000 n
+0000044328 00000 n
+0000044501 00000 n
+0000044674 00000 n
+0000044847 00000 n
+0000045020 00000 n
+0000045193 00000 n
+0000045376 00000 n
+0000050515 00000 n
+0000050688 00000 n
+0000050861 00000 n
+0000051034 00000 n
+0000051207 00000 n
+0000051383 00000 n
+0000056404 00000 n
+0000056577 00000 n
+0000056750 00000 n
+0000056923 00000 n
+0000057091 00000 n
+0000057267 00000 n
+0000061646 00000 n
+0000061819 00000 n
+0000061992 00000 n
+0000062165 00000 n
+0000062326 00000 n
 trailer
-<< /Size 52 /Root 1 0 R /Info << /Title (AI Reading List) /Author (Robert Crown Law Library) >> >>
+<< /Size 73 /Root 1 0 R /Info << /Title (AI Reading List) /Author (Robert Crown Law Library) >> >>
 startxref
-40534
+62502
 %%EOF

@@ -427,9 +427,9 @@ def write_pdf(pages, title):
         offsets.append(len(output))
         output.extend(f"{index} 0 obj\n".encode("ascii") + obj + b"\nendobj\n")
     xref = len(output)
-    output.extend(f"xref\n0 {len(objects)}\n0000000000 65535 f \n".encode("ascii"))
+    output.extend(f"xref\n0 {len(objects)}\n0000000000 65535 f\r\n".encode("ascii"))
     for offset in offsets[1:]:
-        output.extend(f"{offset:010d} 00000 n \n".encode("ascii"))
+        output.extend(f"{offset:010d} 00000 n\r\n".encode("ascii"))
     output.extend(
         f"trailer\n<< /Size {len(objects)} /Root {catalog} 0 R "
         f"/Info << /Title ({pdf_string(title)}) /Author (Robert Crown Law Library) >> >>\n"

@@ -3276,7 +3276,7 @@ main section[id] { scroll-margin-top: 8rem; }
 }
 
 /* ---- The book collection --------------------------------------------------
-   Thirty-two titles, each with a cover, the publication facts, and why it is
+   Forty-seven titles, each with a cover, the publication facts, and why it is
    worth reading. Wider minimum than the card grids: a cover beside a paragraph
    needs room, and below that width the pair stacks instead. */
 .bookGrid {

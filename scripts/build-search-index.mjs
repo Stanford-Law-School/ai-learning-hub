@@ -146,7 +146,7 @@ const pages = (await readdir(ROOT)).filter((f) => f.endsWith(".html") && !SKIP.h
 const index = [];
 
 for (const file of pages) {
-  await page.goto(`http://localhost:${port}/${file}`, { waitUntil: "networkidle" });
+  await page.goto(`http://localhost:${port}/${file}`, { waitUntil: "domcontentloaded" });
   const result = await page.evaluate(extract);
   if (!result) { console.warn(`skipped ${file} (no <main>)`); continue; }
   for (const entry of result.entries) {
